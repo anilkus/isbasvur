@@ -72,13 +72,13 @@
   <div class="card apply-box">
     <div class="row">
       <input type="url" id="link" placeholder="İlan linkini yapıştır">
-      <button class="primary" id="go">Claude için kopyala</button>
+      <button class="primary" id="go">Başvur</button>
     </div>
     <details>
       <summary>Sayfa JavaScript ile açılıyorsa (Workday vb.) ilan metnini buraya yapıştır</summary>
       <textarea id="pasted" placeholder="İlan metni (isteğe bağlı)"></textarea>
     </details>
-    <div class="meta">Başvur butonu "başvur: link" mesajını kopyalar. Claude sohbetine yapıştır: Claude paketi hazırlar, başvuruyu Chrome'da doldurur ve göndermeden önce onayını ister.</div>
+    <div class="meta">Başvur butonu Claude'u "başvur: link" mesajı hazır şekilde açar, Enter'a basman yeterli. Claude paketi hazırlar, başvuruyu Chrome'da doldurur ve göndermeden önce onayını ister.</div>
   </div>
 
   <div class="tabs">
@@ -130,7 +130,9 @@ function openIssue(url, pasted = "") {
 function askClaude(url, pasted = "") {
   if (!/^https?:\/\//.test(url)) { toast("Geçerli bir link gir"); return; }
   const msg = `başvur: ${url}` + (pasted ? `\n\nİlan metni:\n${pasted}` : "");
-  navigator.clipboard.writeText(msg).then(() => toast("Kopyalandı, Claude'a yapıştır"), () => prompt("Bunu Claude'a yapıştır:", msg));
+  // Opens a new Claude chat with the message prefilled; also copies it as a fallback.
+  try { navigator.clipboard.writeText(msg); } catch {}
+  window.open("https://claude.ai/new?q=" + encodeURIComponent(msg), "_blank");
 }
 $("#go").onclick = () => askClaude($("#link").value.trim(), $("#pasted").value.trim());
 
