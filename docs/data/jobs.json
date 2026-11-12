@@ -1,28 +1,8 @@
 {
-  "updated": "2026-11-12T18:17+00:00",
-  "count": 29,
-  "errors": [
-    "jobs.ac.uk Computer Science: 500 Server Error: Internal Server Error for url: https://www.jobs.ac.uk/jobs/computer-sciences?format=rss"
-  ],
+  "updated": "2026-11-12T18:38+00:00",
+  "count": 9,
+  "errors": [],
   "jobs": [
-    {
-      "title": "Senior AI Research Engineer - LLM Training & Inference Infrastructure",
-      "company": "Datadog",
-      "location": "Paris",
-      "url": "https://www.arbeitnow.fr/jobs/companies/datadog/senior-ai-research-engineer-llm-training-inference-infrastructure-paris-322553",
-      "description": "<p>As a Research Engineer on the Frontier Foundations team, you will partner with Research Scientists to build the systems that run large-scale LLM training, reinforcement learning, and inference at Datadog. You will build and operate an in-house distributed runtime that schedules work across large GPU clusters, and you will own how quickly researchers can iterate and how reliably long training runs complete.&nbsp;</p>\n<p>Building on our track record of AI-powered solutions (e.g., Bits AI, Bits Evolve, and our time series foundation model Toto), Datadog AI Research (DAIR) tackles high-risk, hi",
-      "posted": "2026-11-11",
-      "source": "Arbeitnow",
-      "score": 50,
-      "matched": [
-        "llm",
-        "evaluation",
-        "machine learning",
-        "python",
-        "research"
-      ],
-      "status": "new"
-    },
     {
       "title": "Research Staff, Voice AI Foundations - Remote",
       "company": "Deepgram",
@@ -40,25 +20,7 @@
         "research",
         "robustness"
       ],
-      "status": "new"
-    },
-    {
-      "title": "Agentic AI Senior Consultant",
-      "company": "Jobgether",
-      "location": "Netherlands",
-      "url": "https://www.arbeitnow.nl/jobs/companies/jobgether/agentic-ai-senior-consultant-netherlands-41647",
-      "description": "This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for an Agentic AI Senior Consultant based in Netherlands. \n\n In this role, you will act as a trusted technical advisor and hands-on engineering expert, helping enterprise customers design, implement, and scale advanced agentic AI solutions. You will lead the entire customer delivery lifecycle, from identifying high-value business opportunities and designing multi-agent architectures to deploying production-ready systems. Combining strong software engineering expertise, ap",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 46,
-      "matched": [
-        "llm",
-        "large language model",
-        "evaluation",
-        "machine learning",
-        "python"
-      ],
-      "status": "new"
+      "status": "failed"
     },
     {
       "title": "AI Research Engineer (Agentic Reinforcement Learning)",
@@ -77,7 +39,7 @@
         "pytorch",
         "research"
       ],
-      "status": "new"
+      "status": "failed"
     },
     {
       "title": "Anthropic Fellows Program, AI Safety & Security",
@@ -98,7 +60,7 @@
         "ai safety",
         "robustness"
       ],
-      "status": "new"
+      "status": "failed"
     },
     {
       "title": "Staff Machine Learning Engineer",
@@ -116,7 +78,7 @@
         "python",
         "research"
       ],
-      "status": "new"
+      "status": "failed"
     },
     {
       "title": "Threat Research Engineer, Security Factory: Threat Research",
@@ -153,24 +115,6 @@
       "status": "new"
     },
     {
-      "title": "Agentic AI Senior Consultant",
-      "company": "Jobgether",
-      "location": "Switzerland",
-      "url": "https://www.arbeitnow.ch/jobs/companies/jobgether/agentic-ai-senior-consultant-switzerland-345128",
-      "description": "This position is listed on behalf of a partner company, who manages all applications and next steps. Our partner is looking for an Agentic AI Senior Consultant based in Switzerland. \n\n In this role, you will act as a trusted technical advisor and hands-on engineering expert, helping enterprise customers design, implement, and scale advanced agentic AI solutions. You will lead the entire customer delivery lifecycle, from identifying high-value business opportunities and designing multi-agent architectures to deploying production-ready systems. Combining strong software engineering expertise, ap",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 38,
-      "matched": [
-        "llm",
-        "large language model",
-        "evaluation",
-        "machine learning",
-        "python"
-      ],
-      "status": "new"
-    },
-    {
       "title": "AI Research Engineer (Agentic Reinforcement Learning)",
       "company": "Jobgether",
       "location": "Switzerland",
@@ -186,39 +130,6 @@
         "deep learning",
         "pytorch",
         "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Machine Learning Engineer Intern (x/f/m)",
-      "company": "Doctolib",
-      "location": "Paris",
-      "url": "https://www.arbeitnow.fr/jobs/companies/doctolib/machine-learning-engineer-intern-levallois-perret-451465",
-      "description": "We are looking for a Machine Learning Research Intern to join the Doctolib’s Artificial Intelligence teams.\n   As a Machine Learning Research Intern, your mission will be to contribute to developing AI solutions that transform access to healthcare and improve the experience of healthcare professionals and patients. You will work within a research team developing ethical AI technologies to optimize care pathways for millions of patients across Europe.\n   Working in the tech team at Doctolib involves building innovative products and features to improve the daily lives of care teams and patients.",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 35,
-      "matched": [
-        "machine learning",
-        "python",
-        "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Senior Agents Platform Engineer (x/f/m)",
-      "company": "Doctolib",
-      "location": "Paris",
-      "url": "https://www.arbeitnow.fr/jobs/companies/doctolib/senior-agents-platform-engineer-levallois-perret-379393",
-      "description": "Set a new pulse for healthcare! \n We are looking for a Senior Agents Platform Engineer to join the ML Platform (TIGER) team in AI & Machine Learning .\n Your mission will be to build the platform that lets every feature team at Doctolib declare an agent once — and get a production-grade, secure, and compliant AI agent by default. You will work on the foundational layer that powers Consultation Assistant, Phone Assistant, Health Companion, and more: a shared agent runtime, a unified GenAI gateway, and the observability and evaluation infrastructure that makes it all trustworthy — contributing di",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 32,
-      "matched": [
-        "llm",
-        "evaluation",
-        "machine learning",
-        "python"
       ],
       "status": "new"
     },
@@ -257,256 +168,6 @@
         "hugging face",
         "python",
         "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Director AI Platform Engineering",
-      "company": "Deeptech Recruitment",
-      "location": "Germany",
-      "url": "https://www.arbeitnow.com/jobs/companies/deeptech-recruitment/director-ai-platform-engineering-germany-221449",
-      "description": "Our client is building a new AI Engineering & Platform team in Germany to support the next generation of AI-powered media, localization, automation, and workflow capabilities. The Director, AI Engineering & Platform will lead this team and will be responsible for building, operating, and evolving the technical foundation for production AI services across our client.\n This is a senior hands-on leadership role for someone who can build and run a high-performing engineering team, deliver complex AI platform and integration projects, and provide technical direction across cloud infrastructure, mod",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 28,
-      "matched": [
-        "nlp",
-        "llm",
-        "evaluation"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Business Analyst - Enterprise & AI Solutions",
-      "company": "Vmlenterprisesolutions",
-      "location": "Amsterdam",
-      "url": "https://www.arbeitnow.nl/jobs/companies/vmlenterprisesolutions/business-analyst-enterprise-ai-solutions-amsterdam-361566",
-      "description": "<div class=\"content-intro\"><h4><strong>Who We Are</strong></h4>\n<p>WPP Enterprise Solutions designs, builds, and operates the growth systems that competitive businesses rely on. In a world where Al is reshaping how companies drive growth, we lead clients in business transformation and marketing modernization, connecting strategy directly to execution. Our 12,000 experts in engineering and platforms, commerce, consulting, content transformation, CRM, and CX work within a unified global operating unit across 40+ markets. WPP Enterprise Solutions works alongside best-in-class partners including A",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 28,
-      "matched": [
-        "llm",
-        "evaluation",
-        "machine learning",
-        "python"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "ML Infrastructure & Acceleration Engineer - LLMs",
-      "company": "Prosus",
-      "location": "Amsterdam",
-      "url": "https://www.arbeitnow.nl/jobs/companies/prosus/ml-infrastructure-acceleration-engineer-llms-amsterdam-392610",
-      "description": "Who We Are \n You've ordered dinner through Just Eat Takeaway. You've bought and sold on OLX. You've paid with PayU. Chances are, you've already used a Prosus company today.\n We are Prosus, a global technology company powering some of the world's leading lifestyle ecommerce businesses. Every day, billions of people across India, Latin America, Europe and beyond use our products and services to buy, sell, pay, connect and discover.\n Our AI-driven ecosystem spans 100+ companies across ecommerce, food delivery, fintech and experiences, serving billions of consumers worldwide. AI powers how we oper",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 28,
-      "matched": [
-        "llm",
-        "pytorch",
-        "hugging face",
-        "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Sr. Specialist Solutions Architect",
-      "company": "databricks",
-      "location": "Zürich",
-      "url": "https://www.arbeitnow.ch/jobs/companies/databricks/sr-specialist-solutions-architect-zurich-188461",
-      "description": "<p data-pm-slice=\"1 1 []\">FEQ228R125</p>\n<p>As a Senior Specialist Solutions Architect (Sr. SSA) for AI/ML, you will be the go-to technical expert for Databricks' AI platform across our customers. You will help them move from AI experiments to <strong>governed, cost-efficient agents and ML systems running on the Databricks Data Intelligence Platform</strong>.</p>\n<p>You will work with Account Executives and Solutions Architects to win strategic opportunities. You will design architectures for advanced agent and ML use cases and lead hands-on proofs of concept and MVPs. You will act as a truste",
-      "posted": "2026-11-06",
-      "source": "Arbeitnow",
-      "score": 28,
-      "matched": [
-        "llm",
-        "evaluation",
-        "machine learning",
-        "python"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Staff Data Scientist, Trust & Safety",
-      "company": "Vinteden",
-      "location": "Amsterdam",
-      "url": "https://www.arbeitnow.nl/jobs/companies/vinteden/staff-data-scientist-trust-safety-amsterdam-283396",
-      "description": "<div class=\"content-intro\"><h2><strong>Brief info about Vinted&nbsp;</strong></h2>\n<p data-renderer-start-pos=\"1\"><span data-sheets-root=\"1\">Our mission is to make second-hand the first choice, and we're looking for people who want to help us get there. Every day, we work together to help our members buy and sell pre-loved clothing and lifestyle items, giving each piece a second life – or even a third. <br>The Vinted Group is made up of three business units that support this mission:<br><br><strong><a href=\"https://careers.vinted.com/marketplace\" target=\"_blank\">Vinted Marketplace</a></strong>",
-      "posted": "2026-11-11",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "llm",
-        "evaluation",
-        "machine learning",
-        "python"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Staff Computer Vision Engineer - Localization",
-      "company": "Se3",
-      "location": "Munich",
-      "url": "https://www.arbeitnow.com/jobs/companies/se3/staff-computer-vision-engineer-localization-munich-322859",
-      "description": "Join SE3 Labs as Staff Computer Vision Engineer - Localization \n Solve the hardest estimation and systems problems in our visual localization stack, from core algorithms to deployed software.\n About SE3 \n SE3 Labs builds spatial intelligence and autonomy software for unmanned systems. We combine 3D computer vision, state estimation and AI to help autonomous platforms perceive their surroundings, know where they are and operate when GPS and other sensors become unreliable. Defence is a core application of our work today.\n We are growing to a team of 100+ people. Join at a stage where you can sh",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "evaluation",
-        "python",
-        "research",
-        "robustness"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Senior Director, Reporting & Analytics Engineering",
-      "company": "sonyinteractiveentertainmentglobal",
-      "location": "London",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/sonyinteractiveentertainmentglobal/senior-director-reporting-analytics-engineering-london-28066",
-      "description": "<div class=\"content-intro\"><p><strong>Why Sony Interactive Entertainment?</strong></p>\n<p>Sony Interactive Entertainment isn’t just the Best Place to Play — it’s also the Best Place to Work. Sony Interactive Entertainment (SIE) is the company behind the PlayStation brand. As a subsidiary of Sony Group Corporation, we’re part of a proud legacy of innovation and excellence. SIE is a dynamic technology company, delivering cutting-edge hardware and network services to more than 100 million people and an entertainment leader, home to some of the most beloved and recognizable intellectual properties",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "llm",
-        "evaluation",
-        "python",
-        "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Senior AI/ML Engineer",
-      "company": "Optics11",
-      "location": "Amsterdam, Noord-Holland, Netherlands",
-      "url": "https://www.arbeitnow.nl/jobs/companies/optics11/senior-ai-ml-engineer-amsterdam-66773",
-      "description": "We are looking for an experienced AI/ML Engineer to develop and deploy machine learning solutions for real-world underwater acoustic sensing systems.\n\n Optics11 is a deep-tech company developing cutting-edge fiber-optic sensing technologies for challenging environments, including underwater acoustics, offshore energy, and defense applications. Our systems enable high-performance sensing and monitoring through advanced photonics, signal processing, and data-driven intelligence.\n We are expanding our R&D team with a Senior AI/ML Engineer who combines strong mathematical foundations with applied ",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "evaluation",
-        "machine learning",
-        "pytorch",
-        "python",
-        "robustness",
-        "interpretability"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Senior China Research Analyst",
-      "company": "Datenna BV",
-      "location": "Eindhoven, Noord-Brabant, Netherlands",
-      "url": "https://www.arbeitnow.nl/jobs/companies/datenna-bv/senior-china-research-analyst-eindhoven-3607",
-      "description": "Datenna is a fast-growing tech scale-up combining cutting-edge OSINT and AI technologies to provide governments with critical insights into China's techno-economic landscape. Our platform transforms open-source intelligence into actionable insights through advanced data processing and analysis. \n\n The Role: \n Do you enjoy turning complex data into strategic insights that drive critical decisions? As a Senior China Research Analyst, you will lead analytical research projects for our government clients. You'll turn their most pressing questions about China's technology, industrial, and defence-i",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "llm",
-        "python",
-        "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Développeur Python IA",
-      "company": "RGI S.p.A.",
-      "location": "Paris",
-      "url": "https://www.arbeitnow.fr/jobs/companies/rgi-spa/developpeur-python-ia-paris-334045",
-      "description": "Développeur Python IA (H/F) \n\n Paris/Lille | Secteur Assurance \n\n Pourquoi cette opportunité ? \n\nParce que vous participerez à la construction de notre stratégie d’intelligence artificielle, que nous sommes en train de définir.\nVous rejoindrez une équipe motivée et talentueuse, dont la mission est d’intégrer l’IA au cœur de nos processus métier.\n\nL’objectif est de répondre aux besoins de nos équipes comme à ceux de nos clients, et d’automatiser certaines tâches à faible valeur ajoutée.\n\n Éléments clés \n\n Concevoir des solutions RAG et agentiques appliquées à des cas d’usage métier concrets.\n D",
-      "posted": "2026-11-11",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "llm",
-        "machine learning",
-        "python"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Senior AI Engineer - Search & Recommendation - Patient Team (x/f/m)",
-      "company": "Doctolib",
-      "location": "Paris",
-      "url": "https://www.arbeitnow.fr/jobs/companies/doctolib/senior-ai-engineer-search-recommendation-patient-team-levallois-perret-79317",
-      "description": "Join our mission, join Doctolib!  \n We are looking for a Senior AI Engineer to join the Patient team in Paris.  \n The Patient domain sits at the heart of Doctolib's mission: ensuring everyone has better access to the care they need, receives better care from health professionals, and can actively prevent health problems to improve their wellbeing.\n You’ll design the search and recommendation engines behind our health companion, helping 100M patients across Europe instantly navigate to the exact care they need while delivering trusted, curated insights at every step. The retrieval and recommend",
-      "posted": "2026-11-10",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "llm",
-        "evaluation",
-        "python",
-        "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "LLM Deployment Engineer",
-      "company": "Destinusgroup",
-      "location": "Zürich, Switzerland",
-      "url": "https://www.arbeitnow.ch/jobs/companies/destinusgroup/llm-deployment-engineer-zurich-16388",
-      "description": "About the role \n We are seeking an LLM Deployment Engineer to drive the adoption of AI-powered automation across the organization. In this role, you will deploy and scale LLMs to streamline business processes and assist engineering R&D.\n You'll work at the intersection of ML, software infrastructure engineering, and enterprise systems, by developing integration and automation solutions that enable teams across the organization to operate more efficiently.\n\n What You´ll Do \n · Deploy and maintain open-weights LLMs on cloud and local cluster.\n · Scale deployments to serve a large number of users",
-      "posted": "2026-11-06",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "llm"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Senior AI Engineer",
-      "company": "Tomtom",
-      "location": "Amsterdam, The Netherlands",
-      "url": "https://www.arbeitnow.nl/jobs/companies/tomtom/senior-ai-engineer-amsterdam-the-netherlands-4381",
-      "description": "We’re looking for a Software Engineer to join our team and help us build a production-ready AI/data product for TomTom. The work is covering everything from new feature development to infrastructure, and data Engineering. \n Responsibilities: \n\n Build AI systems: Design, develop and maintain production AI solutions, including LLM-based applications, retrieval-augmented generation (RAG) pipelines, agentic workflows and ML model services.\n\n Productionize models: Take models and prototypes from applied scientists and turn them into robust, low-latency, cost-efficient services that scale to global ",
-      "posted": "2026-11-07",
-      "source": "Arbeitnow",
-      "score": 26,
-      "matched": [
-        "llm",
-        "evaluation",
-        "pytorch",
-        "hugging face",
-        "python"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Tech Lead Full-Stack Rails Engineer",
-      "company": "Mitre Media",
-      "location": "USA, Canada, USA timezones",
-      "url": "https://remotive.com/remote-jobs/software-development/tech-lead-full-stack-rails-engineer-2069746",
-      "description": "About Mitre Media \n\n Mitre Media is redefining FinTech with AI-driven tools that empower millions of investors. Our portfolio, including Dividend.com and MutualFunds.com, leverages LLMs to deliver novel data insights and visually rich user experiences. For over a decade, we’ve served individual investors, financial advisors, and top asset managers like BlackRock and Vanguard through our premium data, tools, and advertising solutions. Join our lean, entrepreneurial team to shape the future of AI-powered investing from your location ±3 hours from Eastern Time. \n\n Our users are deeply engaged, sp",
-      "posted": "2026-10-14",
-      "source": "Remotive",
-      "score": 26,
-      "matched": [
-        "nlp",
-        "llm",
-        "xai",
-        "hugging face"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Machine Learning Engineer II - Growth & Personalisation",
-      "company": "Deliveroo ",
-      "location": "London, England, United Kingdom",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/deliveroo/machine-learning-engineer-ii-growth-personalisation-london-24645",
-      "description": "Our Global Structure \n\nDeliveroo is now part of DoorDash, bringing together teams with even greater reach, scale, and ambition. Depending on your role, you may collaborate with teammates, systems, and leaders across DoorDash and Wolt. Together, we're unlocking new possibilities as one global team.\n Join us in our mission to transform the way people shop and eat, where impact, innovation and growth drive everything we do. Our Global Engineering teams tackle complex technical challenges across a global, three-sided marketplace, building and scaling systems that serve millions of customers, rider",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 25,
-      "matched": [
-        "machine learning",
-        "python"
       ],
       "status": "new"
     }
