@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T18:43+00:00",
+  "updated": "2026-11-12T18:51+00:00",
   "count": 9,
   "errors": [],
   "jobs": [
@@ -20,7 +20,7 @@
         "research",
         "robustness"
       ],
-      "status": "failed"
+      "status": "prepared"
     },
     {
       "title": "AI Research Engineer (Agentic Reinforcement Learning)",
@@ -39,7 +39,7 @@
         "pytorch",
         "research"
       ],
-      "status": "failed"
+      "status": "prepared"
     },
     {
       "title": "Anthropic Fellows Program, AI Safety & Security",
@@ -60,7 +60,7 @@
         "ai safety",
         "robustness"
       ],
-      "status": "failed"
+      "status": "prepared"
     },
     {
       "title": "Staff Machine Learning Engineer",
@@ -78,7 +78,7 @@
         "python",
         "research"
       ],
-      "status": "failed"
+      "status": "prepared"
     },
     {
       "title": "Threat Research Engineer, Security Factory: Threat Research",
@@ -102,7 +102,7 @@
       "company": "Destinusgroup",
       "location": "Zürich, Switzerland",
       "url": "https://www.arbeitnow.ch/jobs/companies/destinusgroup/senior-machine-learning-engineer-zurich-435291",
-      "description": "Imagine building intelligent systems that don’t just work in perfect lab conditions, but \n perform reliably in the real world, where uncertainty is the norm and failure is not an \n option. As a Machine Learning Engineer, you will push the limits of computer vision by \n designing, training, and validating neural networks that operate in complex, safety-critical \n environments. Your work will directly influence how autonomous systems perceive and \n interact with the world, combining deep learning, simulation, and rigorous verification into \n one seamless pipeline.\n At Destinus, we are shaping the future of defense through high-speed, autonomous flight \n technologies. We develop next-generation unmanned aerial systems that deliver greater \n speed, precision, and efficiency, supporting governments and defense organizations in \n mission-critical operations worldwide. Daedalean AG, the AI and autonomy hub of the \n Destinus Group, plays a key role in this vision. Developing safety-critical AI systems at the \n intersection of advanced research and real-world aviation. Enabling machines to perceive, \n understand, and make decisions in real time. Together, we combine aerospace \n engineering and artificial intelligence to build the next generation of autonomous flight \n systems, driving innovation where it matters most.\n\n What You´ll Do \n • Design, train, and optimize deep learning models for computer vision tasks in highly \n dynamic and safety-critical environments \n • Manage the development lifecycle of ML capabilities, from early-stage data \n collection to the operational deployments of mature systems\n • Develop robust evaluation pipelines to ensure models meet strict reliability and \n safety requirements \n • Leverage transfer learning and simulation to scale training and testing beyond realworld data limitations \n • Collaborate closely with software, systems, and flight teams to integrate ML models \n into real-world applications\n • Continuously push model performance across edge cases, environmental \n variability, and operational constraints\n\n Requirements \n Strong programming skills in C++ or Rust\n • At least 5 years of hands-on experience in deep learning for computer vision \n • Experience across the full ML stack, including model design, distributed training \n frameworks, evaluation pipelines and resource-constrained inference platforms\n • Experience with simulation environments or synthetic data generation is a strong \n plus \n • Experience with working with integrated sensors, including infrared cameras\n • Master’s degree or PhD in computer science, physics, mathematics, or a related \n technical field- or equal proven practical experience\n Find Jobs in Switzerland on Arbeitnow",
+      "description": "Imagine building intelligent systems that don’t just work in perfect lab conditions, but \n perform reliably in the real world, where uncertainty is the norm and failure is not an \n option. As a Machine Learning Engineer, you will push the limits of computer vision by \n designing, training, and validating neural networks that operate in complex, safety-critical \n environments. Your work will directly influence how autonomous systems perceive and \n interact with the world, combining deep learning, simulation, and rigorous verification into \n one seamless pipeline.\n At Destinus, we are shaping the future of defense through high-speed, autonomous flight \n technologies. We develop next-generation unmanned aerial systems that deliver greater \n speed, precision, and efficiency, supporting governments and defense organizations in \n mission-critical operations worldwide. Daedalean AG, the AI and autonomy hub of the \n Destinus Group, plays a key role in this vision. Developing safety-critical AI systems at the \n intersection of advanced research and real-world aviation. Enabling machines to perceive, \n understand, and make decisions in real time. Together, we combine aerospace \n engineering and artificial intelligence to build the next generation of autonomous flight \n systems, driving innovation where it matters most.\n\n What You´ll Do \n • Design, train, and optimize deep learning models for computer vision tasks in highly \n dynamic and safety-critical environments \n • Manage the development lifecycle of ML capabilities, from early-stage data \n collection to the operational deployments of mature systems\n • Develop robust evaluation pipelines to ensure models meet strict reliability and \n safety requirements \n • Leverage transfer learning and simulation to scale training and testing beyond realworld data limitations \n • Collaborate closely with software, systems, and flight teams to integrate ML models \n into real-world applications\n • Continuously push model performance across edge cases, environmental \n variability, and operational constraints\n\n Requirements \n Strong programming skills in C++ or Rust\n • At least 5 years of hands-on experience in deep learning for computer vision \n • Experience across the full ML stack, including model design, distributed training \n frameworks, evaluation pipelines and resource-constrained inference platforms\n • Experience with simulation environments or synthetic data generation is a strong \n plus \n • Experience with working with integrated sensors, including infrared cameras\n • Master’s degree or PhD in computer science, physics, mathematics, or a related \n technical field- or equal proven practical experience\n Find more English Speaking Jobs in Switzerland on Arbeitnow",
       "posted": "2026-11-12",
       "source": "Arbeitnow",
       "score": 39,

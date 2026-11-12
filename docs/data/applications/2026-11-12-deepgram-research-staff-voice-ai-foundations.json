@@ -1,0 +1,50 @@
+{
+  "job": {
+    "title": "Research Staff, Voice AI Foundations",
+    "company": "Deepgram",
+    "location": "Remote, Amsterdam",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 55,
+    "verdict": "maybe",
+    "strengths": [
+      "Extensive research in LLM-as-a-judge and hybrid evaluation metrics for Turkish text summarization",
+      "Experience leading academic departments and coordinating international academic activities, showing ability to manage complex projects"
+    ],
+    "gaps": [
+      "No direct experience with neural audio codecs or speech synthesis",
+      "Limited published work on audio embeddings or latent space models"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a PhD candidate in Computer Engineering focusing on hybrid evaluation metrics for text summarization and LLM-as-a-judge systems. My work on trustworthy AI and adversarial robustness of explainable AI models gives me a solid grounding in evaluating and improving complex neural systems, which aligns with Deepgram's goal of building robust voice AI foundations.\n\nAt Yozgat Bozok University I lead the Computer Technologies Department and coordinate international academic activities. Managing a team, securing collaborations, and co‑founding a technology centre have honed my ability to drive research projects from concept to implementation. I have also conducted visiting research at KIT and the University of Turku, exposing me to cutting‑edge AI labs.\n\nWhile I have not yet built neural audio codecs, my experience designing hybrid metrics and evaluating large language models equips me to assess and improve latent representations. I am eager to apply my expertise in evaluation, robustness, and model‑centric research to the challenges of latent space modeling for voice AI.\n\nThank you for considering my application. I look forward to discussing how my background can contribute to Deepgram's innovative research agenda.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "PhD researcher in hybrid evaluation metrics and LLM-as-a-judge, experienced department head and international coordinator, ready to bring rigorous evaluation and robustness expertise to Deepgram's voice AI research.",
+  "answers": {
+    "why_this_role": "The role focuses on developing latent space models and neural audio codecs. My research on LLM-as-a-judge and hybrid metrics involves creating and assessing complex model representations, which is directly relevant to evaluating and improving latent audio embeddings.",
+    "why_this_organisation": "Deepgram's emphasis on real‑time, scalable voice AI matches my interest in building systems that work at large scale and under diverse conditions. The company's AI‑first culture aligns with my habit of integrating advanced models into daily research workflows.",
+    "relevant_experience": "I have led research on trustworthy AI and adversarial robustness of explainable AI models, and I co‑founded SmartLab Technology Center where we built prototype AI services. My visiting research at KIT exposed me to audio‑related projects, giving me a foundation for voice AI work.",
+    "research_interests": "I am interested in evaluating and improving large language models, designing hybrid metrics, and ensuring robustness of AI systems. Extending this to audio, I want to explore how latent representations can be factorized and recombined for high‑quality speech synthesis.",
+    "additional_information": "I hold two patents and am a member of COST Actions AID-AgE, Net4Brain and InsectAI, demonstrating my engagement with collaborative research networks."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Research Staff, Voice AI Foundations",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Research Staff, Voice AI Foundations position at Deepgram. I have highlighted my experience in AI evaluation, robust model design, and academic leadership, which I believe fit the role's requirements.\n\nThank you for your time and consideration.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-12-deepgram-research-staff-voice-ai-foundations",
+  "url": "https://www.arbeitnow.nl/jobs/companies/deepgram/research-staff-voice-ai-foundations-remote-amsterdam-428068",
+  "created": "2026-11-12T18:51+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

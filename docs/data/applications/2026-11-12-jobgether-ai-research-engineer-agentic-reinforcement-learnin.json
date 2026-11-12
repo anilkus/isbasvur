@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "AI Research Engineer (Agentic Reinforcement Learning)",
+    "company": "Jobgether",
+    "location": "Netherlands",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 45,
+    "verdict": "maybe",
+    "strengths": [
+      "Extensive research in Turkish NLP, LLM‑as‑judge, and multimodal evaluation metrics",
+      "Experience designing scalable research infrastructure and leading academic units",
+      "Two patents and active participation in international COST actions"
+    ],
+    "gaps": [
+      "No demonstrated experience with reinforcement learning algorithms or multimodal vision systems",
+      "No publications in top AI conferences listed in the CV"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a researcher and lecturer with a PhD in Computer Engineering, focusing on evaluation metrics for large language models and multimodal text summarization. At Yozgat Bozok University I lead the Computer Technologies Department and coordinate international academic activities, which has given me solid experience in building and managing research infrastructure for large‑scale experiments.\n\nMy recent work on LLM‑as‑judge and hybrid metrics directly tackles reward modeling and evaluation, topics that overlap with the reward‑optimization challenges you describe. I have also co‑founded a technology center where we built prototype systems that integrate text and image data, giving me hands‑on experience with multimodal pipelines.\n\nWhile my background is strongest in natural language processing and trustworthy AI, I have a strong theoretical foundation in machine learning and have contributed to two patents related to AI system design. I am eager to apply this expertise to reinforcement learning for multimodal agents and to learn the specific RL techniques required for your projects.\n\nI look forward to discussing how my research experience and leadership skills can support the development of scalable, reliable AI agents at your organization.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "Researcher and lecturer with a PhD in Computer Engineering, experienced in multimodal evaluation, LLM‑as‑judge, and building scalable research infrastructure. Ready to apply my AI expertise to reinforcement learning challenges.",
+  "answers": {
+    "why_this_role": "The role requires designing reward mechanisms and evaluation protocols for multimodal AI. My work on hybrid evaluation metrics and LLM‑as‑judge aligns directly with these needs, and I have experience building large‑scale research pipelines.",
+    "why_this_organisation": "Your focus on agentic reinforcement learning and multimodal systems matches my interest in advancing trustworthy AI across text and image modalities. The remote, globally distributed setting fits my collaborative academic background.",
+    "relevant_experience": "Led the Computer Technologies Department at Yozgat Bozok University, coordinating international projects and managing research infrastructure. Conducted research on multimodal evaluation and LLM‑based judging, resulting in two patents and active participation in COST actions.",
+    "research_interests": "I aim to improve evaluation and alignment of multimodal AI systems, especially through robust reward modeling and explainable decision‑making. My current interests include bridging NLP and vision for trustworthy agent behavior.",
+    "additional_information": "I have visiting research experience at KIT and University of Turku, and I co‑founded an LLM‑powered platform for workplace reporting, demonstrating practical AI deployment."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for AI Research Engineer (Agentic Reinforcement Learning)",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the AI Research Engineer position. I have highlighted my experience in multimodal evaluation, LLM‑as‑judge research, and building scalable research infrastructure.\n\nThank you for your consideration.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-12-jobgether-ai-research-engineer-agentic-reinforcement-learnin",
+  "url": "https://www.arbeitnow.nl/jobs/companies/jobgether/ai-research-engineer-agentic-reinforcement-learning-netherlands-255371",
+  "created": "2026-11-12T18:51+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
