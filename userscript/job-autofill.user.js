@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Job Agent Autofill
-// @namespace    https://github.com/anilkus/job-agent
+// @namespace    https://github.com/anilkus/isbasvur
 // @version      1.1.0
 // @description  Fills job application forms from your Job Agent packages. Never submits, the last click is yours.
 // @author       Anıl Kuş
@@ -16,7 +16,7 @@
 (function () {
   "use strict";
 
-  const SITE = "https://anilkus.github.io/job-agent/";
+  const SITE = "https://anilkus.github.io/isbasvur/";
 
   // Personal details live only in your browser (Tampermonkey storage), never in the public repo.
   const DEFAULTS = {

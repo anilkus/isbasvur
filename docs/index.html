@@ -108,7 +108,7 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 
 // owner/repo from the Pages URL: <owner>.github.io/<repo>/
 const OWNER = location.hostname.endsWith("github.io") ? location.hostname.split(".")[0] : "anilkus";
-const REPO = location.hostname.endsWith("github.io") ? (location.pathname.split("/")[1] || "job-agent") : "job-agent";
+const REPO = location.hostname.endsWith("github.io") ? (location.pathname.split("/")[1] || "isbasvur") : "isbasvur";
 
 const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },

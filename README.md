@@ -2,7 +2,7 @@
 
 Finds matching job postings every day, writes a tailored application package for any link you give it, and fills the application form in your browser. The last click (Submit) is always yours.
 
-Site: https://anilkus.github.io/job-agent/
+Site: https://anilkus.github.io/isbasvur/
 
 ## How it works
 
@@ -17,7 +17,7 @@ Flow: paste a link on the site → it opens a pre-filled issue `apply: <link>` �
 
 ## Kurulum (bir kerelik)
 
-1. **Repo:** Bu klasörü `anilkus/job-agent` olarak GitHub'a yükle (public, Pages ücretsiz planda public repo ister).
+1. **Repo:** Bu klasörü `anilkus/isbasvur` olarak GitHub'a yükle (public, Pages ücretsiz planda public repo ister).
 2. **API anahtarı:** Settings → Secrets and variables → Actions → *New repository secret* → `ANTHROPIC_API_KEY`.
    İsteğe bağlı: *Variables* sekmesinde `CLAUDE_MODEL` (varsayılan `claude-sonnet-5-5`).
 3. **Pages:** Settings → Pages → Source: *Deploy from a branch*, Branch: `main`, klasör: `/docs`.
