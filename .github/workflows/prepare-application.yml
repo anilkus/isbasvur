@@ -15,7 +15,6 @@ on:
 permissions:
   contents: write
   issues: write
-  models: read
 
 concurrency:
   group: data-writes
@@ -73,8 +72,9 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_MODEL: ${{ vars.GH_MODEL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
         run: |
           cd scripts
           python prepare_application.py --url "${{ steps.input.outputs.url }}" \

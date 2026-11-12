@@ -2,7 +2,7 @@
 fit analysis, tailored cover letter and answers to typical form questions.
 
 Usage: python prepare_application.py --url URL [--text-file posting.txt] [--summary-out summary.md]
-LLM: free GitHub Models via GITHUB_TOKEN (needs `permissions: models: read`),
+LLM: any OpenAI-compatible API (default: Groq free tier) via LLM_API_KEY,
 or Anthropic if ANTHROPIC_API_KEY is set.
 """
 import argparse
@@ -19,10 +19,10 @@ from common import (APPS_DIR, UA, ai_flags, humanize, load_cv, load_json, load_p
                     save_json, slugify, strip_html)
 
 API_URL = "https://api.anthropic.com/v1/messages"
-GH_MODELS_URL = "https://models.github.ai/inference/chat/completions"
+LLM_BASE_URL = (os.environ.get("LLM_BASE_URL") or "https://api.groq.com/openai/v1").rstrip("/")
 USE_ANTHROPIC = bool(os.environ.get("ANTHROPIC_API_KEY"))
 MODEL = (os.environ.get("CLAUDE_MODEL") or "claude-sonnet-5-5") if USE_ANTHROPIC \
-    else (os.environ.get("GH_MODEL") or "openai/gpt-4.1")
+    else (os.environ.get("LLM_MODEL") or "openai/gpt-oss-120b")
 
 
 def fetch_posting(url):
@@ -33,42 +33,41 @@ def fetch_posting(url):
         tag.decompose()
     main = soup.find("main") or soup.find("article") or soup.body or soup
     text = strip_html(str(main))
-    return text[:15000]
+    return text[:9000]
 
 
-def call_github_models(system, user, max_tokens=4000):
-    token = os.environ.get("GITHUB_TOKEN")
-    if not token:
-        sys.exit("GITHUB_TOKEN is not set (the workflow needs `permissions: models: read`).")
-    for attempt in range(3):
-        r = requests.post(GH_MODELS_URL, timeout=180, headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json",
-            "Content-Type": "application/json",
-        }, json={
-            "model": MODEL,
-            "max_tokens": max_tokens,
-            "temperature": 0.7,
-            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
-        })
-        if r.status_code == 429 and attempt < 2:  # free tier rate limit, wait and retry
-            import time
-            time.sleep(int(r.headers.get("retry-after", "30")) + 1)
+def call_openai_compatible(system, user, max_tokens=4000):
+    key = os.environ.get("LLM_API_KEY")
+    if not key:
+        sys.exit("LLM_API_KEY secret is missing (free key: https://console.groq.com/keys).")
+    import time
+    body = {
+        "model": MODEL, "max_tokens": max_tokens, "temperature": 0.7,
+        "response_format": {"type": "json_object"},
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+    }
+    if "gpt-oss" in MODEL:
+        body["reasoning_effort"] = "low"
+    for attempt in range(4):
+        r = requests.post(f"{LLM_BASE_URL}/chat/completions", timeout=180, json=body,
+                          headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        if r.status_code == 429 and attempt < 3:  # free tier: wait for the per-minute window
+            time.sleep(min(int(float(r.headers.get("retry-after", "20"))) + 2, 65))
             continue
         if r.status_code >= 400:
-            sys.exit(f"GitHub Models error {r.status_code}: {r.text[:500]}")
+            sys.exit(f"LLM API error {r.status_code}: {r.text[:500]}")
         try:
             return r.json()["choices"][0]["message"]["content"]
         except Exception:
-            sys.exit(f"GitHub Models unexpected reply {r.status_code} "
-                     f"{r.headers.get('content-type')}: {r.text[:300]!r}")
+            sys.exit(f"LLM API unexpected reply {r.status_code}: {r.text[:300]!r}")
+    sys.exit("LLM API rate limit: try again later.")
 
 
 def call_claude(system, user, max_tokens=4000):
-    """Name kept for compatibility: uses GitHub Models unless an Anthropic key exists."""
+    """Name kept for compatibility: uses the free OpenAI-compatible API unless an Anthropic key exists."""
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
-        return call_github_models(system, user, max_tokens)
+        return call_openai_compatible(system, user, max_tokens)
     r = requests.post(API_URL, timeout=180, headers={
         "x-api-key": key,
         "anthropic-version": "2023-06-01",
@@ -191,7 +190,7 @@ def main():
         sys.exit("Posting text is too short. The page is probably rendered with JavaScript. "
                  "Paste the posting text into the issue body and try again.")
 
-    system, user = build_prompts(profile, cv, posting, a.url)
+    system, user = build_prompts(profile, cv, posting[:9000], a.url)
     pkg = clean(parse_json(call_claude(system, user)))
 
     flags = ai_flags(collect_text(pkg))

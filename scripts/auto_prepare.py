@@ -1,7 +1,7 @@
 """After the daily scan: write application packages for the best new matches.
 
 Picks jobs from docs/data/jobs.json that score high enough and have no package yet,
-runs prepare_application.py for each (free GitHub Models), and records the outcome
+runs prepare_application.py for each (free Groq API), and records the outcome
 on the job so it is not retried every day. Packages wait on the site for approval.
 """
 import subprocess
