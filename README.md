@@ -15,6 +15,24 @@ Site: https://anilkus.github.io/isbasvur/
 
 Flow: give the link to Claude in chat → Claude writes and pushes the package (and a Gmail draft is created if the posting wants email) → open the posting, click **Formu doldur**, check, attach CV, submit.
 
+## Otomatik başvuru (ücretsiz)
+
+1. **Bulma ve hazırlama:** Her sabah tarama yapılır. Puanı yüksek 4 yeni ilan için paketler ücretsiz GitHub Models ile kendiliğinden yazılır.
+   Başka bir ilan için sitede **Başvur** de, GitHub'da açılan isteği "Create" ile onayla.
+2. **Onay:** Sitede pakete bak, **Onayla ve gönder** de, GitHub'da "Create" ile onayla.
+3. **Gönderim:** Mail ile kabul eden ilanlarda mail Gmail'den gider. Greenhouse, Lever, Ashby, Workable, Personio, SmartRecruiters,
+   Recruitee, Teamtailor, JOIN ve BambooHR formları arka planda doldurulup gönderilir. Zorunlu bir alan doldurulamazsa,
+   CAPTCHA, giriş ekranı ya da desteklenmeyen bir portal çıkarsa **göndermez**, "elle tamamla" diye bildirir.
+   Sonuç issue'ya yorum olarak düşer, sitede de durum görünür.
+
+Gerekli secret'lar (Settings → Secrets and variables → Actions):
+- `GMAIL_ADDRESS`, `GMAIL_APP_PASSWORD`: mail başvuruları için (uygulama şifresi, normal şifre değil)
+- `APPLICANT_JSON`: formlardaki kişisel bilgiler, ör. `{"first_name":"Anıl","last_name":"Kuş","email":"...","phone":"...","city":"Yozgat","country":"Turkey","sponsorship":"Yes","work_authorization":"No, I do not currently have an EU work permit","relocation":"Yes"}`
+- `DOCS_PASSPHRASE`: `private/*.gpg` belgelerinin parolası
+- İsteğe bağlı değişken `GH_MODEL` (varsayılan `openai/gpt-4.1`)
+
+Formlardaki zorunlu gizlilik/veri işleme onay kutuları, sen paketi onayladığında senin adına işaretlenir.
+
 ## Kurulum (bir kerelik)
 
 1. **Repo:** Bu klasörü `anilkus/isbasvur` olarak GitHub'a yükle (public, Pages ücretsiz planda public repo ister).

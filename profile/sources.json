@@ -14,5 +14,9 @@
   },
   "rss": [],
   "min_score": 30,
-  "max_jobs": 150
+  "max_jobs": 150,
+  "auto_prepare": {
+    "max_per_day": 4,
+    "min_score": 40
+  }
 }

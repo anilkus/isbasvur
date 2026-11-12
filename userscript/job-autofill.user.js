@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Job Agent Autofill
 // @namespace    https://github.com/anilkus/isbasvur
-// @version      1.3.0
+// @version      1.4.0
 // @description  Fills job application forms from your Job Agent packages. Never submits, the last click is yours.
 // @author       Anıl Kuş
 // @match        *://*/*
@@ -31,6 +31,11 @@
     degree: "PhD candidate (MSc in Computer Engineering)", university: "Mersin University",
   };
   const me = () => Object.assign({}, DEFAULTS, GM_getValue("me", {}));
+
+  // Headless submit (GitHub Actions / Playwright) calls this instead of using the panel.
+  if (window.__JA_AUTOMATION) {
+    window.__jaFill = async id => fill(await get(`${SITE}data/applications/${id}.json`));
+  }
 
   GM_registerMenuCommand("Job Agent: kişisel bilgileri düzenle", () => {
     const cur = me();

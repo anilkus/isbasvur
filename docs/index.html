@@ -78,7 +78,7 @@
       <summary>Sayfa JavaScript ile açılıyorsa (Workday vb.) ilan metnini buraya yapıştır</summary>
       <textarea id="pasted" placeholder="İlan metni (isteğe bağlı)"></textarea>
     </details>
-    <div class="meta">Başvur butonu Claude'u "başvur: link" mesajı hazır şekilde açar, Enter'a basman yeterli. Claude paketi hazırlar, başvuruyu Chrome'da doldurur ve göndermeden önce onayını ister.</div>
+    <div class="meta">Başvur: GitHub'da hazır bir istek açılır, "Create" de. 1-2 dakikada paket hazırlanır. Sonra pakette <b>Onayla ve gönder</b>'e basınca sistem başvuruyu kendisi gönderir.</div>
   </div>
 
   <div class="tabs">
@@ -129,10 +129,12 @@ function openIssue(url, pasted = "") {
 // No API: packages are written in a Claude chat. The button copies a ready message to paste there.
 function askClaude(url, pasted = "") {
   if (!/^https?:\/\//.test(url)) { toast("Geçerli bir link gir"); return; }
-  const msg = `başvur: ${url}` + (pasted ? `\n\nİlan metni:\n${pasted}` : "");
-  // Opens a new Claude chat with the message prefilled; also copies it as a fallback.
-  try { navigator.clipboard.writeText(msg); } catch {}
-  window.open("https://claude.ai/new?q=" + encodeURIComponent(msg), "_blank");
+  let body = `Link: ${url}\n\nİlan metni gerekiyorsa aşağıdaki çizginin altına yapıştır.\n---\n${pasted}`;
+  if (body.length > 6000) body = body.slice(0, 6000);
+  issue("apply: " + url, body);
+}
+function issue(title, body) {
+  window.open(`https://github.com/${OWNER}/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`, "_blank");
 }
 $("#go").onclick = () => askClaude($("#link").value.trim(), $("#pasted").value.trim());
 
@@ -181,7 +183,8 @@ function renderApps() {
         <h3><a href="#" data-open="${esc(a.id)}">${esc(a.title || "İlan")}</a></h3>
         <div class="meta">${esc(a.company || "")} · ${esc((a.created || "").slice(0, 10))}
           · <span class="pill v-${esc(a.verdict)}">${esc(a.verdict || "")}</span>
-          ${a.method === "email" ? " · 📧 mail ile" : ""}${a.status === "draft" ? " · taslak hazır" : ""}
+          ${a.method === "email" ? " · 📧 mail ile" : ""}
+          · <b>${({ready:"onay bekliyor", draft:"taslak", submitted:"gönderildi ✅", manual:"elle tamamla ✋", failed:"hata ❌"})[a.status] || esc(a.status)}</b>
           ${applied.includes(a.url) ? " · başvuruldu" : ""}</div>
       </div>
       <div class="actions"><button data-open="${esc(a.id)}">Aç</button></div>
@@ -213,7 +216,9 @@ async function openApp(id) {
         <div><h3 style="margin:0">${esc(j.title)} · ${esc(j.company)}</h3>
           <div class="meta">${esc(j.location || "")} ${j.deadline ? "· son tarih " + esc(j.deadline) : ""}</div></div>
         <div class="row">
-          <a class="btn primary" href="${esc(a.url)}" target="_blank" rel="noopener">İlana git</a>
+          ${a.status === "submitted" ? `<span class="pill v-apply">Gönderildi</span>` :
+            `<button class="primary" data-submit="${esc(a.id)}">Onayla ve gönder</button>`}
+          <a class="btn" href="${esc(a.url)}" target="_blank" rel="noopener">İlana git</a>
           <button data-applied="${esc(a.url)}">${isApplied ? "Başvuruyu geri al" : "Başvurdum"}</button>
           <button data-close>Kapat</button>
         </div>
@@ -224,6 +229,7 @@ async function openApp(id) {
         <div><h4>Eksikler</h4><ul>${(f.gaps || []).map(s => `<li>${esc(s)}</li>`).join("") || "<li>yok</li>"}</ul></div>
       </div>
       ${a.style_flags?.length ? `<div class="meta" style="color:var(--warn)">Kontrol et: ${esc(a.style_flags.join(", "))}</div>` : ""}
+      ${a.submission ? `<div class="block meta"><b>Son gönderim denemesi:</b> ${esc(a.submission.result)} · ${esc(a.submission.reason)}</div>` : ""}
       ${mailCard}
       ${a.email ? block("Mail: " + (a.email.subject || ""), a.email.body) : ""}
       ${block("Cover letter", a.cover_letter)}
@@ -238,6 +244,10 @@ $("#apps").onclick = e => {
   if (t.dataset.open) { e.preventDefault(); openApp(t.dataset.open); }
   if ("copy" in t.dataset) { navigator.clipboard.writeText(t.closest(".block").querySelector(".text").textContent); toast("Kopyalandı"); }
   if ("close" in t.dataset) $("#appDetail").innerHTML = "";
+  if (t.dataset.submit) {
+    if (!confirm("Bu başvuru senin adına gönderilecek. Metinleri kontrol ettin mi?")) return;
+    issue("submit: " + t.dataset.submit, "Onaylandı. Başvuruyu gönder.");
+  }
   if (t.dataset.gmail) {
     const to = $("#draftTo").value.trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) { toast("Geçerli bir alıcı adresi gir"); return; }

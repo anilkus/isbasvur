@@ -101,10 +101,18 @@ def save_draft(msg, user, password):
     return folder
 
 
+def send_mail(msg, user, password):
+    import smtplib
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=60) as s:
+        s.login(user, password)
+        s.send_message(msg)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--id", required=True)
     ap.add_argument("--to", help="override recipient")
+    ap.add_argument("--send", action="store_true", help="send now via Gmail SMTP instead of saving a draft")
     ap.add_argument("--dry-run", help="write .eml here instead of saving to Gmail")
     ap.add_argument("--summary-out", default="summary.md")
     a = ap.parse_args()
@@ -127,26 +135,35 @@ def main():
         else:
             if not os.environ.get("GMAIL_APP_PASSWORD"):
                 sys.exit("GMAIL_APP_PASSWORD secret is missing.")
-            where = "Gmail " + save_draft(msg, sender, os.environ["GMAIL_APP_PASSWORD"])
+            if a.send:
+                if missing and any(m != "cover_letter" for m in missing):
+                    sys.exit(f"Not sending: required documents missing from the repo: {', '.join(missing)}")
+                send_mail(msg, sender, os.environ["GMAIL_APP_PASSWORD"])
+                where = "gönderildi"
+            else:
+                where = "Gmail " + save_draft(msg, sender, os.environ["GMAIL_APP_PASSWORD"])
 
     names = [n for _, n in attachments]
     pkg["email_draft"] = {
         "created": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
         "to": to, "subject": msg["Subject"], "attachments": names, "missing": missing,
     }
-    pkg["status"] = "draft"
+    status = "submitted" if a.send and not a.dry_run else "draft"
+    pkg["status"] = status
     save_json(path, pkg)
     index = load_json(APPS_DIR / "index.json", []) or []
     for i in index:
         if i["id"] == a.id:
-            i["status"] = "draft"
+            i["status"] = status
     save_json(APPS_DIR / "index.json", index)
 
-    lines = ["", "---", f"📧 **Taslak hazır** ({where}) → `{to}`",
+    title = "📧 **Mail gönderildi**" if status == "submitted" else f"📧 **Taslak hazır** ({where})"
+    lines = ["", "---", f"{title} → `{to}`",
              f"Ekler: {', '.join(names)}"]
     if missing:
         lines.append(f"⚠️ Repoda olmayan belgeler: {', '.join(missing)}. Taslağa elle ekle.")
-    lines.append("Gmail > Taslaklar'dan kontrol edip gönder.")
+    if status != "submitted":
+        lines.append("Gmail > Taslaklar'dan kontrol edip gönder.")
     with open(a.summary_out, "a", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
     print("\n".join(lines))

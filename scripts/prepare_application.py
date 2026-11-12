@@ -2,7 +2,8 @@
 fit analysis, tailored cover letter and answers to typical form questions.
 
 Usage: python prepare_application.py --url URL [--text-file posting.txt] [--summary-out summary.md]
-Needs ANTHROPIC_API_KEY in the environment.
+LLM: free GitHub Models via GITHUB_TOKEN (needs `permissions: models: read`),
+or Anthropic if ANTHROPIC_API_KEY is set.
 """
 import argparse
 import datetime as dt
@@ -18,7 +19,10 @@ from common import (APPS_DIR, UA, ai_flags, humanize, load_cv, load_json, load_p
                     save_json, slugify, strip_html)
 
 API_URL = "https://api.anthropic.com/v1/messages"
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
+GH_MODELS_URL = "https://models.github.ai/inference/chat/completions"
+USE_ANTHROPIC = bool(os.environ.get("ANTHROPIC_API_KEY"))
+MODEL = (os.environ.get("CLAUDE_MODEL") or "claude-sonnet-5-5") if USE_ANTHROPIC \
+    else (os.environ.get("GH_MODEL") or "openai/gpt-4.1")
 
 
 def fetch_posting(url):
@@ -32,10 +36,35 @@ def fetch_posting(url):
     return text[:15000]
 
 
+def call_github_models(system, user, max_tokens=4000):
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token:
+        sys.exit("GITHUB_TOKEN is not set (the workflow needs `permissions: models: read`).")
+    for attempt in range(3):
+        r = requests.post(GH_MODELS_URL, timeout=180, headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json",
+        }, json={
+            "model": MODEL,
+            "max_tokens": max_tokens,
+            "temperature": 0.7,
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
+        })
+        if r.status_code == 429 and attempt < 2:  # free tier rate limit, wait and retry
+            import time
+            time.sleep(int(r.headers.get("retry-after", "30")) + 1)
+            continue
+        if r.status_code >= 400:
+            sys.exit(f"GitHub Models error {r.status_code}: {r.text[:500]}")
+        return r.json()["choices"][0]["message"]["content"]
+
+
 def call_claude(system, user, max_tokens=4000):
+    """Name kept for compatibility: uses GitHub Models unless an Anthropic key exists."""
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
-        sys.exit("ANTHROPIC_API_KEY is not set (add it as a repository secret).")
+        return call_github_models(system, user, max_tokens)
     r = requests.post(API_URL, timeout=180, headers={
         "x-api-key": key,
         "anthropic-version": "2023-06-01",
@@ -207,7 +236,7 @@ def main():
         "", f"**Başvuru yolu:** {app.get('method', '?')}"
             + (f" → {app.get('email')}" if app.get("email") else ""),
         f"**İstenen belgeler:** {', '.join(app.get('required_documents') or [])}",
-        "", f"Paket hazır: `{slug}`.",
+        "", f"Paket hazır. Kontrol edip göndermek için: https://anilkus.github.io/isbasvur/?app={slug} → **Onayla ve gönder**",
     ]
     if flags:
         lines.append(f"\n⚠️ Metinde hâlâ şu kalıplar var, göndermeden önce bak: {', '.join(flags)}")
