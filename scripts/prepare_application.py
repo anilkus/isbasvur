@@ -173,6 +173,7 @@ def main():
     ap.add_argument("--url", required=True)
     ap.add_argument("--text-file", help="posting text pasted by the user (used if the page can't be read)")
     ap.add_argument("--summary-out", default="summary.md")
+    ap.add_argument("--apply-url", help="employer's application form, if different from --url")
     a = ap.parse_args()
 
     profile, cv = load_profile(), load_cv()
@@ -210,6 +211,7 @@ def main():
     pkg.update({
         "id": slug,
         "url": a.url,
+        "apply_url": a.apply_url or a.url,
         "created": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
         "model": MODEL,
         "style_flags": flags,

@@ -6,7 +6,8 @@ import xml.etree.ElementTree as ET
 
 import requests
 
-from common import DATA_DIR, PROFILE_DIR, UA, load_json, load_profile, save_json, score_job, strip_html
+from common import (DATA_DIR, PROFILE_DIR, SUPPORTED_FORMS, UA, load_json, load_profile, resolve_apply_url,
+                    save_json, score_job, strip_html)
 
 S = requests.Session()
 S.headers["User-Agent"] = UA
@@ -110,6 +111,17 @@ def main():
 
     out.sort(key=lambda j: j["score"], reverse=True)
     out = out[: cfg.get("max_jobs", 150)]
+
+    # Keep only jobs whose real application page is a form we can submit.
+    if cfg.get("forms_only", True):
+        kept = []
+        for j in out:
+            prev = old.get(j["url"], {})
+            j["apply_url"] = prev.get("apply_url") or resolve_apply_url(j["url"], S)
+            if SUPPORTED_FORMS.search(j["apply_url"]):
+                kept.append(j)
+        print(f"{len(kept)} of {len(out)} have a supported application form")
+        out = kept
     save_json(DATA_DIR / "jobs.json", {
         "updated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes"),
         "count": len(out),

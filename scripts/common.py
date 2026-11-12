@@ -118,3 +118,27 @@ def humanize(text):
 def ai_flags(text):
     low = (text or "").lower()
     return [w for w in BANNED if w in low]
+
+
+# Application portals the headless submitter can handle (no login wall).
+SUPPORTED_FORMS = re.compile(
+    r"greenhouse\.io|lever\.co|ashbyhq\.com|workable\.com|personio\.(de|com)|smartrecruiters\.com|"
+    r"recruitee\.com|teamtailor\.com|join\.com|bamboohr\.com")
+
+
+def resolve_apply_url(url, session=None):
+    """Follow the job board's Apply link to the employer's real application page."""
+    import requests
+    s = session or requests.Session()
+    candidates = [url.rstrip("/") + "/apply"] if "arbeitnow." in url else [url]
+    for c in candidates:
+        try:
+            r = s.get(c, headers={"User-Agent": UA}, timeout=20, allow_redirects=True)
+            if r.url and r.url != c:
+                return r.url.split("?utm_")[0]
+            if SUPPORTED_FORMS.search(r.url or ""):
+                return r.url
+        except Exception:
+            pass
+    return url
+

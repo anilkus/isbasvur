@@ -82,7 +82,7 @@
   </div>
 
   <div class="tabs">
-    <button class="tab on" data-tab="jobs">Uygun ilanlar</button>
+    <button class="tab on" data-tab="jobs">Uygun ilanlar (formlu)</button>
     <button class="tab" data-tab="apps">Başvuru paketleri</button>
   </div>
 
@@ -273,7 +273,7 @@ $("#apps").onclick = e => {
   JOBS = data.jobs || [];
   $("#jobsMeta").textContent = data.updated ? `${JOBS.length} ilan · son tarama ${data.updated.replace("T", " ")} UTC` : "";
   renderJobs();
-  APPS = await getJSON("data/applications/index.json", []);
+  APPS = (await getJSON("data/applications/index.json", [])).filter(a => a.verdict !== "skip");
   renderApps();
   const id = new URLSearchParams(location.search).get("app");
   if (id) { document.querySelector('[data-tab="apps"]').click(); openApp(id); }

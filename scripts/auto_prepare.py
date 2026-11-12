@@ -25,6 +25,7 @@ def main():
         with open("/tmp/posting.txt", "w", encoding="utf-8") as f:
             f.write(f"{j['title']}\n{j.get('company', '')} · {j.get('location', '')}\n\n{j.get('description', '')}")
         r = subprocess.run([sys.executable, "prepare_application.py", "--url", j["url"], "--text-file", "/tmp/posting.txt",
+                            "--apply-url", j.get("apply_url") or j["url"],
                             "--summary-out", "/tmp/auto_summary.md"], capture_output=True, text=True)
         j["status"] = "prepared" if r.returncode == 0 else "failed"
         print(j["status"], j["title"], "|", (r.stdout + r.stderr).strip().splitlines()[-1:] )

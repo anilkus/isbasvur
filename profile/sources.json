@@ -13,10 +13,11 @@
     ]
   },
   "rss": [],
-  "min_score": 30,
+  "min_score": 35,
   "max_jobs": 150,
   "auto_prepare": {
     "max_per_day": 4,
     "min_score": 40
-  }
+  },
+  "forms_only": true
 }

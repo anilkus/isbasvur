@@ -145,7 +145,7 @@ def main():
     pkg = load_json(APPS_DIR / f"{a.id}.json")
     if not pkg:
         out("failed", reason=f"package {a.id} not found")
-    url = a.url or pkg["url"]
+    url = a.url or pkg.get("apply_url") or pkg["url"]
     if not SUPPORTED.search(url):
         out("manual", reason="Bu başvuru portalı otomatik gönderim için desteklenmiyor (hesap ya da özel form gerekiyor olabilir).")
     me = json.loads(os.environ.get("APPLICANT_JSON") or "{}")
