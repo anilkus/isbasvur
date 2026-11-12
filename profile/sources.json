@@ -1,0 +1,9 @@
+{
+  "arbeitnow": { "enabled": true, "pages": 5 },
+  "remotive": { "enabled": true, "searches": ["nlp", "machine learning", "llm", "research scientist"] },
+  "rss": [
+    { "name": "jobs.ac.uk Computer Science", "url": "https://www.jobs.ac.uk/jobs/computer-sciences/?format=rss" }
+  ],
+  "min_score": 25,
+  "max_jobs": 150
+}

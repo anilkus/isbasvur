@@ -1,0 +1,10 @@
+{
+  "updated": "2026-11-12T17:40+00:00",
+  "count": 0,
+  "errors": [
+    "Arbeitnow: HTTPSConnectionPool(host='www.arbeitnow.com', port=443): Max retries exceeded with url: /api/job-board-api?page=1 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))",
+    "Remotive: HTTPSConnectionPool(host='remotive.com', port=443): Max retries exceeded with url: /api/remote-jobs?search=nlp&limit=50 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))",
+    "jobs.ac.uk Computer Science: HTTPSConnectionPool(host='www.jobs.ac.uk', port=443): Max retries exceeded with url: /jobs/computer-sciences/?format=rss (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))"
+  ],
+  "jobs": []
+}

@@ -1,0 +1,88 @@
+name: Prepare application
+
+# The site opens a pre-filled issue titled "apply: <link>". This workflow
+# turns it into an application package, comments a summary and closes the issue.
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      url:
+        description: Job posting link
+        required: true
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.issue.title, 'apply:') &&
+       github.event.issue.user.login == github.repository_owner)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Read link and pasted text
+        id: input
+        env:
+          TITLE: ${{ github.event.issue.title }}
+          BODY: ${{ github.event.issue.body }}
+          MANUAL_URL: ${{ github.event.inputs.url }}
+        run: |
+          python - <<'EOF'
+          import os, re
+          url = os.environ.get("MANUAL_URL") or ""
+          title, body = os.environ.get("TITLE") or "", os.environ.get("BODY") or ""
+          if not url:
+              m = re.search(r"https?://\S+", title) or re.search(r"https?://\S+", body)
+              url = m.group(0) if m else ""
+          pasted = body.split("---", 1)[1] if "---" in body else ""
+          open("posting.txt", "w", encoding="utf-8").write(pasted.strip())
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"url={url}\n")
+          EOF
+
+      - name: Build package
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+        run: |
+          cd scripts
+          python prepare_application.py --url "${{ steps.input.outputs.url }}" \
+            --text-file ../posting.txt --summary-out ../summary.md 2>&1 | tee ../log.txt
+          exit ${PIPESTATUS[0]}
+
+      - name: Commit
+        run: |
+          git config user.name "job-agent"
+          git config user.email "job-agent@users.noreply.github.com"
+          git add docs/data/applications
+          git commit -m "Application package: ${{ steps.input.outputs.url }}" || exit 0
+          git pull --rebase && git push
+
+      - name: Report back on the issue
+        if: always() && github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -f summary.md ]; then
+            gh issue comment ${{ github.event.issue.number }} --body-file summary.md
+            gh issue close ${{ github.event.issue.number }}
+          else
+            { echo "Paket hazırlanamadı:"; echo '```'; tail -n 20 log.txt 2>/dev/null; echo '```'; \
+              echo "İlan metnini issue gövdesine \`---\` satırının altına yapıştırıp yeni issue aç."; } > err.md
+            gh issue comment ${{ github.event.issue.number }} --body-file err.md
+          fi

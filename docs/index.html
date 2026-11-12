@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Agent · Anıl Kuş</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --bg: #f6f5f1; --card: #fff; --ink: #1d1d1b; --muted: #6b6a64; --line: #e4e2da;
+    --accent: #1f5c4a; --accent-soft: #e3efe9; --warn: #9a5b00; --warn-soft: #fbf0dc; --bad: #9b2c2c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --card: #1f1f1d; --ink: #ecebe6; --muted: #9b9a93; --line: #33332f;
+            --accent: #6fc3a5; --accent-soft: #1d3029; --warn: #e3a64a; --warn-soft: #3a2d17; --bad: #e07a7a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 28px 20px 80px; }
+  h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 0 0 22px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .apply-box { display: grid; gap: 10px; margin-bottom: 22px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  input[type=url], input[type=search], textarea {
+    flex: 1; min-width: 220px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--bg); color: var(--ink); font: inherit; }
+  textarea { width: 100%; min-height: 90px; resize: vertical; }
+  button, .btn { padding: 9px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--card);
+         color: var(--ink); font: inherit; cursor: pointer; text-decoration: none; white-space: nowrap; }
+  button.primary, .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { button.primary, .btn.primary { color: #10201a; } }
+  button:hover, .btn:hover { filter: brightness(0.96); }
+  details summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+  .tab { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: none; padding: 10px 12px; color: var(--muted); }
+  .tab.on { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .list { display: grid; gap: 10px; }
+  .job { display: grid; grid-template-columns: 52px 1fr auto; gap: 14px; align-items: start; }
+  .score { width: 52px; height: 52px; border-radius: 10px; display: grid; place-items: center; font-weight: 700;
+           background: var(--accent-soft); color: var(--accent); font-size: 17px; }
+  .score.mid { background: var(--warn-soft); color: var(--warn); }
+  .job h3 { margin: 0 0 2px; font-size: 16px; }
+  .job h3 a { color: inherit; text-decoration: none; }
+  .job h3 a:hover { text-decoration: underline; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .tag { font-size: 12px; padding: 2px 8px; border-radius: 99px; background: var(--bg); border: 1px solid var(--line); color: var(--muted); }
+  .actions { display: flex; flex-direction: column; gap: 6px; }
+  .done { opacity: 0.55; }
+  .pill { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 99px; font-weight: 600; }
+  .v-apply { background: var(--accent-soft); color: var(--accent); }
+  .v-maybe { background: var(--warn-soft); color: var(--warn); }
+  .v-skip { background: var(--warn-soft); color: var(--bad); }
+  .block { margin-top: 18px; }
+  .block h4 { margin: 0 0 6px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; }
+  .text { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 680px) { .two { grid-template-columns: 1fr; } .job { grid-template-columns: 44px 1fr; } .actions { grid-column: 2; flex-direction: row; } }
+  .empty { color: var(--muted); padding: 30px; text-align: center; }
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg);
+           padding: 8px 14px; border-radius: 8px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Job Agent</h1>
+  <p class="sub">Uygun ilanları bulur, ilana özel başvuru paketini hazırlar. Formu userscript doldurur, gönder tuşuna sen basarsın.</p>
+
+  <div class="card apply-box">
+    <div class="row">
+      <input type="url" id="link" placeholder="İlan linkini yapıştır">
+      <button class="primary" id="go">Başvuru paketi hazırla</button>
+    </div>
+    <details>
+      <summary>Sayfa JavaScript ile açılıyorsa (Workday vb.) ilan metnini buraya yapıştır</summary>
+      <textarea id="pasted" placeholder="İlan metni (isteğe bağlı)"></textarea>
+    </details>
+    <div class="meta">Buton GitHub'da hazır doldurulmuş bir issue açar. "Submit new issue" dediğinde Actions 1-2 dakikada paketi üretir.</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab on" data-tab="jobs">Uygun ilanlar</button>
+    <button class="tab" data-tab="apps">Başvuru paketleri</button>
+  </div>
+
+  <section id="jobs">
+    <div class="row" style="margin-bottom:12px">
+      <input type="search" id="q" placeholder="Ara: başlık, şirket, şehir">
+      <label class="meta"><input type="checkbox" id="showHidden"> gizlenenleri göster</label>
+    </div>
+    <div class="meta" id="jobsMeta" style="margin-bottom:10px"></div>
+    <div class="list" id="jobList"></div>
+  </section>
+
+  <section id="apps" hidden>
+    <div id="appDetail"></div>
+    <div class="list" id="appList"></div>
+  </section>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+// owner/repo from the Pages URL: <owner>.github.io/<repo>/
+const OWNER = location.hostname.endsWith("github.io") ? location.hostname.split(".")[0] : "anilkus";
+const REPO = location.hostname.endsWith("github.io") ? (location.pathname.split("/")[1] || "job-agent") : "job-agent";
+
+const store = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+let hidden = store.get("hidden", []);
+let applied = store.get("applied", []);
+
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 1600); }
+
+function openIssue(url, pasted = "") {
+  if (!/^https?:\/\//.test(url)) { toast("Geçerli bir link gir"); return; }
+  let body = `Link: ${url}\n\nİlan metni gerekiyorsa aşağıdaki çizginin altına yapıştır.\n---\n${pasted}`;
+  if (body.length > 6000) body = body.slice(0, 6000);
+  const u = `https://github.com/${OWNER}/${REPO}/issues/new?title=${encodeURIComponent("apply: " + url)}&body=${encodeURIComponent(body)}`;
+  window.open(u, "_blank");
+}
+$("#go").onclick = () => openIssue($("#link").value.trim(), $("#pasted").value.trim());
+
+document.querySelectorAll(".tab").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === b));
+  $("#jobs").hidden = b.dataset.tab !== "jobs";
+  $("#apps").hidden = b.dataset.tab !== "apps";
+});
+
+async function getJSON(path, fallback) {
+  try { const r = await fetch(path + "?t=" + Date.now()); return r.ok ? r.json() : fallback; } catch { return fallback; }
+}
+
+let JOBS = [];
+function renderJobs() {
+  const q = $("#q").value.toLowerCase(), showHidden = $("#showHidden").checked;
+  const list = JOBS.filter(j => (showHidden || !hidden.includes(j.url)) &&
+    (!q || `${j.title} ${j.company} ${j.location}`.toLowerCase().includes(q)));
+  $("#jobList").innerHTML = list.length ? list.map(j => `
+    <div class="card job ${applied.includes(j.url) ? "done" : ""}">
+      <div class="score ${j.score < 50 ? "mid" : ""}">${j.score}</div>
+      <div>
+        <h3><a href="${esc(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a></h3>
+        <div class="meta">${esc(j.company)} · ${esc(j.location || "konum yok")} · ${esc(j.source)} ${j.posted ? "· " + esc(j.posted) : ""}</div>
+        <div class="tags">${(j.matched || []).map(m => `<span class="tag">${esc(m)}</span>`).join("")}</div>
+      </div>
+      <div class="actions">
+        <button class="primary" data-prep="${esc(j.url)}">Paket hazırla</button>
+        <button data-hide="${esc(j.url)}">${hidden.includes(j.url) ? "Göster" : "Gizle"}</button>
+      </div>
+    </div>`).join("") : `<div class="empty">Henüz eşleşen ilan yok. Actions sekmesinden "Fetch jobs" çalıştır.</div>`;
+}
+$("#q").oninput = renderJobs; $("#showHidden").onchange = renderJobs;
+$("#jobList").onclick = e => {
+  const p = e.target.dataset.prep, h = e.target.dataset.hide;
+  if (p) openIssue(p);
+  if (h) { hidden = hidden.includes(h) ? hidden.filter(x => x !== h) : [...hidden, h]; store.set("hidden", hidden); renderJobs(); }
+};
+
+let APPS = [];
+function renderApps() {
+  $("#appList").innerHTML = APPS.length ? APPS.map(a => `
+    <div class="card job ${applied.includes(a.url) ? "done" : ""}">
+      <div class="score ${(a.score ?? 0) < 50 ? "mid" : ""}">${a.score ?? "?"}</div>
+      <div>
+        <h3><a href="#" data-open="${esc(a.id)}">${esc(a.title || "İlan")}</a></h3>
+        <div class="meta">${esc(a.company || "")} · ${esc((a.created || "").slice(0, 10))}
+          · <span class="pill v-${esc(a.verdict)}">${esc(a.verdict || "")}</span>
+          ${applied.includes(a.url) ? " · başvuruldu" : ""}</div>
+      </div>
+      <div class="actions"><button data-open="${esc(a.id)}">Aç</button></div>
+    </div>`).join("") : `<div class="empty">Henüz paket yok. Yukarıya bir ilan linki yapıştır.</div>`;
+}
+
+async function openApp(id) {
+  const a = await getJSON(`data/applications/${id}.json`, null);
+  if (!a) { toast("Paket bulunamadı"); return; }
+  const block = (title, text) => text ? `<div class="block"><h4>${esc(title)} <button data-copy>Kopyala</button></h4><div class="text">${esc(text)}</div></div>` : "";
+  const f = a.fit || {}, j = a.job || {};
+  const isApplied = applied.includes(a.url);
+  $("#appDetail").innerHTML = `
+    <div class="card" style="margin-bottom:16px">
+      <div class="row" style="justify-content:space-between">
+        <div><h3 style="margin:0">${esc(j.title)} · ${esc(j.company)}</h3>
+          <div class="meta">${esc(j.location || "")} ${j.deadline ? "· son tarih " + esc(j.deadline) : ""}</div></div>
+        <div class="row">
+          <a class="btn primary" href="${esc(a.url)}" target="_blank" rel="noopener">İlana git</a>
+          <button data-applied="${esc(a.url)}">${isApplied ? "Başvuruyu geri al" : "Başvurdum"}</button>
+          <button data-close>Kapat</button>
+        </div>
+      </div>
+      <div class="two block">
+        <div><h4>Güçlü yanlar · ${esc(f.score)}/100 <span class="pill v-${esc(f.verdict)}">${esc(f.verdict)}</span></h4>
+          <ul>${(f.strengths || []).map(s => `<li>${esc(s)}</li>`).join("")}</ul></div>
+        <div><h4>Eksikler</h4><ul>${(f.gaps || []).map(s => `<li>${esc(s)}</li>`).join("") || "<li>yok</li>"}</ul></div>
+      </div>
+      ${a.style_flags?.length ? `<div class="meta" style="color:var(--warn)">Kontrol et: ${esc(a.style_flags.join(", "))}</div>` : ""}
+      ${block("Cover letter", a.cover_letter)}
+      ${block("Kısa tanıtım", a.short_pitch)}
+      ${Object.entries(a.answers || {}).map(([k, v]) => block(k.replace(/_/g, " "), v)).join("")}
+      ${(a.custom_questions || []).map(q => block(q.question, q.answer)).join("")}
+    </div>`;
+  $("#appDetail").scrollIntoView({ behavior: "smooth" });
+}
+$("#apps").onclick = e => {
+  const t = e.target;
+  if (t.dataset.open) { e.preventDefault(); openApp(t.dataset.open); }
+  if ("copy" in t.dataset) { navigator.clipboard.writeText(t.closest(".block").querySelector(".text").textContent); toast("Kopyalandı"); }
+  if ("close" in t.dataset) $("#appDetail").innerHTML = "";
+  if (t.dataset.applied) {
+    const u = t.dataset.applied;
+    applied = applied.includes(u) ? applied.filter(x => x !== u) : [...applied, u];
+    store.set("applied", applied); renderApps(); renderJobs();
+    t.textContent = applied.includes(u) ? "Başvuruyu geri al" : "Başvurdum";
+  }
+};
+
+(async () => {
+  const data = await getJSON("data/jobs.json", { jobs: [] });
+  JOBS = data.jobs || [];
+  $("#jobsMeta").textContent = data.updated ? `${JOBS.length} ilan · son tarama ${data.updated.replace("T", " ")} UTC` : "";
+  renderJobs();
+  APPS = await getJSON("data/applications/index.json", []);
+  renderApps();
+  const id = new URLSearchParams(location.search).get("app");
+  if (id) { document.querySelector('[data-tab="apps"]').click(); openApp(id); }
+})();
+</script>
+</body>
+</html>
