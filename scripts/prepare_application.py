@@ -92,7 +92,7 @@ def parse_json(text):
 
 SCHEMA = """{
   "job": {"title": "", "company": "", "location": "", "deadline": "", "language": "en"},
-  "fit": {"score": 0, "verdict": "apply | maybe | skip", "strengths": [""], "gaps": [""]},
+  "fit": {"score": "integer 0-100", "verdict": "apply | maybe | skip", "strengths": [""], "gaps": [""]},
   "cover_letter": "",
   "short_pitch": "",
   "answers": {
@@ -192,6 +192,9 @@ def main():
 
     system, user = build_prompts(profile, cv, posting[:9000], a.url)
     pkg = clean(parse_json(call_claude(system, user)))
+    fit = pkg.get("fit") or {}
+    if isinstance(fit.get("score"), (int, float)) and fit["score"] <= 10:  # model used a 0-10 scale
+        fit["score"] = int(fit["score"] * 10)
 
     flags = ai_flags(collect_text(pkg))
     if flags:  # one revision pass if machine-sounding phrases slipped through

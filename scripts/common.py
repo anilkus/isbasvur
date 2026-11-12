@@ -96,6 +96,9 @@ BANNED = [
     "in today's", "fast-paced", "dynamic team", "synergy", "cutting-edge",
     "seamless", "embark", "realm", "navigate the", "unwavering", "spearhead",
     "game-changer", "it is worth noting", "in conclusion", "esteemed",
+    "honed", "eager to", "innovative", "solid grounding", "equips me", "aligns with",
+    "i am confident", "unique opportunity", "invaluable", "robust understanding", "deeply",
+    "showcase", "foster", "pivotal", "commitment to excellence", "look forward to the opportunity",
 ]
 
 
