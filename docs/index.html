@@ -217,6 +217,7 @@ async function openApp(id) {
           <div class="meta">${esc(j.location || "")} ${j.deadline ? "· son tarih " + esc(j.deadline) : ""}</div></div>
         <div class="row">
           ${a.status === "submitted" ? `<span class="pill v-apply">Gönderildi</span>` :
+            ap.method === "email" ? `<span class="meta">Mail ile başvuru: aşağıdan <b>Gmail'de aç</b></span>` :
             `<button class="primary" data-submit="${esc(a.id)}">Onayla ve gönder</button>`}
           <a class="btn" href="${esc(a.url)}" target="_blank" rel="noopener">İlana git</a>
           <button data-applied="${esc(a.url)}">${isApplied ? "Başvuruyu geri al" : "Başvurdum"}</button>

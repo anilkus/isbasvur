@@ -20,7 +20,7 @@ Flow: give the link to Claude in chat → Claude writes and pushes the package (
 1. **Bulma ve hazırlama:** Her sabah tarama yapılır. Puanı yüksek 4 yeni ilan için paketler ücretsiz Groq API ile kendiliğinden yazılır.
    Başka bir ilan için sitede **Başvur** de, GitHub'da açılan isteği "Create" ile onayla.
 2. **Onay:** Sitede pakete bak, **Onayla ve gönder** de, GitHub'da "Create" ile onayla.
-3. **Gönderim:** Mail ile kabul eden ilanlarda mail Gmail'den gider. Greenhouse, Lever, Ashby, Workable, Personio, SmartRecruiters,
+3. **Gönderim:** Mail ile kabul eden ilanlarda (Gmail secret'ları yoksa) sitede **Gmail'de aç** ile maili kendin gönderirsin. Greenhouse, Lever, Ashby, Workable, Personio, SmartRecruiters,
    Recruitee, Teamtailor, JOIN ve BambooHR formları arka planda doldurulup gönderilir. Zorunlu bir alan doldurulamazsa,
    CAPTCHA, giriş ekranı ya da desteklenmeyen bir portal çıkarsa **göndermez**, "elle tamamla" diye bildirir.
    Sonuç issue'ya yorum olarak düşer, sitede de durum görünür.

@@ -6,6 +6,7 @@ Updates the package/index status: submitted | manual | failed.
 import argparse
 import datetime as dt
 import json
+import os
 import subprocess
 import sys
 
@@ -38,7 +39,11 @@ def main():
         result, reason = "submitted", "Bu başvuru zaten gönderilmiş, tekrar gönderilmedi."
     else:
         app = pkg.get("application") or {}
-        if app.get("method") == "email" and app.get("email"):
+        if app.get("method") == "email" and app.get("email") and not os.environ.get("GMAIL_APP_PASSWORD"):
+            result = "manual"
+            reason = (f"Bu ilan mail ile başvuru istiyor ({app['email']}). Sitede pakette **Gmail'de aç** de, "
+                      "userscript'in **Ekleri ekle** butonuyla CV ve cover letter'ı ekle, sonra gönder.")
+        elif app.get("method") == "email" and app.get("email"):
             r = subprocess.run([sys.executable, "email_draft.py", "--id", a.id, "--send",
                                 "--summary-out", "/tmp/mail.md"], capture_output=True, text=True)
             ok = r.returncode == 0
@@ -58,7 +63,7 @@ def main():
     job = pkg.get("job") or {}
     icon = {"submitted": "✅", "manual": "✋", "failed": "❌"}.get(result, "•")
     lines = [f"{icon} **{job.get('title', '')} · {job.get('company', '')}**", "", reason]
-    if result == "manual":
+    if result == "manual" and (pkg.get("application") or {}).get("method") != "email":
         lines += ["", f"Bunu elle tamamlaman gerekiyor: {pkg['url']}",
                   "İlan sayfasında userscript'in **Formu doldur** butonu alanların çoğunu doldurur."]
     if result == "failed":
