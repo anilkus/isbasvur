@@ -3,3 +3,5 @@ summary.md
 log.txt
 err.md
 __pycache__/
+private/*.pdf
+private/*.docx

@@ -1,0 +1,11 @@
+{
+  "cv": { "file": "private/cv.pdf.gpg", "name": "Anil_Kus_CV.pdf" },
+  "cover_letter": { "name": "Anil_Kus_Cover_Letter.pdf" },
+  "transcript": { "file": "private/transcript.pdf.gpg", "name": "Anil_Kus_Transcripts.pdf" },
+  "degree_certificate": { "file": "private/degrees.pdf.gpg", "name": "Anil_Kus_Degree_Certificates.pdf" },
+  "publications": { "file": "private/publications.pdf.gpg", "name": "Anil_Kus_Publications.pdf" },
+  "research_statement": { "file": "private/research_statement.pdf.gpg", "name": "Anil_Kus_Research_Statement.pdf" },
+  "teaching_statement": { "file": "private/teaching_statement.pdf.gpg", "name": "Anil_Kus_Teaching_Statement.pdf" },
+  "references": { "file": "private/references.pdf.gpg", "name": "Anil_Kus_References.pdf" },
+  "language_certificate": { "file": "private/language.pdf.gpg", "name": "Anil_Kus_Language_Certificate.pdf" }
+}

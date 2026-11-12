@@ -173,6 +173,7 @@ function renderApps() {
         <h3><a href="#" data-open="${esc(a.id)}">${esc(a.title || "İlan")}</a></h3>
         <div class="meta">${esc(a.company || "")} · ${esc((a.created || "").slice(0, 10))}
           · <span class="pill v-${esc(a.verdict)}">${esc(a.verdict || "")}</span>
+          ${a.method === "email" ? " · 📧 mail ile" : ""}${a.status === "draft" ? " · taslak hazır" : ""}
           ${applied.includes(a.url) ? " · başvuruldu" : ""}</div>
       </div>
       <div class="actions"><button data-open="${esc(a.id)}">Aç</button></div>
@@ -185,6 +186,18 @@ async function openApp(id) {
   const block = (title, text) => text ? `<div class="block"><h4>${esc(title)} <button data-copy>Kopyala</button></h4><div class="text">${esc(text)}</div></div>` : "";
   const f = a.fit || {}, j = a.job || {};
   const isApplied = applied.includes(a.url);
+  const ap = a.application || {}, d = a.email_draft;
+  const mailCard = `
+    <div class="block"><h4>Başvuru yolu: ${esc(ap.method || "?")}${ap.email ? " · " + esc(ap.email) : ""}</h4>
+      <div class="meta">İstenen belgeler: ${esc((ap.required_documents || []).join(", "))}</div>
+      ${d ? `<div class="meta" style="margin-top:6px">📧 Gmail taslağı ${esc(d.created.slice(0, 16).replace("T", " "))} → ${esc(d.to)}
+              · ekler: ${esc(d.attachments.join(", "))}${d.missing.length ? ` · <b style="color:var(--warn)">eksik: ${esc(d.missing.join(", "))}</b>` : ""}</div>` : ""}
+      <div class="row" style="margin-top:8px">
+        <input type="email" id="draftTo" value="${esc(d?.to || ap.email || "")}" placeholder="alici@universite.edu" style="max-width:300px">
+        <button data-draft="${esc(a.id)}">${d ? "Taslağı yeniden oluştur" : "Gmail taslağı oluştur"}</button>
+        <a class="btn" href="data/applications/${esc(a.id)}-cover-letter.pdf" target="_blank">Cover letter PDF</a>
+      </div>
+    </div>`;
   $("#appDetail").innerHTML = `
     <div class="card" style="margin-bottom:16px">
       <div class="row" style="justify-content:space-between">
@@ -202,6 +215,8 @@ async function openApp(id) {
         <div><h4>Eksikler</h4><ul>${(f.gaps || []).map(s => `<li>${esc(s)}</li>`).join("") || "<li>yok</li>"}</ul></div>
       </div>
       ${a.style_flags?.length ? `<div class="meta" style="color:var(--warn)">Kontrol et: ${esc(a.style_flags.join(", "))}</div>` : ""}
+      ${mailCard}
+      ${a.email ? block("Mail: " + (a.email.subject || ""), a.email.body) : ""}
       ${block("Cover letter", a.cover_letter)}
       ${block("Kısa tanıtım", a.short_pitch)}
       ${Object.entries(a.answers || {}).map(([k, v]) => block(k.replace(/_/g, " "), v)).join("")}
@@ -214,6 +229,12 @@ $("#apps").onclick = e => {
   if (t.dataset.open) { e.preventDefault(); openApp(t.dataset.open); }
   if ("copy" in t.dataset) { navigator.clipboard.writeText(t.closest(".block").querySelector(".text").textContent); toast("Kopyalandı"); }
   if ("close" in t.dataset) $("#appDetail").innerHTML = "";
+  if (t.dataset.draft) {
+    const to = $("#draftTo").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) { toast("Geçerli bir alıcı adresi gir"); return; }
+    const title = `draft: ${t.dataset.draft} ${to}`;
+    window.open(`https://github.com/${OWNER}/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent("Gmail taslağı oluştur. Gönderilmez, Taslaklar'da bekler.")}`, "_blank");
+  }
   if (t.dataset.applied) {
     const u = t.dataset.applied;
     applied = applied.includes(u) ? applied.filter(x => x !== u) : [...applied, u];

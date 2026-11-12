@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Job Agent Autofill
 // @namespace    https://github.com/anilkus/job-agent
-// @version      1.0.0
+// @version      1.1.0
 // @description  Fills job application forms from your Job Agent packages. Never submits, the last click is yours.
 // @author       Anıl Kuş
 // @match        *://*/*
@@ -37,6 +37,80 @@
     if (!edited) return;
     try { GM_setValue("me", JSON.parse(edited)); alert("Kaydedildi."); } catch { alert("JSON hatalı, kaydedilmedi."); }
   });
+
+  // ---------- documents (kept only in this browser) ----------
+  const DOC_KEYS = {
+    cv: "CV", transcript: "Transkript", degree_certificate: "Diploma", publications: "Yayın listesi",
+    research_statement: "Research statement", teaching_statement: "Teaching statement",
+    references: "Referans mektupları", language_certificate: "Dil belgesi",
+  };
+  const DOC_RULES = [
+    [/cover|motivation|anschreiben|letter of interest|ön yazı/, "cover_letter"],
+    [/\bcv\b|resume|résumé|lebenslauf|curriculum|özgeçmiş/, "cv"],
+    [/transcript|zeugnis|grades|notendurchschnitt|transkript/, "transcript"],
+    [/degree|diploma|certificate of (graduation|degree)|urkunde/, "degree_certificate"],
+    [/publication|papers/, "publications"],
+    [/research (statement|proposal|plan)|forschung/, "research_statement"],
+    [/teaching/, "teaching_statement"],
+    [/reference|recommendation|empfehlung/, "references"],
+    [/language|ielts|toefl|cefr|sprach/, "language_certificate"],
+  ];
+
+  GM_registerMenuCommand("Job Agent: belgeleri yönet (CV, transkript...)", () => {
+    const o = document.createElement("div");
+    o.style.cssText = "position:fixed;inset:0;z-index:2147483647;background:rgba(0,0,0,.45);display:grid;place-items:center;font:14px system-ui,sans-serif";
+    o.innerHTML = `<div style="background:#fff;color:#111;border-radius:12px;padding:18px;width:420px;max-height:80vh;overflow:auto">
+      <b>Job Agent belgeleri</b><div style="color:#666;font-size:12px;margin:4px 0 12px">Sadece bu tarayıcıda saklanır. PDF önerilir.</div>
+      ${Object.entries(DOC_KEYS).map(([k, label]) => {
+        const d = GM_getValue("doc_" + k, null);
+        return `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin:8px 0">
+          <span>${label}<br><small style="color:#666">${d ? d.name : "yok"}</small></span>
+          <input type="file" data-k="${k}" accept=".pdf,.doc,.docx" style="max-width:180px"></div>`;
+      }).join("")}
+      <button style="margin-top:10px;padding:6px 14px">Kapat</button></div>`;
+    o.querySelector("button").onclick = () => o.remove();
+    o.querySelectorAll("input[type=file]").forEach(inp => inp.onchange = () => {
+      const f = inp.files[0]; if (!f) return;
+      const r = new FileReader();
+      r.onload = () => { GM_setValue("doc_" + inp.dataset.k, { name: f.name, type: f.type, data: r.result });
+                         inp.previousElementSibling.querySelector("small").textContent = f.name + " ✓"; };
+      r.readAsDataURL(f);
+    });
+    document.body.appendChild(o);
+  });
+
+  const dataUrlToFile = d => {
+    const [head, b64] = d.data.split(",");
+    const bin = atob(b64), bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new File([bytes], d.name, { type: d.type || head.match(/data:([^;]+)/)?.[1] || "application/pdf" });
+  };
+  const getBinary = url => new Promise((ok, fail) => GM_xmlhttpRequest({
+    method: "GET", url, responseType: "arraybuffer",
+    onload: r => r.status === 200 ? ok(r.response) : fail(r.status), onerror: fail,
+  }));
+
+  async function fileFor(key, pkg) {
+    if (key === "cover_letter") {
+      const buf = await getBinary(`${SITE}data/applications/${pkg.id}-cover-letter.pdf`);
+      return new File([buf], "Anil_Kus_Cover_Letter.pdf", { type: "application/pdf" });
+    }
+    const d = GM_getValue("doc_" + key, null);
+    return d ? dataUrlToFile(d) : null;
+  }
+
+  function attach(input, file) {
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    input.files = dt.files;
+    ["input", "change"].forEach(t => input.dispatchEvent(new Event(t, { bubbles: true })));
+    // Some upload widgets listen for a drop on their wrapper instead.
+    const zone = input.closest("[class*=drop], [class*=upload], [data-testid*=upload]");
+    if (zone) {
+      try { zone.dispatchEvent(new DragEvent("drop", { bubbles: true, cancelable: true, dataTransfer: dt })); } catch {}
+    }
+    return input.files.length > 0;
+  }
 
   // ---------- helpers ----------
   const get = url => new Promise((ok, fail) => GM_xmlhttpRequest({
@@ -129,16 +203,33 @@
     ];
   }
 
-  function fill(pkg) {
+  async function fill(pkg) {
     const p = me();
     const R = rules(p, pkg);
+    // File inputs are often visually hidden behind a styled button, so don't require visibility for them.
     const fields = [...document.querySelectorAll("input, textarea, select")].filter(el =>
-      visible(el) && !el.disabled && !el.readOnly &&
+      (el.type === "file" || visible(el)) && !el.disabled && !el.readOnly &&
       !["hidden", "submit", "button", "checkbox", "radio", "password", "search", "image", "reset"].includes(el.type));
+    const fileInputs = fields.filter(el => el.type === "file");
 
-    let filled = 0, todo = 0, files = 0;
+    let filled = 0, todo = 0, files = 0, uploaded = [];
     for (const el of fields) {
-      if (el.type === "file") { mark(el, "#d98b00"); files++; continue; }
+      if (el.type === "file") {
+        if (el.files && el.files.length) continue;
+        const label = labelOf(el);
+        let key = (DOC_RULES.find(([re]) => re.test(label)) || [])[1];
+        if (!key && fileInputs.length === 1) key = "cv";
+        let ok = false;
+        try {
+          const file = key && await fileFor(key, pkg);
+          ok = !!file && attach(el, file);
+          if (ok) uploaded.push(file.name);
+        } catch { ok = false; }
+        const target = visible(el) ? el : (el.closest("label, div") || el);
+        mark(target, ok ? "#2f9e6e" : "#d98b00");
+        if (!ok) files++;
+        continue;
+      }
       if (el.value && el.value.trim() && el.tagName !== "SELECT") continue; // keep what is already there
       const label = labelOf(el);
       let value = null;
@@ -153,7 +244,7 @@
       if (value && setValue(el, value)) { mark(el, "#2f9e6e"); filled++; }
       else if (el.required || el.getAttribute("aria-required") === "true") { mark(el, "#d98b00"); todo++; }
     }
-    return { filled, todo, files };
+    return { filled, todo, files, uploaded };
   }
 
   // ---------- panel ----------
@@ -183,10 +274,11 @@
       msg.textContent = "Yükleniyor...";
       try {
         const pkg = await get(`${SITE}data/applications/${box.querySelector("select").value}.json`);
-        const r = fill(pkg);
+        const r = await fill(pkg);
         msg.innerHTML = `${r.filled} alan dolduruldu (yeşil).` +
+          (r.uploaded.length ? `<br>Yüklendi: ${r.uploaded.join(", ")}` : "") +
           (r.todo ? `<br>${r.todo} zorunlu alan sende (turuncu).` : "") +
-          (r.files ? `<br>CV/dosya yüklemesini sen yap.` : "") +
+          (r.files ? `<br>${r.files} dosya alanı yüklenemedi, elle ekle.` : "") +
           `<br><b>Her şeyi kontrol et, sonra Gönder'e bas.</b>`;
       } catch (e) { msg.textContent = "Paket alınamadı: " + e; }
     };

@@ -70,8 +70,18 @@ SCHEMA = """{
     "research_interests": "",
     "additional_information": ""
   },
-  "custom_questions": [{"question": "", "answer": ""}]
+  "custom_questions": [{"question": "", "answer": ""}],
+  "application": {
+    "method": "email | form | unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": ["cv", "cover_letter"]
+  },
+  "email": {"subject": "", "body": ""}
 }"""
+
+DOC_KEYS = ["cv", "cover_letter", "transcript", "degree_certificate", "publications",
+            "research_statement", "teaching_statement", "references", "language_certificate"]
 
 
 def build_prompts(profile, cv, posting, url):
@@ -91,6 +101,13 @@ Writing rules:
 - custom_questions: any explicit questions or required statements found in the posting, answered.
   Empty list if none.
 - Do not fill salary, notice period or work permit answers. The candidate handles those.
+- application.method is "email" only if the posting says to send applications to an email address.
+  Put that exact address in application.email and any reference/job code in application.reference_code.
+- application.required_documents: what the posting asks for, using only these keys:
+  {", ".join(DOC_KEYS)}. Always include "cv" and "cover_letter".
+- email.subject: short, includes the job title and reference code if there is one.
+- email.body: 70 to 130 words, a plain email (not the cover letter), says which documents are attached,
+  ends with "Best regards,\\n{profile['name']}". Fill email even if method is "form".
 
 Return ONLY valid JSON in exactly this shape:
 {SCHEMA}"""
@@ -113,7 +130,7 @@ def clean(obj):
 
 
 def collect_text(pkg):
-    parts = [pkg.get("cover_letter", ""), pkg.get("short_pitch", "")]
+    parts = [pkg.get("cover_letter", ""), pkg.get("short_pitch", ""), (pkg.get("email") or {}).get("body", "")]
     parts += list((pkg.get("answers") or {}).values())
     parts += [q.get("answer", "") for q in pkg.get("custom_questions") or []]
     return "\n".join(p for p in parts if isinstance(p, str))
@@ -171,8 +188,15 @@ def main():
         "id": slug, "url": a.url, "title": job.get("title"), "company": job.get("company"),
         "score": pkg.get("fit", {}).get("score"), "verdict": pkg.get("fit", {}).get("verdict"),
         "created": pkg["created"], "status": "ready",
+        "method": (pkg.get("application") or {}).get("method"),
     })
     save_json(APPS_DIR / "index.json", index)
+
+    # Tell the workflow whether to build a Gmail draft.
+    app = pkg.get("application") or {}
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+            f.write(f"app_id={slug}\nmethod={app.get('method', 'unknown')}\n")
 
     fit = pkg.get("fit", {})
     lines = [
@@ -180,7 +204,10 @@ def main():
         f"**Uyum:** {fit.get('score', '?')}/100, öneri: `{fit.get('verdict', '?')}`",
         "", "**Güçlü yanlar:**", *[f"- {s}" for s in fit.get("strengths", [])],
         "", "**Eksikler:**", *([f"- {g}" for g in fit.get("gaps", [])] or ["- yok"]),
-        "", f"Paket hazır: `{slug}`. Siteden bakabilir, ilan sayfasında userscript ile formu doldurabilirsin.",
+        "", f"**Başvuru yolu:** {app.get('method', '?')}"
+            + (f" → {app.get('email')}" if app.get("email") else ""),
+        f"**İstenen belgeler:** {', '.join(app.get('required_documents') or [])}",
+        "", f"Paket hazır: `{slug}`.",
     ]
     if flags:
         lines.append(f"\n⚠️ Metinde hâlâ şu kalıplar var, göndermeden önce bak: {', '.join(flags)}")

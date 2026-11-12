@@ -1,7 +1,8 @@
 name: Prepare application
 
-# The site opens a pre-filled issue titled "apply: <link>". This workflow
-# turns it into an application package, comments a summary and closes the issue.
+# The site opens pre-filled issues:
+#   "apply: <link>"            -> build the package (+ Gmail draft if the posting asks for email)
+#   "draft: <package-id> [to]" -> build a Gmail draft for an existing package
 on:
   issues:
     types: [opened]
@@ -20,12 +21,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  prepare:
+  run:
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (startsWith(github.event.issue.title, 'apply:') &&
+      ((startsWith(github.event.issue.title, 'apply:') || startsWith(github.event.issue.title, 'draft:')) &&
        github.event.issue.user.login == github.repository_owner)
     runs-on: ubuntu-latest
+    env:
+      GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      DOCS_PASSPHRASE: ${{ secrets.DOCS_PASSPHRASE }}
+      CONTACT_LINE: ${{ secrets.CONTACT_LINE }}
     steps:
       - uses: actions/checkout@v4
 
@@ -33,9 +39,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - run: pip install requests beautifulsoup4
+      - run: pip install requests beautifulsoup4 reportlab && sudo apt-get install -y -qq fonts-dejavu-core gnupg >/dev/null
 
-      - name: Read link and pasted text
+      - name: Read the request
         id: input
         env:
           TITLE: ${{ github.event.issue.title }}
@@ -44,18 +50,25 @@ jobs:
         run: |
           python - <<'EOF'
           import os, re
-          url = os.environ.get("MANUAL_URL") or ""
           title, body = os.environ.get("TITLE") or "", os.environ.get("BODY") or ""
-          if not url:
+          out = {"mode": "apply", "url": os.environ.get("MANUAL_URL") or "", "id": "", "to": ""}
+          if title.startswith("draft:"):
+              parts = title[len("draft:"):].split()
+              out["mode"], out["id"] = "draft", parts[0] if parts else ""
+              out["to"] = next((p for p in parts[1:] if "@" in p), "")
+          elif not out["url"]:
               m = re.search(r"https?://\S+", title) or re.search(r"https?://\S+", body)
-              url = m.group(0) if m else ""
+              out["url"] = m.group(0) if m else ""
           pasted = body.split("---", 1)[1] if "---" in body else ""
           open("posting.txt", "w", encoding="utf-8").write(pasted.strip())
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-              f.write(f"url={url}\n")
+              for k, v in out.items():
+                  f.write(f"{k}={v}\n")
           EOF
 
       - name: Build package
+        id: build
+        if: steps.input.outputs.mode == 'apply'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
@@ -65,12 +78,31 @@ jobs:
             --text-file ../posting.txt --summary-out ../summary.md 2>&1 | tee ../log.txt
           exit ${PIPESTATUS[0]}
 
+      - name: Public cover letter PDF (used by the autofill userscript)
+        if: steps.build.outputs.app_id != ''
+        run: |
+          cd scripts
+          CONTACT_LINE="" python cover_letter_pdf.py "../docs/data/applications/${{ steps.build.outputs.app_id }}.json" \
+            "../docs/data/applications/${{ steps.build.outputs.app_id }}-cover-letter.pdf"
+
+      - name: Gmail draft
+        if: >-
+          (steps.build.outputs.method == 'email' && env.GMAIL_APP_PASSWORD != '') ||
+          steps.input.outputs.mode == 'draft'
+        run: |
+          cd scripts
+          ID="${{ steps.build.outputs.app_id }}"; [ -z "$ID" ] && ID="${{ steps.input.outputs.id }}"
+          TO="${{ steps.input.outputs.to }}"
+          python email_draft.py --id "$ID" ${TO:+--to "$TO"} --summary-out ../summary.md 2>&1 | tee -a ../log.txt
+          exit ${PIPESTATUS[0]}
+
       - name: Commit
+        if: always()
         run: |
           git config user.name "job-agent"
           git config user.email "job-agent@users.noreply.github.com"
           git add docs/data/applications
-          git commit -m "Application package: ${{ steps.input.outputs.url }}" || exit 0
+          git commit -m "Application update: ${{ steps.input.outputs.url }}${{ steps.input.outputs.id }}" || exit 0
           git pull --rebase && git push
 
       - name: Report back on the issue
@@ -78,11 +110,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -f summary.md ]; then
+          if [ -f summary.md ] && [ "${{ job.status }}" = "success" ]; then
             gh issue comment ${{ github.event.issue.number }} --body-file summary.md
             gh issue close ${{ github.event.issue.number }}
           else
-            { echo "Paket hazırlanamadı:"; echo '```'; tail -n 20 log.txt 2>/dev/null; echo '```'; \
-              echo "İlan metnini issue gövdesine \`---\` satırının altına yapıştırıp yeni issue aç."; } > err.md
+            { [ -f summary.md ] && cat summary.md; echo; echo "Bir adım başarısız oldu:"; echo '```'; tail -n 20 log.txt 2>/dev/null; echo '```'; \
+              echo "İlan sayfası okunamadıysa metni issue gövdesine \`---\` satırının altına yapıştırıp yeni issue aç."; } > err.md
             gh issue comment ${{ github.event.issue.number }} --body-file err.md
           fi
