@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Job Agent Autofill
 // @namespace    https://github.com/anilkus/isbasvur
-// @version      1.2.0
+// @version      1.3.0
 // @description  Fills job application forms from your Job Agent packages. Never submits, the last click is yours.
 // @author       Anıl Kuş
 // @match        *://*/*
@@ -336,6 +336,59 @@
     };
     document.body.appendChild(box);
     return box;
+  }
+
+  // ---------- Settings page: SITE#ayarlar (fields are stored only in this browser) ----------
+  if (location.href.startsWith(SITE)) {
+    const LABELS = {
+      first_name: "Ad", last_name: "Soyad", email: "E-posta", phone: "Telefon", city: "Şehir", country: "Ülke",
+      linkedin: "LinkedIn", github: "GitHub", website: "Web sitesi", orcid: "ORCID", scholar: "Google Scholar",
+      salary: "Maaş beklentisi", notice_period: "İhbar süresi / başlama", work_authorization: "Çalışma izni durumu",
+      sponsorship: "Vize sponsorluğu gerekiyor mu", relocation: "Taşınmaya açık mı", heard_from: "İlanı nereden duydun",
+      degree: "En yüksek derece", university: "Üniversite",
+    };
+    const render = () => {
+      document.getElementById("ja-settings")?.remove();
+      if (location.hash !== "#ayarlar") return;
+      const p = me();
+      const box = document.createElement("div");
+      box.id = "ja-settings";
+      box.style.cssText = "position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.45);overflow:auto;font:14px system-ui,sans-serif";
+      box.innerHTML = `<form id="ja-form" style="background:#fff;color:#111;max-width:640px;margin:30px auto;border-radius:12px;padding:20px">
+        <h2 style="margin:0 0 4px">Ayarlar</h2>
+        <div style="color:#666;margin-bottom:14px">Bu bilgiler ve belgeler sadece bu tarayıcıda (Tampermonkey) saklanır, repoya gitmez.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        ${Object.entries(LABELS).map(([k, l]) => `<label style="display:grid;gap:3px;font-size:12px;color:#555">${l}
+          <input name="${k}" value="${String(p[k] ?? "").replace(/"/g, "&quot;")}" style="padding:7px;border:1px solid #ccc;border-radius:6px;font:inherit;color:#111"></label>`).join("")}
+        </div>
+        <h3 style="margin:18px 0 6px">Belgeler</h3>
+        ${Object.entries(DOC_KEYS).map(([k, l]) => { const d = GM_getValue("doc_" + k, null);
+          return `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin:6px 0">
+            <span>${l} <small style="color:#2f9e6e" data-doc="${k}">${d ? "✓ " + d.name : ""}</small></span>
+            <input type="file" data-k="${k}" accept=".pdf,.doc,.docx"></div>`; }).join("")}
+        <div style="display:flex;gap:8px;margin-top:16px">
+          <button type="submit" id="ja-save" style="padding:8px 16px;background:#1f5c4a;color:#fff;border:0;border-radius:6px;cursor:pointer">Kaydet</button>
+          <a href="#" style="padding:8px 16px;color:#333">Kapat</a>
+          <span id="ja-saved" style="color:#2f9e6e;align-self:center"></span>
+        </div></form>`;
+      box.querySelector("form").onsubmit = e => {
+        e.preventDefault();
+        const data = Object.fromEntries([...new FormData(e.target)].filter(([k]) => k in LABELS));
+        GM_setValue("me", Object.assign(me(), data));
+        box.querySelector("#ja-saved").textContent = "Kaydedildi ✓";
+      };
+      box.querySelectorAll("input[type=file]").forEach(inp => inp.onchange = () => {
+        const f = inp.files[0]; if (!f) return;
+        const r = new FileReader();
+        r.onload = () => { GM_setValue("doc_" + inp.dataset.k, { name: f.name, type: f.type, data: r.result });
+                           box.querySelector(`[data-doc="${inp.dataset.k}"]`).textContent = "✓ " + f.name; };
+        r.readAsDataURL(f);
+      });
+      document.body.appendChild(box);
+    };
+    window.addEventListener("hashchange", render);
+    render();
+    return;
   }
 
   if (location.hostname === "mail.google.com") {
