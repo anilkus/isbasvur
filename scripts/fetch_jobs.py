@@ -117,8 +117,8 @@ def main():
         kept = []
         for j in out:
             prev = old.get(j["url"], {})
-            j["apply_url"] = prev.get("apply_url") or resolve_apply_url(j["url"], S)
-            if SUPPORTED_FORMS.search(j["apply_url"]):
+            j["apply_url"] = resolve_apply_url(prev.get("apply_url") or j["url"], S)
+            if j["apply_url"] and SUPPORTED_FORMS.search(j["apply_url"]):
                 kept.append(j)
         print(f"{len(kept)} of {len(out)} have a supported application form")
         out = kept

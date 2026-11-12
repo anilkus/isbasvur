@@ -134,6 +134,9 @@ def resolve_apply_url(url, session=None):
     for c in candidates:
         try:
             r = s.get(c, headers={"User-Agent": UA}, timeout=20, allow_redirects=True)
+            if r.status_code == 404 or re.search(r"might have closed|no longer (available|accepting)|job not found|"
+                                                 r"position (has been )?filled|stelle ist nicht mehr", r.text[:20000], re.I):
+                return None  # posting closed
             if r.url and r.url != c:
                 return r.url.split("?utm_")[0]
             if SUPPORTED_FORMS.search(r.url or ""):
