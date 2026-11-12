@@ -106,6 +106,7 @@ def humanize(text):
     """Deterministic cleanup on top of the model's own style instructions."""
     if not isinstance(text, str):
         return text
+    text = re.sub("[‐‑­]", "-", text)  # unicode hyphens -> plain hyphen
     text = re.sub(r"\s*[—–]\s*", ", ", text)  # em/en dash -> comma
     text = re.sub(r"\s+--\s+", ", ", text)
     text = text.replace("“", '"').replace("”", '"').replace("’", "'")
