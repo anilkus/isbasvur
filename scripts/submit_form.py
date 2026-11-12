@@ -119,6 +119,11 @@ def answer_choices(page, me):
 
 
 def open_form(page, url):
+    # Known portals keep the form on its own page.
+    if "lever.co/" in url and not url.rstrip("/").endswith("/apply"):
+        url = url.split("?")[0].rstrip("/") + "/apply"
+    if "ashbyhq.com/" in url and "/application" not in url:
+        url = url.split("?")[0].rstrip("/") + "/application"
     page.goto(url, wait_until="domcontentloaded", timeout=60000)
     page.wait_for_timeout(2500)
     if page.locator("input[type=email], input[name*=mail i]").count():
