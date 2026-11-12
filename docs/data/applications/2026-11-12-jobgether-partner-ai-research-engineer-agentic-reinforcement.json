@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "AI Research Engineer (Agentic Reinforcement Learning)",
+    "company": "Jobgether (partner)",
+    "location": "Netherlands",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 68,
+    "verdict": "maybe",
+    "strengths": [
+      "Experience with multimodal NLP and trustworthy AI research",
+      "Led academic projects and built AI systems for medical and text summarization tasks",
+      "Active participation in international research networks and conferences"
+    ],
+    "gaps": [
+      "No documented large-scale reinforcement learning experiments on vision or multimodal agents",
+      "No publications in core RL conferences such as ICML, NeurIPS, ICLR"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last years building AI systems that combine language understanding with real-world constraints. My PhD work on hybrid evaluation metrics for Turkish summarization required designing reward-like metrics and testing them on large text corpora, which gave me practical experience in shaping model behavior and measuring performance across modalities.\n\nAt Toros University I co-founded the SmartLab Technology Center and led projects that integrated NLP models with medical imaging data for diagnostic support. This involved setting up distributed training pipelines, curating multimodal datasets, and publishing the results at international workshops. My recent participation in the COST InsectAI and Net4Brain networks further sharpened my skills in collaborative, large-scale AI engineering.\n\nI have a solid record of publishing peer-reviewed papers on trustworthy AI and multimodal NLP, and I regularly present findings at venues such as CISPA Trustworthy AI Summer School and ELSA Workshop. I enjoy turning experimental insights into reproducible code and robust evaluation protocols.\n\nI would like to apply my background in multimodal research, system design, and rigorous experimentation to advance agentic reinforcement learning at your team.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop trustworthy AI systems that combine language and visual data, lead large research projects, and build scalable training pipelines for real-world applications.",
+  "answers": {
+    "why_this_role": "The role focuses on creating reinforcement learning methods for multimodal agents, which matches my experience designing reward metrics for text summarization and building AI pipelines that fuse language and medical imaging data.",
+    "why_this_organisation": "Your partner's emphasis on fast-moving, globally distributed research matches my work coordinating international projects and publishing in cross-disciplinary venues.",
+    "relevant_experience": "I led the SmartLab Technology Center, built multimodal NLP tools for health texts, and contributed to COST projects that required large-scale AI development and data management.",
+    "research_interests": "I am interested in trustworthy, explainable AI that can adapt across modalities, especially how reward design can improve reliability of autonomous agents.",
+    "additional_information": "I have experience mentoring diverse teams, managing academic departments, and securing patents for AI-enabled hardware, demonstrating both technical depth and leadership."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for AI Research Engineer (Agentic Reinforcement Learning)",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the AI Research Engineer (Agentic Reinforcement Learning) position. I look forward to discussing how my background in multimodal AI and trustworthy systems can contribute to your team.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-12-jobgether-partner-ai-research-engineer-agentic-reinforcement",
+  "url": "https://www.arbeitnow.nl/jobs/companies/jobgether/ai-research-engineer-agentic-reinforcement-learning-netherlands-255371",
+  "apply_url": "https://jobs.lever.co/jobgether/83ab8cfc-3930-466a-ad80-5b083adcc607/apply",
+  "created": "2026-11-12T19:04+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

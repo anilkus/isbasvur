@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "Research Staff, Voice AI Foundations",
+    "company": "Deepgram",
+    "location": "Remote",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 68,
+    "verdict": "maybe",
+    "strengths": [
+      "Experience in NLP and trustworthy AI research, including publications on evaluation metrics for clinical AI systems",
+      "Leadership of academic departments and coordination of international research projects such as COST networks"
+    ],
+    "gaps": [
+      "No direct experience with neural audio codecs or speech synthesis",
+      "No published work on audio latent space modeling"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD focus on trustworthy AI and natural language processing. My recent work on human-centered evaluation metrics for clinical AI systems and on hybrid summarisation models shows I can design metrics and models that balance performance with interpretability. As head of a department and co-founder of a technology centre, I have led interdisciplinary teams and managed research grants, including participation in COST projects on AI-driven image analysis and data privacy.\n\nAt Deepgram, I would apply my experience in building evaluation frameworks to the development of latent space models for voice. My background in combining extractive methods with large language models mirrors the challenge of factorising audio representations into interpretable dimensions. I enjoy turning research ideas into usable tools, as seen in my utility model for smart refrigerator monitoring and a patent on secure smart doors.\n\nI am comfortable experimenting with new AI tools and adapting quickly to evolving research directions. I look forward to contributing to Deepgram's mission of making voice AI universally accessible.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I combine trustworthy AI research with hands-on leadership, having built evaluation metrics for clinical models and hybrid summarisation systems. My experience in interdisciplinary projects and AI-driven product development prepares me to tackle Deepgram's challenges in latent audio modeling.",
+  "answers": {
+    "why_this_role": "The role asks for pioneering latent space models for voice. My work on hybrid NLP metrics and participation in AI-focused COST networks shows I can develop novel evaluation methods and integrate AI into complex pipelines, which supports building and testing new audio representations.",
+    "why_this_organisation": "Deepgram's focus on real-time, scalable voice AI matches my interest in moving AI from research to production. The company's AI-first culture fits my habit of experimenting with the latest models and turning research into usable systems.",
+    "relevant_experience": "I led a department while managing international research projects, co-founded a technology centre, and published on trustworthy AI evaluation. I also contributed to a utility model for AI-supported food spoilage detection, demonstrating practical AI system development.",
+    "research_interests": "My interests lie at the intersection of trustworthy AI, evaluation metrics, and applying large language models to new domains. I aim to extend these ideas to audio, creating interpretable and efficient representations for speech.",
+    "additional_information": "I have experience mentoring diverse teams, coordinating Erasmus programmes, and presenting work at international workshops, which will help me collaborate across Deepgram's global engineering and research groups."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Research Staff, Voice AI Foundations",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Research Staff, Voice AI Foundations position at Deepgram. I look forward to discussing how my background in trustworthy AI and interdisciplinary research can contribute to your team.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-12-deepgram-research-staff-voice-ai-foundations",
+  "url": "https://www.arbeitnow.nl/jobs/companies/deepgram/research-staff-voice-ai-foundations-remote-amsterdam-428068",
+  "apply_url": "https://jobs.ashbyhq.com/Deepgram/1518fd8f-7e9d-4712-9e6b-a7e10ba25bdd/application",
+  "created": "2026-11-12T19:03+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

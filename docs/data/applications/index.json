@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "id": "2026-11-12-jobgether-partner-ai-research-engineer-agentic-reinforcement",
+    "url": "https://www.arbeitnow.nl/jobs/companies/jobgether/ai-research-engineer-agentic-reinforcement-learning-netherlands-255371",
+    "title": "AI Research Engineer (Agentic Reinforcement Learning)",
+    "company": "Jobgether (partner)",
+    "score": 68,
+    "verdict": "maybe",
+    "created": "2026-11-12T19:04+00:00",
+    "status": "ready",
+    "method": "unknown"
+  },
+  {
+    "id": "2026-11-12-deepgram-research-staff-voice-ai-foundations",
+    "url": "https://www.arbeitnow.nl/jobs/companies/deepgram/research-staff-voice-ai-foundations-remote-amsterdam-428068",
+    "title": "Research Staff, Voice AI Foundations",
+    "company": "Deepgram",
+    "score": 68,
+    "verdict": "maybe",
+    "created": "2026-11-12T19:03+00:00",
+    "status": "ready",
+    "method": "unknown"
+  }
+]

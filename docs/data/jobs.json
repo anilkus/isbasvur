@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-12T18:51+00:00",
-  "count": 9,
+  "updated": "2026-11-12T19:03+00:00",
+  "count": 4,
   "errors": [],
   "jobs": [
     {
@@ -20,7 +20,8 @@
         "research",
         "robustness"
       ],
-      "status": "new"
+      "status": "prepared",
+      "apply_url": "https://jobs.ashbyhq.com/Deepgram/1518fd8f-7e9d-4712-9e6b-a7e10ba25bdd/application"
     },
     {
       "title": "AI Research Engineer (Agentic Reinforcement Learning)",
@@ -39,63 +40,8 @@
         "pytorch",
         "research"
       ],
-      "status": "new"
-    },
-    {
-      "title": "Anthropic Fellows Program, AI Safety & Security",
-      "company": "anthropic",
-      "location": "London",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/anthropic/anthropic-fellows-program-ai-safety-security-london-145651",
-      "description": "<div class=\"content-intro\"><h2><strong>About Anthropic</strong></h2>\n<p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe and beneficial for our users and for society as a whole. Our team is a quickly growing group of committed researchers, engineers, policy experts, and business leaders working together to build beneficial AI systems.</p></div><p>Applications are now open for our January cohort - <a href=\"https://bit.ly/afpsafety\">apply here by October 30.</a></p>\n<h1><strong>Anthropic Fellows Program overview</strong></h1>\n<p>The Anthropic Fellows Program is designed to foster AI research and engineering talent. We provide funding and mentorship to promising technical talent - regardless of previous experience.</p>\n<p>Fellows will primarily use external infrastructure (e.g. open-source models, public APIs) to work on an empirical project aligned with our research priorities, with the goal of producing a <strong>public output</strong> (e.g. a paper submission). In one of our earlier cohorts, over 80% of fellows produced papers.&nbsp;We run multiple cohorts of Fellows each year and review applications on a rolling basis.</p>\n<h2><strong>What to expect</strong></h2>\n<ul>\n<li>4 months of full-time research&nbsp;</li>\n<li>Direct mentorship from Anthropic researchers&nbsp;</li>\n<li>Access to a shared workspace (in either Bay Area, California, Toronto, Canada, or London, UK)</li>\n<li>Connection to the broader AI safety and security research community</li>\n<li>Weekly stipend of 4,615 USD / 3,440 GBP / 6,470 CAD / 4,110 EUR + benefits (these vary by country)</li>\n<li>Funding for compute (~$15k/month) and other research expenses</li>\n</ul>\n<h2><strong>Interview process</strong></h2>\n<p>The interview process will include an initial application &amp; reference check, technical assessments &amp; interviews, and a research discussion.&nbsp;</p>\n<p><strong>We encourage you to apply even if you do not believe you meet every single qualification.</strong> Not all strong candidates will meet every single qualification as listed. Research shows that people who identify as being from underrepresented groups are more prone to experiencing imposter syndrome and doubting the strength of their candidacy, so we urge you not to exclude yourself prematurely and to submit an application if you're interested in this work. We think AI systems like the ones we're building have enormous social and ethical implications. We think this makes representation even more important, and we strive to include a range of diverse perspectives on our team.</p>\n<h2><strong>Compensation</strong></h2>\n<p>The expected base stipend for this role is 4,615 USD / 3,440 GBP / 6,470 CAD / 4,110 EUR per week, with an expectation of 40 hours per week for 4 months (with possible extension).</p>\n<h2><strong>Across the workstreams, you may be a good fit if you:</strong></h2>\n<ul>\n<li>Are motivated by making sure AI is safe and beneficial for society as a whole</li>\n<li>Are excited to transition into empirical AI research and would be interested in a full-time role at Anthropic</li>\n<li>Have a strong technical background in computer science, mathematics, or physics</li>\n<li>Thrive in fast-paced, collaborative environments</li>\n<li>Can implement ideas quickly and communicate clearly</li>\n</ul>\n<h2><strong>Strong candidates may also have:</strong></h2>\n<ul>\n<li>Strong background in a discipline relevant to a specific Fellows workstream (e.g. economics, social sciences, or cybersecurity)</li>\n<li>Experience in areas of research or engineering related to their workstream</li>\n</ul>\n<h2><strong>Candidates must be:</strong></h2>\n<ul>\n<li>Fluent in Python programming</li>\n<li>Available to work full-time on the Fellows program</li>\n</ul>\n<h1><strong>AI Safety Fellows</strong></h1>\n<h2><strong>Mentors, research areas, &amp; past projects</strong></h2>\n<p>Fellows will undergo a project selection &amp; mentor matching process. Potential ment",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 44,
-      "matched": [
-        "llm",
-        "trustworthy ai",
-        "adversarial",
-        "deep learning",
-        "python",
-        "research",
-        "ai safety",
-        "robustness"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Staff Machine Learning Engineer",
-      "company": "sonyinteractiveentertainmentglobal",
-      "location": "London",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/sonyinteractiveentertainmentglobal/staff-machine-learning-engineer-london-289554",
-      "description": "<div class=\"content-intro\"><p><strong>Why Sony Interactive Entertainment?</strong></p>\n<p>Sony Interactive Entertainment isn’t just the Best Place to Play — it’s also the Best Place to Work. Sony Interactive Entertainment (SIE) is the company behind the PlayStation brand. As a subsidiary of Sony Group Corporation, we’re part of a proud legacy of innovation and excellence. SIE is a dynamic technology company, delivering cutting-edge hardware and network services to more than 100 million people and an entertainment leader, home to some of the most beloved and recognizable intellectual properties (IP) in the world. Our role at SIE is to create and nurture the experiences under the PlayStation brand, a name synonymous with entertainment excellence and creativity.</p></div><h2><span style=\"font-size: 12pt;\">Role Description:</span></h2>\n<p><span style=\"font-size: 12pt;\">We are looking for an independent, dedicated Staff Machine Learning Engineer to join the&nbsp;<a href=\"https://sonyinteractive.com/en/news/blog/\" target=\"_blank\"><span style=\"color: #0875e1;\"><u>Visual Computing Group</u></span></a> (VCG) and contribute to redefining the world of game play and live streaming via advanced R&amp;D. VCG’s mission is to design and deploy advanced neural networks and machine learning (ML) for game rendering and streaming systems of SIE that exceed the state-of-the-art in runtime efficiency, visual quality and latency. &nbsp;</span><br><br><span style=\"font-size: 12pt;\"><strong>&nbsp;What you’ll be doing:</strong></span></p>\n<ul>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">Develop and improve core generative models for graphics and video processing for a variety of applications, such as live video streaming, game rendering, etc.</span></li>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">Research and prototyping of new methods for graphics or video enhancement, and data generation pipelines from generative models</span></li>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">Collaborate with team members on drafting publications and patent submissions</span></li>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">Participate and assist the team in core R&amp;D work with other teams within Sony Interactive Entertainment </span><br><br><br></li>\n</ul>\n<p><span style=\"font-size: 12pt;\"><strong>&nbsp;What we’re looking for:</strong></span></p>\n<ul>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">PhD or MSc in Computer Science, Electronic Engineering, Artificial Intelligence, Machine Learning, Computer Graphics or a related field, or equivalent skills evidenced by work experience in the specific domain of the post</span></li>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">7+ years of experience in demonstrable research experience in industry or academia</span></li>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">Strong background in: TensorFlow or PyTorch; Python and packages/libraries related to computer vision or graphics; evidenced by the development of advanced applications in image/video/graphics processing or computer vision (minimum 7 years),</span></li>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">Evidence of leading technical developments by several publications in top-tier conferences like CVPR, ECCV, ICCV, SIGGRAPH or similar</span></li>\n<li style=\"font-size: 12pt;\"><span style=\"font-size: 12pt;\">Solid background in one or more of the following:</span></li>\n</ul>\n<p><span style=\"font-size: 12pt;\">(i) neural network architectures, evidenced (for example) by knowledge of how to formulate and test advanced loss functions in neural network design;</span><br><br><span style=\"font-size: 12pt;\">(ii) design and test of advanced convolutional, recurrent, transformer-based, diffusion-based or other neural network architectures in a task-specific manner;</span><br><br><span style=\"font-size: 12pt;\">(iii) some experience in training, validation and",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 41,
-      "matched": [
-        "evaluation",
-        "machine learning",
-        "pytorch",
-        "python",
-        "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "Threat Research Engineer, Security Factory: Threat Research",
-      "company": "gitlab",
-      "location": "Remote (remote)",
-      "url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-threat-research-engineer-security-factory-threat-research-472873",
-      "description": "<div class=\"content-intro\"><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster.</p>\n<p>The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI into their daily workflows to drive efficiency, innovation, and impact. GitLab is where careers accelerate, innovation flourishes, and every voice is valued. Our high-performance culture is driven by our values&nbsp;and continuous knowledge exchange, enabling our team members to reach their full potential while collaborating with industry leaders to solve complex problems. <a href=\"https://www.youtube.com/watch?v=OuZIb5zszQI\">Co-create the future with us</a> as we build technology that transforms how the world develops software.</p>\n<p>*<em>Fortune 500® is a registered trademark of Fortune Media IP Limited, used under license. Claim based on GitLab data. Fortune 100 refers to the top 20% ranked companies in the 2025 Fortune 500 list, published in June 2025. Fortune and Fortune Media IP Limited are not affiliated with, and do not endorse products or services of GitLab.</em></p></div><h2><strong>An overview of this role</strong></h2>\n<p>As a Threat Research Engineer, you’ll take ideas from the first question to a working proof of concept, deploy it, and analyze the results yourself. This is a full-stack role, with AI central to how we work. You’ll build agentic workflows for research, analysis, and detection, and use AI tools every day to move faster.</p>\n<h2><strong>What you’ll do</strong></h2>\n<ul>\n<li>Research new attack surfaces and threat vectors, including AI coding agents, agent plugins, and package ecosystems.</li>\n<li>Find and responsibly disclose vulnerabilities in open source projects and developer tools.</li>\n<li>Analyze software supply chain incidents and events.</li>\n<li>Build AI-powered workflows and agents that automate research, analysis, and detection.</li>\n<li>Build and maintain the cloud-based systems behind our detection and advisory work.</li>\n<li>Improve the quality and coverage of our vulnerability and malware advisories.</li>\n<li>Write up your findings as blog posts and present them at conferences.</li>\n<li>Take part in on-call or operational support where your team's ownership model requires it.</li>\n</ul>\n<h2><strong>What you’ll bring</strong></h2>\n<ul>\n<li>Hands-on security experience in research, malware analysis, penetration testing, or security tooling, with both a developer mindset and an adversarial mindset: you can build systems and think about how to break them.</li>\n<li>Demonstrated experience using AI in real work, such as building with large language model APIs or agent frameworks like LangChain, LangGraph, or agent SDKs.</li>\n<li>Strong programming skills in Go or Python, with good software engineering practices including testing, code review, continuous integration and continuous delivery, and maintainable code.</li>\n<li>Experience deploying and running production services on a public cloud.</li>\n<li>Understanding of how package ecosystems work and how software supply chain attacks happen.</li>\n<li>Ability to map possible attack vectors, name trade-offs, and make data-driven decisions, balancing quality and speed with customer outcomes in mind while keeping up with security and AI industry trends.</li>\n<li>Clear writing that explains findings to both engineers and a general audience.</li>\n<li>Helpful, but not required: published vulnerability findings; security research on AI agents, large language model applications, or Model Context Protocol (MCP) servers; Google Cloud Platform experience; or infrastructure as c",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 40,
-      "matched": [
-        "large language model",
-        "adversarial",
-        "python",
-        "research"
-      ],
-      "status": "new"
+      "status": "prepared",
+      "apply_url": "https://jobs.lever.co/jobgether/83ab8cfc-3930-466a-ad80-5b083adcc607/apply"
     },
     {
       "title": "Senior Machine Learning Engineer",
@@ -112,7 +58,8 @@
         "deep learning",
         "research"
       ],
-      "status": "new"
+      "status": "new",
+      "apply_url": "https://apply.workable.com/destinusgroup/j/4F1344A4A5/"
     },
     {
       "title": "AI Research Engineer (Agentic Reinforcement Learning)",
@@ -131,45 +78,8 @@
         "pytorch",
         "research"
       ],
-      "status": "new"
-    },
-    {
-      "title": "Senior Applied Scientist",
-      "company": "Tomtom",
-      "location": "Amsterdam, The Netherlands",
-      "url": "https://www.arbeitnow.nl/jobs/companies/tomtom/senior-applied-scientist-amsterdam-the-netherlands-322073",
-      "description": "Meet the team    \n\n You’ll join the Traffic Control Features team within TomTom’s Automated Driving organization . The team builds the technology that turns real-world observations into reliable map information about traffic signs, traffic lights, stop lines and road markings .   \n\n You’ll work with applied scientists and software engineers to develop algorithms and machine-learning solutions that detect, position and connect these features to the right roads and driving directions. The goal is to deliver accurate, scalable map content that supports navigation and advanced driving experiences. TomTom measures these features using quality dimensions such as recall, precision, and road-relation accuracy.   \n\n What you will do: \n\n Develop algorithms and ML solutions for traffic signs, traffic lights, road markings, and other traffic-control features, including projects with Computer Vision and Image Recognition. \n\n Design and productionize solutions that extract reliable map information from diverse, large-scale and noisy real-world data sources, including car sensor data and unstructured information. \n\n Improve how features are detected, positioned, and associated with the correct road/lane and driving direction. \n\n Drive measurable improvements in recall, precision, and overall map quality against customer-facing targets. \n\n Own components of production pipelines, from input data and feature extraction through evaluation and validated map output. \n\n Solve complex problems involving geospatial geometry, map matching, computer vision, image recognition, noisy observations, ground-truth quality, and large-scale evaluation. \n\n Run experiments, translate successful approaches into production solutions, and clearly document outcomes. \n\n Use AI tools, such as Claude Code, to support problem solving, data analysis, implementation, and engineering productivity. \n\n Mentor junior colleagues, provide insightful code reviews, and contribute to hiring.   \n\n What you will need: \n\n 4+ years of professional experience in Applied Science, Machine Learning, algorithm development, computer vision or related field. \n\n Bachelor’s degree or higher in Computer Science, Machine Learning, Computer Vision, Geospatial Science, Statistics or another quantitative field. Master’s or PhD is a plus. \n\n Strong fundamentals in  algorithms and machine learning , including model development, evaluation, statistics and experimental design. \n\n Proficiency in  Python , an ML framework such as PyTorch or TensorFlow, and large-scale data processing tools such as Spark or Databricks. \n\n Experience taking algorithms, ML models or data pipelines from experimentation into  production . \n\n Experience leading well-scoped technical projects and mentoring junior colleagues. \n\n Ability to work across data, algorithms, modeling, ground truth and evaluation rather than operating within only one area of expertise. \n\n Strong problem-solving skills and the ability to independently approach complex and ambiguous problems. \n\n Proficient written and verbal communication skills in English. \n\n You already live in the Netherlands. We cannot offer relocation for this role.   \n\n What we offer \n A competitive compensation package, of course.   \n Time and resources to grow and develop, including a personal development budget and paid leave for learning days, as well as paid access to e-learning resources such as O’Reilly and LinkedIn Learning.  \n Time to support life outside of work, with enhanced parental leave plus paid leave to care for loved ones and volunteer in local communities.   \n Work flexibility, where TomTom’ers, in agreement with their manager and team, use both the office and home to focus, collaborate, learn and socialize. It’s all about getting the best out of both worlds – we ask TomTom’ers to come to the office two days a week, and the remaining three are free to be worked in either location. \n Improve your home office with a setup budget and get extra support with a monthly",
-      "posted": "2026-11-07",
-      "source": "Arbeitnow",
-      "score": 32,
-      "matched": [
-        "evaluation",
-        "machine learning",
-        "pytorch",
-        "python",
-        "research"
-      ],
-      "status": "new"
-    },
-    {
-      "title": "AI Engineer - Full time",
-      "company": "Meetdavis",
-      "location": "Paris",
-      "url": "https://www.arbeitnow.fr/jobs/companies/meetdavis/ai-engineer-full-time-paris-81807",
-      "description": "TLDR; Davis is hiring an AI Engineer to work on the multi-agent pipeline turning raw, fragmented data into expert-grade real estate deliverables. You will make it more reliable, fast, and indistinguishable from the best human teams, then push it past what any human team could do, owning the stack end to end, from context engineering and orchestration to verification, storage and evaluation.\n\n About Davis \n Davis is an AI-native real estate company accelerating early-stage development and architectural design. Today developers coordinate 4-5 fragmented stakeholders over weeks or months. Soon they'll need only one: Davis.\n We turn every input that shapes a development decision into decision-ready outputs: investor-grade feasibility studies, investment analysis, and architect-certified designs, delivered in days. Every stage pairs our proprietary AI systems with expert review, so velocity never comes at the cost of reliability.\n We closed a $5.5M pre-seed co-led by Heartcore Capital and Balderton Capital , with Yellow, Evantic and Entrepreneur First, alongside angels from the founding teams of Spacemaker, Black Forest Labs, Hugging Face, Supabase, Cleo and Spore Bio. We already work with leading developers and expect to support hundreds of projects over the coming year, deepening our research, our hiring, and our coverage of the development process end to end.\n\n Where We Operate \n Early-stage development starts with a chain of high-stakes decisions , each requiring different data, different expertise, and different deliverables. Today, we deliver AI-powered outputs across the full spectrum - site sourcing, feasibility studies, architectural design, investment analysis, financial modeling, dataroom analysis, and more.\n\n The Role \n You will work on one of the core systems behind what Davis delivers. Our agents take raw, fragmented data and turn it into deliverables that real estate professionals use to make high-stakes decisions. Your job is to make that pipeline reliable, fast, and indistinguishable from work done by the best human teams - then push it beyond what any human team could do.\n You can expect to:\n Build and operate multi-agent systems that turn heterogeneous data into expert-grade deliverables across real estate development workflows.\n\n Own the system end to end : infra, orchestration, context engineering, how the system selects, structures, and injects the right information so agents behave reliably at scale.\n\n Ensure production-grade quality , performance, and reliability across every output we deliver to clients.\n\n Sit with clients and domain experts regularly to understand their constraints, challenge your own assumptions, and make sure every output meets and even exceeds clients' expectations.\n\n Beyond the technical depth, this role will expose you to how real estate decisions are made, how clients think, and what it takes to deliver outputs they trust. You'll develop a sharp business intuition alongside your engineering skills.\n\n Key Responsibilities \n Harness engineering: design and build the system layer around the model - context assembly, tool orchestration, verification, and report generation - to deliver consistent, high-quality outputs at scale.\n\n Data ingestion & context assembly: handle messy, unstructured project data from heterogeneous sources and ensure agents have the right context at all times.\n\n Storage & traceability: persist sources, extracted facts, intermediate results, report versions, and expert edits.\n\n Expert-in-the-loop UX: design and build the review experience (annotations, edits, approvals, diffs/version history, provenance display).\n\n Evaluation & benchmarking: build an internal eval harness (datasets, rubrics, regression tests, monitoring) to track agents performance over time.\n\n What We're Looking For \n 1.5+ years building and deploying production software at scale (APIs, reliability, testing, performance).\n\n Experience building and evaluating LLM agents / multi-step workflows in rea",
-      "posted": "2026-11-12",
-      "source": "Arbeitnow",
-      "score": 30,
-      "matched": [
-        "nlp",
-        "llm",
-        "summarization",
-        "evaluation",
-        "hugging face",
-        "python",
-        "research"
-      ],
-      "status": "new"
+      "status": "new",
+      "apply_url": "https://jobs.lever.co/jobgether/ec26e4e9-2d68-4c13-8500-e6b81d7372b0/apply"
     }
   ]
 }
