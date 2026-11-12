@@ -30,6 +30,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--id", required=True)
     ap.add_argument("--summary-out", default="summary.md")
+    ap.add_argument("--dry-run", action="store_true", help="fill the form but do not submit")
     a = ap.parse_args()
 
     pkg = load_json(APPS_DIR / f"{a.id}.json")
@@ -50,7 +51,8 @@ def main():
             result = "submitted" if ok else "failed"
             reason = f"Mail gönderildi → {app['email']}" if ok else (r.stderr or r.stdout).strip()[-400:]
         else:
-            r = subprocess.run([sys.executable, "submit_form.py", "--id", a.id], capture_output=True, text=True)
+            r = subprocess.run([sys.executable, "submit_form.py", "--id", a.id] + (["--dry-run"] if a.dry_run else []),
+                               capture_output=True, text=True)
             try:
                 res = json.loads(r.stdout.strip().splitlines()[-1])
             except Exception:
@@ -58,10 +60,13 @@ def main():
             result, reason = res["result"], res.get("reason", "")
             if res.get("uploaded"):
                 reason += f" Yüklenen: {', '.join(res['uploaded'])}."
-        set_status(a.id, result, reason)
+        if not a.dry_run:
+            set_status(a.id, result, reason)
 
     job = pkg.get("job") or {}
-    icon = {"submitted": "✅", "manual": "✋", "failed": "❌"}.get(result, "•")
+    icon = {"submitted": "✅", "manual": "✋", "failed": "❌", "dry-run": "🧪"}.get(result, "•")
+    if result == "dry-run":
+        reason = "Deneme: form dolduruldu, GÖNDERİLMEDİ. " + reason
     lines = [f"{icon} **{job.get('title', '')} · {job.get('company', '')}**", "", reason]
     if result == "manual" and (pkg.get("application") or {}).get("method") != "email":
         lines += ["", f"Bunu elle tamamlaman gerekiyor: {pkg['url']}",

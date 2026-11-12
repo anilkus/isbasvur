@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   submit:
-    if: startsWith(github.event.issue.title, 'submit:') && github.event.issue.user.login == github.repository_owner
+    if: (startsWith(github.event.issue.title, 'submit:') || startsWith(github.event.issue.title, 'test:')) && github.event.issue.user.login == github.repository_owner
     runs-on: ubuntu-latest
     env:
       GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
@@ -38,8 +38,9 @@ jobs:
         env:
           TITLE: ${{ github.event.issue.title }}
         run: |
-          ID=$(echo "$TITLE" | sed -E 's/^submit:[[:space:]]*//; s/[[:space:]].*$//')
-          cd scripts && python submit.py --id "$ID" --summary-out ../summary.md
+          ID=$(echo "$TITLE" | sed -E 's/^(submit|test):[[:space:]]*//; s/[[:space:]].*$//')
+          DRY=""; case "$TITLE" in test:*) DRY="--dry-run";; esac
+          cd scripts && python submit.py --id "$ID" --summary-out ../summary.md $DRY
       - name: Commit
         if: always()
         run: |
