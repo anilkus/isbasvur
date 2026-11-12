@@ -57,7 +57,11 @@ def call_github_models(system, user, max_tokens=4000):
             continue
         if r.status_code >= 400:
             sys.exit(f"GitHub Models error {r.status_code}: {r.text[:500]}")
-        return r.json()["choices"][0]["message"]["content"]
+        try:
+            return r.json()["choices"][0]["message"]["content"]
+        except Exception:
+            sys.exit(f"GitHub Models unexpected reply {r.status_code} "
+                     f"{r.headers.get('content-type')}: {r.text[:300]!r}")
 
 
 def call_claude(system, user, max_tokens=4000):

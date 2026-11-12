@@ -104,7 +104,7 @@ def main():
         if score < cfg.get("min_score", 25):
             continue
         j["score"], j["matched"] = score, matched[:8]
-        j["description"] = j["description"][:600]
+        j["description"] = j["description"][:4000]
         j["status"] = old.get(j["url"], {}).get("status", "new")
         out.append(j)
 
