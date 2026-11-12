@@ -29,25 +29,14 @@ Flow: give the link to Claude in chat → Claude writes and pushes the package (
    çalışma izni gibi bilgileri gir. Bunlar sadece tarayıcında durur, repoya hiç girmez.
 7. **CV:** `profile/cv.md` dosyasını güncel CV metninle değiştir. Model sadece burada yazanı kullanır.
 
-### Mail ile başvuru (Gmail taslağı)
+### Mail ile başvuru
 
-İlan "başvurunu şu adrese gönder" diyorsa paket hazırlanınca Gmail'de ekleriyle birlikte bir **taslak** oluşur. Hiçbir şey otomatik gönderilmez.
-Başka ilanlar için de sitedeki pakette **Gmail taslağı oluştur** butonu var.
+Şifre paylaşmadan çalışır. Sitede paketi aç → **Gmail'de aç**: alıcı, konu ve metin dolu bir mail penceresi açılır.
+Pencere açıkken sağ altta userscript'in **Ekleri ekle** butonu çıkar. CV, ilana özel cover letter PDF'i ve ilanın istediği
+diğer belgeleri ekler. Kontrol edip Gönder'e sen basarsın.
 
-1. Gmail hesabında 2 adımlı doğrulama açık olsun, sonra https://myaccount.google.com/apppasswords adresinden bir uygulama şifresi al.
-2. Repo secret'ları ekle:
-   - `GMAIL_ADDRESS`: kişisel Gmail adresin
-   - `GMAIL_APP_PASSWORD`: aldığın 16 haneli uygulama şifresi
-   - `DOCS_PASSPHRASE`: belgeleri şifrelemek için uzun bir parola
-   - `CONTACT_LINE` (isteğe bağlı): mail ekindeki cover letter başlığına yazılacak satır, örn. `mail@gmail.com · +90 5xx xxx xx xx`
-3. Belgeleri şifreleyip ekle (repoda sadece `.gpg` dosyaları durur):
-   ```bash
-   export DOCS_PASSPHRASE='secret ile aynı parola'
-   ./scripts/encrypt_docs.sh cv ~/Belgeler/CV.pdf
-   ./scripts/encrypt_docs.sh transcript ~/Belgeler/Transkript.pdf
-   git add private && git commit -m "docs" && git push
-   ```
-   Anahtar adları ve ekte görünecek dosya adları `profile/documents.json` içinde.
+(İsteğe bağlı tam otomatik taslak: `GMAIL_ADDRESS`, `GMAIL_APP_PASSWORD`, `DOCS_PASSPHRASE` secret'ları ve
+`scripts/encrypt_docs.sh` ile şifreli belgeler eklenirse `email-drafts.yml` taslağı kendisi oluşturur. Secret yoksa bu adım atlanır.)
 
 ### Formlara dosya yükleme
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Job Agent Autofill
 // @namespace    https://github.com/anilkus/isbasvur
-// @version      1.1.0
+// @version      1.2.0
 // @description  Fills job application forms from your Job Agent packages. Never submits, the last click is yours.
 // @author       Anıl Kuş
 // @match        *://*/*
@@ -10,6 +10,7 @@
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
 // @connect      anilkus.github.io
+// @match        https://mail.google.com/*
 // @run-at       document-idle
 // ==/UserScript==
 
@@ -283,6 +284,70 @@
       } catch (e) { msg.textContent = "Paket alınamadı: " + e; }
     };
     document.body.appendChild(box);
+  }
+
+  // ---------- Gmail: attach documents to an open compose window ----------
+  async function gmailAttach(list, chosenId, msg) {
+    const inputs = [...document.querySelectorAll('input[type=file][name="Filedata"]')];
+    const input = inputs[inputs.length - 1];
+    if (!input) { msg.textContent = "Açık bir mail penceresi bulamadım."; return; }
+
+    // Prefer the package whose subject matches the compose window.
+    const subjects = [...document.querySelectorAll('input[name="subjectbox"]')];
+    const subject = (subjects[subjects.length - 1]?.value || "").trim();
+    let pkg = null;
+    for (const item of [list.find(x => x.id === chosenId), ...list.slice(0, 15)].filter(Boolean)) {
+      const p = await get(`${SITE}data/applications/${item.id}.json`);
+      if (!pkg) pkg = p;                      // the selected one is the fallback
+      if (subject && (p.email || {}).subject === subject) { pkg = p; break; }
+    }
+    const wanted = [...new Set(["cv", "cover_letter", ...(((pkg.application || {}).required_documents) || [])])];
+    const files = [], missing = [];
+    for (const key of wanted) {
+      try { const f = await fileFor(key, pkg); f ? files.push(f) : missing.push(DOC_KEYS[key] || key); }
+      catch { missing.push(DOC_KEYS[key] || key); }
+    }
+    if (!files.length) { msg.textContent = "Eklenecek belge yok. Menüden belgeleri yükle."; return; }
+    const dt = new DataTransfer();
+    files.forEach(f => dt.items.add(f));
+    input.files = dt.files;
+    input.dispatchEvent(new Event("change", { bubbles: true }));
+    msg.innerHTML = `Eklendi: ${files.map(f => f.name).join(", ")}` +
+      (missing.length ? `<br>Eksik: ${missing.join(", ")} (menüden yükle ya da elle ekle)` : "") +
+      `<br><b>Kontrol et, Gönder'e sen bas.</b>`;
+  }
+
+  function gmailPanel(list) {
+    const box = document.createElement("div");
+    box.style.cssText = "position:fixed;right:16px;bottom:16px;z-index:2147483647;background:#1f5c4a;color:#fff;" +
+      "font:13px/1.4 system-ui,sans-serif;border-radius:10px;padding:10px 12px;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:320px";
+    box.innerHTML = `<div style="font-weight:600;margin-bottom:6px">Job Agent</div>
+      <select style="width:100%;margin-bottom:8px;color:#111;border-radius:6px;padding:4px">
+        ${list.slice(0, 30).map(x => `<option value="${x.id}">${(x.company || "").slice(0, 22)} · ${(x.title || "").slice(0, 30)}</option>`).join("")}
+      </select>
+      <div style="display:flex;gap:6px">
+        <button data-act="att" style="flex:1;padding:6px;border:0;border-radius:6px;cursor:pointer">Ekleri ekle</button>
+        <button data-act="x" style="padding:6px 10px;border:0;border-radius:6px;cursor:pointer">×</button>
+      </div><div data-msg style="margin-top:8px;opacity:.9"></div>`;
+    box.querySelector('[data-act="x"]').onclick = () => box.remove();
+    box.querySelector('[data-act="att"]').onclick = () => {
+      const msg = box.querySelector("[data-msg]"); msg.textContent = "Ekleniyor...";
+      gmailAttach(list, box.querySelector("select").value, msg).catch(e => msg.textContent = "Hata: " + e);
+    };
+    document.body.appendChild(box);
+    return box;
+  }
+
+  if (location.hostname === "mail.google.com") {
+    let box = null;
+    // Show the panel only while a compose window is open.
+    setInterval(async () => {
+      const open = !!document.querySelector('input[name="subjectbox"]');
+      if (open && !box) {
+        try { const list = await get(`${SITE}data/applications/index.json`); if (list.length && !box) box = gmailPanel(list); } catch {}
+      } else if (!open && box) { box.remove(); box = null; }
+    }, 1500);
+    return;
   }
 
   // Show the panel only on pages that look like an application form.

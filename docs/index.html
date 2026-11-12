@@ -200,9 +200,10 @@ async function openApp(id) {
               · ekler: ${esc(d.attachments.join(", "))}${d.missing.length ? ` · <b style="color:var(--warn)">eksik: ${esc(d.missing.join(", "))}</b>` : ""}</div>` : ""}
       <div class="row" style="margin-top:8px">
         <input type="email" id="draftTo" value="${esc(d?.to || ap.email || "")}" placeholder="alici@universite.edu" style="max-width:300px">
-        <button data-draft="${esc(a.id)}">${d ? "Taslağı yeniden oluştur" : "Gmail taslağı oluştur"}</button>
+        <button class="primary" data-gmail="${esc(a.id)}">Gmail'de aç</button>
         <a class="btn" href="data/applications/${esc(a.id)}-cover-letter.pdf" target="_blank">Cover letter PDF</a>
       </div>
+      <div class="meta" style="margin-top:6px">Mail penceresinde sağ alttaki <b>Ekleri ekle</b> butonu belgeleri ekler. Kontrol edip Gönder'e sen basarsın.</div>
     </div>`;
   $("#appDetail").innerHTML = `
     <div class="card" style="margin-bottom:16px">
@@ -235,11 +236,16 @@ $("#apps").onclick = e => {
   if (t.dataset.open) { e.preventDefault(); openApp(t.dataset.open); }
   if ("copy" in t.dataset) { navigator.clipboard.writeText(t.closest(".block").querySelector(".text").textContent); toast("Kopyalandı"); }
   if ("close" in t.dataset) $("#appDetail").innerHTML = "";
-  if (t.dataset.draft) {
+  if (t.dataset.gmail) {
     const to = $("#draftTo").value.trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(to)) { toast("Geçerli bir alıcı adresi gir"); return; }
-    const title = `draft: ${t.dataset.draft} ${to}`;
-    window.open(`https://github.com/${OWNER}/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent("Gmail taslağı oluştur. Gönderilmez, Taslaklar'da bekler.")}`, "_blank");
+    getJSON(`data/applications/${t.dataset.gmail}.json`, null).then(a => {
+      const m = a?.email || {};
+      // Remember which package this compose window belongs to, for the userscript.
+      const u = "https://mail.google.com/mail/?view=cm&fs=1" +
+        `&to=${encodeURIComponent(to)}&su=${encodeURIComponent(m.subject || "")}&body=${encodeURIComponent(m.body || "")}`;
+      window.open(u, "_blank");
+    });
   }
   if (t.dataset.applied) {
     const u = t.dataset.applied;
