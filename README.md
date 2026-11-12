@@ -13,13 +13,14 @@ Site: https://anilkus.github.io/isbasvur/
 | `scripts/prepare_application.py` | GitHub Actions, on issue | Reads the posting, asks Claude for fit analysis, cover letter and form answers in your voice, cleans dashes and AI phrasing |
 | `userscript/job-autofill.user.js` | Your browser (Tampermonkey) | On an application form, fills fields from the package, marks what is left. Never submits |
 
-Flow: paste a link on the site → it opens a pre-filled issue `apply: <link>` → submit it → about 1-2 minutes later the issue gets a fit summary and closes → open the posting, click **Formu doldur**, check, attach CV, submit.
+Flow: give the link to Claude in chat → Claude writes and pushes the package (and a Gmail draft is created if the posting wants email) → open the posting, click **Formu doldur**, check, attach CV, submit.
 
 ## Kurulum (bir kerelik)
 
 1. **Repo:** Bu klasörü `anilkus/isbasvur` olarak GitHub'a yükle (public, Pages ücretsiz planda public repo ister).
-2. **API anahtarı:** Settings → Secrets and variables → Actions → *New repository secret* → `ANTHROPIC_API_KEY`.
-   İsteğe bağlı: *Variables* sekmesinde `CLAUDE_MODEL` (varsayılan `claude-sonnet-5-5`).
+2. **Paketler (API gerekmez):** İlan linkini Claude sohbetine `isbasvur: <link>` diye ver. Claude paketi yazar,
+   `scripts/save_package.py` ile kaydedip push eder. İstersen ileride `ANTHROPIC_API_KEY` secret'ı ekleyip
+   `apply: <link>` issue'larıyla tam otomatik moda geçebilirsin.
 3. **Pages:** Settings → Pages → Source: *Deploy from a branch*, Branch: `main`, klasör: `/docs`.
 4. **Actions izni:** Settings → Actions → General → Workflow permissions → *Read and write permissions*.
 5. **İlk tarama:** Actions → *Fetch jobs* → *Run workflow*.

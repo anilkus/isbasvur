@@ -1,0 +1,53 @@
+name: Email drafts
+
+# When a new package is pushed and the posting asks for an email application,
+# put a Gmail draft (with attachments) in your Drafts folder. Nothing is sent.
+on:
+  push:
+    branches: [main]
+    paths: ["docs/data/applications/*.json"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+
+jobs:
+  drafts:
+    runs-on: ubuntu-latest
+    env:
+      GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      DOCS_PASSPHRASE: ${{ secrets.DOCS_PASSPHRASE }}
+      CONTACT_LINE: ${{ secrets.CONTACT_LINE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests beautifulsoup4 reportlab && sudo apt-get install -y -qq fonts-dejavu-core gnupg >/dev/null
+      - name: Draft every email package that has no draft yet
+        run: |
+          if [ -z "$GMAIL_APP_PASSWORD" ]; then echo "Gmail secrets not set, skipping."; exit 0; fi
+          cd scripts
+          python - <<'EOF'
+          import json, subprocess, sys
+          from common import APPS_DIR, load_json
+          for item in load_json(APPS_DIR / "index.json", []) or []:
+              pkg = load_json(APPS_DIR / f"{item['id']}.json", {}) or {}
+              app = pkg.get("application") or {}
+              if app.get("method") == "email" and app.get("email") and not pkg.get("email_draft"):
+                  print("Drafting", item["id"])
+                  subprocess.run([sys.executable, "email_draft.py", "--id", item["id"],
+                                  "--summary-out", "/tmp/summary.md"], check=True)
+          EOF
+      - name: Commit
+        run: |
+          git config user.name "job-agent"
+          git config user.email "job-agent@users.noreply.github.com"
+          git add docs/data/applications
+          git commit -m "Gmail drafts created" || exit 0
+          git pull --rebase && git push
