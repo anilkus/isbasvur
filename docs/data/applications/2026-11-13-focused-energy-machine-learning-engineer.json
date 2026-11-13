@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "Machine Learning Engineer",
+    "company": "Focused Energy",
+    "location": "Darmstadt, DE",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 55,
+    "verdict": "maybe",
+    "strengths": [
+      "Built and deployed ML models for clinical AI and NLP tasks",
+      "Managed interdisciplinary projects and coordinated international research activities"
+    ],
+    "gaps": [
+      "No demonstrated experience with physics-based simulations or PDE data",
+      "No explicit work with HPC environments, C++/Fortran, or multiphysics surrogate modeling"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD focus on trustworthy AI and medical NLP. In my recent work I designed and evaluated machine learning models that assess clinical AI systems, handling high-dimensional text data and uncertainty quantification. I also led a research centre where we built AI prototypes for real-world use, coordinating engineers, clinicians and external partners.\n\nMy experience with Python, deep-learning frameworks and probabilistic modelling matches the core technical needs of your role. While my background is not in computational physics, I have repeatedly adapted ML methods to new domains, from summarising medical papers to detecting disinformation, and I am comfortable learning domain-specific constraints such as PDE-based data.\n\nI have managed interdisciplinary teams, organized international workshops, and overseen the full lifecycle of AI projects, from data preparation to deployment and monitoring. I look forward to bringing this practical, cross-functional approach to your Digital Twin environment and help accelerate fusion research.\n\nThank you for considering my application.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop trustworthy AI models for complex data, lead interdisciplinary research projects, and have hands-on experience deploying ML pipelines in Python, ready to adapt these skills to your fusion Digital Twin.",
+  "answers": {
+    "why_this_role": "The role combines ML engineering with real-time system integration, which matches my experience building and deploying AI models for clinical and medical applications, handling uncertainty and ensuring reproducibility.",
+    "why_this_organisation": "Focused Energy's mission to create clean, abundant power resonates with my interest in applying AI to high-impact scientific challenges.",
+    "relevant_experience": "I designed evaluation metrics for clinical AI, built NLP models for medical summarisation, and led a technology centre that delivered AI prototypes to end users, covering the full ML pipeline from data handling to deployment.",
+    "research_interests": "I am interested in trustworthy, explainable AI and its application to scientific domains, especially where model reliability and uncertainty matter.",
+    "additional_information": "I have coordinated international research activities, mentored students, and hold patents in AI-enabled hardware, demonstrating both technical depth and leadership."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Machine Learning Engineer - Focused Energy",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Machine Learning Engineer position. I have highlighted my experience in building trustworthy AI models, managing interdisciplinary projects, and deploying ML pipelines.\n\nI look forward to the possibility of contributing to Focused Energy's Digital Twin initiatives.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-13-focused-energy-machine-learning-engineer",
+  "url": "https://www.arbeitnow.com/jobs/companies/focused/machine-learning-engineer-darmstadt-101910",
+  "apply_url": "https://jobs.ashbyhq.com/focused/576081bf-2b9e-4441-a48f-85fec40db219/application",
+  "created": "2026-11-13T13:06+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
