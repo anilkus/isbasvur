@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "AI Research Scientist",
+    "company": "MakiPeople",
+    "location": "Paris",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 78,
+    "verdict": "apply",
+    "strengths": [
+      "Hands-on evaluation of LLMs for medical NLP tasks",
+      "Publications on trustworthy AI and human-centered evaluation",
+      "Experience designing and testing scoring pipelines"
+    ],
+    "gaps": [
+      "No formal training in psychometrics or IRT",
+      "No listed experience with R or cloud database platforms"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years building and evaluating NLP systems for medical and trustworthy AI. In my PhD work I created hybrid evaluation metrics for Turkish text summarisation and published a paper on human-centered evaluation of clinical AI models. Those projects required me to design benchmarks, compare model outputs with expert ratings, and test robustness to prompt changes, exactly the kind of work described for evaluating LLMs at Maki.\n\nAt Toros University I led the SmartLab Technology Center, where we built an LLM-as-judge system for Turkish summaries and measured agreement with human judges. This gave me practical experience in prompt engineering, fine-tuning, and bias analysis across languages. I also contributed to COST research networks focusing on AI-driven medical imaging, where I handled data pipelines and statistical validation.\n\nMy teaching background means I can explain technical findings clearly to both scientific peers and business stakeholders. While I have not formally studied psychometrics, I have applied reliability and validity concepts in my own research and look forward to deepening that knowledge.\n\nI look forward to bringing my LLM evaluation expertise and commitment to transparent, fair AI to MakiPeople.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I evaluate LLMs for medical NLP, design human-centered benchmarks, and lead AI projects that balance accuracy, fairness and real-world impact.",
+  "answers": {
+    "why_this_role": "I enjoy turning research into robust, fair AI tools. This role lets me apply my LLM benchmarking experience to hiring assessments, a new but related domain.",
+    "why_this_organisation": "MakiPeople combines psychology and AI, which matches my work on trustworthy AI and human-centered evaluation.",
+    "relevant_experience": "My PhD created hybrid metrics for summarisation, I built an LLM-as-judge system for Turkish summaries, and I published on trustworthy clinical AI, all involving LLM evaluation, bias checks and human-model comparison.",
+    "research_interests": "I focus on explainable NLP, evaluation metrics that bridge AI and human judgement, and bias mitigation in language models.",
+    "additional_information": "I have led interdisciplinary teams, co-founded a tech centre, and mentored diverse students, showing I can work across research and product contexts."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for AI Research Scientist",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the AI Research Scientist position. I look forward to discussing how my experience with LLM evaluation and trustworthy AI can contribute to MakiPeople.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-14-makipeople-ai-research-scientist",
+  "url": "https://www.arbeitnow.fr/jobs/companies/makipeople/ai-research-scientist-paris-149972",
+  "apply_url": "https://jobs.ashbyhq.com/maki/f2394cc5-71c4-43ae-8bec-36c6294cdb39/application",
+  "created": "2026-11-14T12:10+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
