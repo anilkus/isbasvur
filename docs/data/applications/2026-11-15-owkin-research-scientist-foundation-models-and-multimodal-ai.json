@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Research Scientist, Foundation Models and Multimodal AI",
+    "company": "Owkin",
+    "location": "Paris, France (remote possible)",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 68,
+    "verdict": "apply",
+    "strengths": [
+      "Hands-on fine-tuning of foundation models for Turkish NLP tasks",
+      "Design of cross-modal alignment methods in research projects",
+      "Strong Python and PyTorch experience with published AI work"
+    ],
+    "gaps": [
+      "No documented experience with biological omics data",
+      "No explicit Docker/Kubernetes deployment experience"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years adapting large language models for Turkish text summarisation and clinical AI evaluation. In my PhD work I built hybrid pipelines that combine extractive summarisation with LLMs, fine-tuning open-source transformers on domain-specific data. This directly matches your need for model adaptation and optimisation.\n\nAt Toros University I led a project that aligned textual and visual representations for a medical reporting tool, using contrastive learning and unified embedding spaces. The system integrated structured patient data, images and free-text notes, showing that I can design multimodal architectures similar to CLIP-style models.\n\nMy research has produced several peer-reviewed papers on trustworthy AI and multimodal NLP, and I regularly use Python, PyTorch and the Hugging Face ecosystem. I have also contributed to COST research networks where I handled large multimodal datasets and built evaluation pipelines that assess model reliability and generalisation.\n\nI look forward to bringing this blend of research depth and practical engineering to Owkin's K Pro platform. Thank you for considering my application.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I adapt foundation models for domain-specific NLP and have built multimodal pipelines that fuse text, images and structured data for medical AI, using Python, PyTorch and Hugging Face.",
+  "answers": {
+    "why_this_role": "The role combines fine-tuning of foundation models with multimodal integration, exactly the work I have done in my PhD and research projects on hybrid summarisation and clinical AI evaluation.",
+    "why_this_organisation": "Owkin's focus on AI for biology matches my interest in trustworthy medical AI, and the collaborative, international environment reflects my experience coordinating academic networks across Europe and Turkey.",
+    "relevant_experience": "I have fine-tuned transformer models for Turkish summarisation, built cross-modal alignment architectures for medical reporting, and created benchmarking pipelines to evaluate model reliability on clinical data.",
+    "research_interests": "My research aims to make AI systems explainable and ready for real-world medical use, especially by combining language models with other data modalities such as images and structured health records.",
+    "additional_information": "I have led academic departments, co-founded a technology centre, and mentored students in AI, demonstrating leadership and teamwork skills."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "form",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Research Scientist, Foundation Models and Multimodal AI",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Research Scientist position. I have highlighted my experience with foundation model fine-tuning, multimodal integration, and Python/PyTorch development.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-15-owkin-research-scientist-foundation-models-and-multimodal-ai",
+  "url": "https://www.arbeitnow.fr/jobs/companies/owkin/research-scientist-foundation-models-and-multimodal-ai-paris-108085",
+  "apply_url": "https://jobs.ashbyhq.com/owkin/9de3763d-8987-47dc-988d-1fa6a82d52a2/application",
+  "created": "2026-11-15T12:43+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
