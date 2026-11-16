@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-15T12:43+00:00",
-  "count": 5,
+  "updated": "2026-11-16T13:37+00:00",
+  "count": 6,
   "errors": [],
   "jobs": [
     {
@@ -85,6 +85,24 @@
       ],
       "status": "new",
       "apply_url": "https://jobs.lever.co/Nomagic/fafe0fa1-f6b8-4004-a869-cbe587325067/apply"
+    },
+    {
+      "title": "Senior ML Research Scientist – AI & Generative Recommendation (f/m/d)",
+      "company": "adjoe",
+      "location": "Berlin",
+      "url": "https://www.arbeitnow.com/jobs/companies/adjoe/senior-ml-research-scientist-ai-generative-recommendation-berlin-431681",
+      "description": "adjoe builds the technologies behind mobile app growth and monetization, challenging the status quo of adtech by redefining how apps acquire users and generate revenue. Our two products, Playtime Arcade and adjoe Ads , sit at opposite ends of the mobile advertising spectrum: rewarded engagement and programmatic in-app advertising. Together they run on 13% of the world's smartphones, connecting advertisers, publishers, and hundreds of millions of users, with one goal: making mobile advertising work better for everyone in the ecosystem.\n\n Next-Gen Machine Intelligence for Scalable Discovery & Engagement \n\n The Data Science Research team builds foundational ML representations and advanced AI capabilities that enhance both Playtime and adjoe Ads . Operating as a horizontal deep-tech layer, the team leverages advanced AI and deep learning approaches—specifically generative approaches —to deliver critical systems such as high-dimensional user embeddings , general content understanding and sequential recommendation . These frameworks scale adjoe's products beyond standard industry limitations, utilizing behavioral and transactional data from over 770 million users.\n The team operates at the intersection of bleeding-edge R&D and high-scale production engineering, acting as the company’s internal science bar raiser and primary consulting layer for complex ML bottlenecks. The stack is optimized for deep learning and heavy data throughput: PyTorch and [Ray/Hugging Face] for training and fine-tuning foundation models, Trino and Athena for querying massive user-behavior data lakes, and dedicated GPU infrastructure for heavy workloads. The full lifecycle of these AI capabilities is owned by the team—from academic paper translation and offline prototyping to deploying core algorithmic frameworks built to sustain high-throughput, realtime production environments.\n\n Your Mission & Who We Are Looking For: \n PhD or equivalent research depth, with a production track record. You have a PhD in CS, Statistics, Math, or Physics, or an MSc with extensive industry research, and publications in top-tier venues like SIGIR, KDD, NeurIPS, or ICLR. You've spent 4+ years building large-scale recommender systems in high-throughput environments: AdTech, e-commerce, or social.\n\n You translate research into production, not just prototypes. You distill SOTA research into robust, production-ready code optimized for sub-millisecond latency. At adjoe, that means architecting multi-stage recommendation pipelines, Generative Retrieval, Deep Ranking, and Re-ranking, serving millions of requests across a stack built on 770 million users' behavioral data .\n\n Deep expertise in PyTorch and large-scale model optimization. You have hands-on experience with high-concurrency optimization, model quantization, and distillation, the engineering side of getting large generative models to run under extreme production constraints, not just in research environments.\n\n Content understanding and embeddings are core to your work. You research and develop information-rich user and ad embeddings using unsupervised and generative approaches, directly improving the quality of predictions across both Playtime and adjoe Ads.\n\n Raises the technical bar around them. You lead architectural debates, mentor junior scientists, and drive the team's research direction without needing a roadmap handed to you.\n\n 🌎 We welcome applications from talent worldwide and provide relocation support to Hamburg, Germany for those ready to join our team. \n\n What’s in It for You? \n At adjoe, you’re not here to just close JIRA tickets, you’re helping build the infrastructure behind one of the most impactful platforms in adtech. The systems you work on will reach hundreds of millions of users and power billions of decisions every day.\n Go Big. Own projects with impact on 770M users and push adtech boundaries.\n\n Move Fast. Ship solutions multiple times a day, learn from results, and keep momentum.\n\n Be Direct. Solve p",
+      "posted": "2026-11-15",
+      "source": "Arbeitnow",
+      "score": 37,
+      "matched": [
+        "deep learning",
+        "pytorch",
+        "hugging face",
+        "research"
+      ],
+      "status": "new",
+      "apply_url": "https://jobs.ashbyhq.com/adjoe/147d4798-84f3-4110-b7c4-3ffb2106bb51/application"
     },
     {
       "title": "CENTRALE LYON - Post-doctoral researcher (12 months) Mathematics of energy-efficient AI: diffusion models on emerging hardware",
