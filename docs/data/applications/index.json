@@ -1,5 +1,38 @@
 [
   {
+    "id": "2026-11-17-actcareers-machine-learning-engineer-ranking-retrieval",
+    "url": "https://www.arbeitnow.ch/jobs/companies/actcareers/machine-learning-engineer-ranking-retrieval-zurich-388176",
+    "title": "Machine Learning Engineer, Ranking & Retrieval",
+    "company": "Actcareers",
+    "score": 68,
+    "verdict": "maybe",
+    "created": "2026-11-17T14:24+00:00",
+    "status": "ready",
+    "method": "form"
+  },
+  {
+    "id": "2026-11-17-actcareers-machine-learning-engineer-applied-ai",
+    "url": "https://www.arbeitnow.ch/jobs/companies/actcareers/machine-learning-engineer-applied-ai-zurich-290885",
+    "title": "Machine Learning Engineer, Applied AI",
+    "company": "Actcareers",
+    "score": 78,
+    "verdict": "maybe",
+    "created": "2026-11-17T14:23+00:00",
+    "status": "ready",
+    "method": "unknown"
+  },
+  {
+    "id": "2026-11-17-prosus-senior-machine-learning-engineer-evals",
+    "url": "https://www.arbeitnow.nl/jobs/companies/prosus/senior-machine-learning-engineer-evals-amsterdam-66181",
+    "title": "Senior Machine Learning Engineer, Evals",
+    "company": "Prosus",
+    "score": 78,
+    "verdict": "apply",
+    "created": "2026-11-17T14:22+00:00",
+    "status": "ready",
+    "method": "unknown"
+  },
+  {
     "id": "2026-11-15-owkin-research-scientist-foundation-models-and-multimodal-ai",
     "url": "https://www.arbeitnow.fr/jobs/companies/owkin/research-scientist-foundation-models-and-multimodal-ai-paris-108085",
     "title": "Research Scientist, Foundation Models and Multimodal AI",

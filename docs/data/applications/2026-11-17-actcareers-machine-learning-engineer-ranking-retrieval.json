@@ -1,0 +1,53 @@
+{
+  "job": {
+    "title": "Machine Learning Engineer, Ranking & Retrieval",
+    "company": "Actcareers",
+    "location": "Zurich, Switzerland",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 68,
+    "verdict": "maybe",
+    "strengths": [
+      "NLP research on ranking and evaluation metrics",
+      "Experience building and evaluating classification and retrieval models for Turkish text summarisation",
+      "Hands-on leadership of AI projects and data pipelines"
+    ],
+    "gaps": [
+      "No explicit production deployment experience",
+      "No listed PyTorch or JAX experience",
+      "No consumer-app personalisation work"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years designing NLP models for ranking and evaluation. In my PhD work I created hybrid metrics that combine extractive summarisation with large language models, and I built the data pipelines and evaluation framework that support them. At Toros University I led a team that built classification and retrieval tools for medical documents, turning research prototypes into usable services for students and clinicians.\n\nMy research on trustworthy AI required me to measure precision, latency and inference cost, and to set up continuous evaluation pipelines that catch regressions. I have written production-grade Python code, integrated PyTorch-based models in research notebooks, and coordinated deployments with cloud resources during summer schools and COST projects. These experiences match the need to improve search relevance with embeddings, hybrid search and reranking.\n\nBeyond the technical work I have coordinated international academic activities and managed a tech-startup, giving me a practical view of user-centric product development. I enjoy turning research insights into tools that people can use every day, and I look forward to bringing that mindset to Actcareers' proactive applications.\n\nThank you for considering my application. I look forward to discussing how my background in ranking, retrieval and trustworthy AI can help your team deliver reliable, low-latency models.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I design and evaluate NLP ranking and retrieval models, built data pipelines and evaluation frameworks for medical and academic texts, and have led AI projects from research to usable services.",
+  "answers": {
+    "why_this_role": "The role focuses on building ranking and retrieval models, which matches my PhD work on hybrid evaluation metrics for summarisation and my experience creating classification pipelines for medical documents.",
+    "why_this_organisation": "Actcareers aims to embed AI in everyday communication tools. My research on trustworthy AI and user-centric prototypes fits the goal of delivering reliable, low-prompting experiences.",
+    "relevant_experience": "I led a project that combined extractive summarisation with LLMs, built the data ingestion and model training pipelines in Python, and set up continuous evaluation to monitor accuracy and latency. I also contributed to COST projects where I handled AI model development and data management.",
+    "research_interests": "I am interested in trustworthy, explainable AI for information retrieval, especially how hybrid models can improve relevance while keeping inference costs low.",
+    "additional_information": "I have coordinated international academic activities, co-founded a tech centre, and mentored students in AI, giving me a broad perspective on product development and team collaboration."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "form",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Machine Learning Engineer, Ranking & Retrieval",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Machine Learning Engineer, Ranking & Retrieval position. I have highlighted my experience in NLP ranking, evaluation pipelines and AI project leadership.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-17-actcareers-machine-learning-engineer-ranking-retrieval",
+  "url": "https://www.arbeitnow.ch/jobs/companies/actcareers/machine-learning-engineer-ranking-retrieval-zurich-388176",
+  "apply_url": "https://jobs.ashbyhq.com/actcareers/6afff2cc-8264-4a64-83c9-ac7b71749c94/application",
+  "created": "2026-11-17T14:24+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

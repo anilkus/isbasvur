@@ -1,0 +1,53 @@
+{
+  "job": {
+    "title": "Machine Learning Engineer, Applied AI",
+    "company": "Actcareers",
+    "location": "Zurich, Switzerland",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 78,
+    "verdict": "maybe",
+    "strengths": [
+      "experience with NLP, embeddings and evaluation metrics",
+      "strong Python background and research on trustworthy AI",
+      "leadership in academic projects and data-driven research"
+    ],
+    "gaps": [
+      "no explicit production deployment experience",
+      "no mention of PyTorch or JAX usage",
+      "no large-scale inference infrastructure experience"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years building NLP systems that are explainable and ready for real use. In my PhD work I created hybrid evaluation metrics for Turkish text summarisation, combining extractive methods with large language models. That required building embedding-based retrieval pipelines, ranking models and custom evaluation datasets, the same core skills you list for classification, ranking and personalisation.\n\nAt Toros University I led a research centre where we delivered AI prototypes for medical text analysis. I designed data pipelines, trained deep models in Python and measured accuracy, latency and inference cost across multiple experiments. My recent publications on trustworthy AI and LLM-as-a-judge show I keep up with transformer models and fine-tuning techniques.\n\nBeyond research I have coordinated international projects and mentored students, which taught me how to turn user feedback into concrete model improvements. While I have not yet deployed a model at massive scale, I have built end-to-end training and evaluation workflows that are production-ready.\n\nI look forward to bringing my hands-on AI experience and my focus on reliable, user-centric systems to Actcareers.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "NLP researcher with Python expertise, embedding-based retrieval, and hands-on model evaluation, ready to build reliable AI for everyday apps.",
+  "answers": {
+    "why_this_role": "The role focuses on building classifiers, ranking and personalisation models, tasks I have performed while developing hybrid summarisation metrics and trustworthy AI evaluation pipelines in my research.",
+    "why_this_organisation": "Actcareers aims to embed AI into daily communication tools, a goal that matches my work on explainable AI for health texts and my interest in making AI useful for non-technical users.",
+    "relevant_experience": "I built embedding-driven retrieval and reranking pipelines for Turkish summarisation, created evaluation datasets, and led a research centre delivering AI prototypes for medical documents.",
+    "research_interests": "My research centers on trustworthy NLP, hybrid summarisation, and applying LLMs to real-world problems while ensuring transparency and user safety.",
+    "additional_information": "I have coordinated international academic activities, mentored Kaggle participants, and co-founded a tech startup, showing my ability to work across teams and deliver results."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Machine Learning Engineer, Applied AI",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Machine Learning Engineer, Applied AI position. I have highlighted my experience with NLP, embeddings, and model evaluation pipelines that align with your needs.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-17-actcareers-machine-learning-engineer-applied-ai",
+  "url": "https://www.arbeitnow.ch/jobs/companies/actcareers/machine-learning-engineer-applied-ai-zurich-290885",
+  "apply_url": "https://jobs.ashbyhq.com/actcareers/04bc96e6-a2a2-4c4b-a091-afe4ed44dd9a/application",
+  "created": "2026-11-17T14:23+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

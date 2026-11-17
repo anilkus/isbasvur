@@ -1,0 +1,50 @@
+{
+  "job": {
+    "title": "Senior Machine Learning Engineer, Evals",
+    "company": "Prosus",
+    "location": "Amsterdam",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 78,
+    "verdict": "apply",
+    "strengths": [
+      "Experience designing and evaluating NLP models for medical and Turkish text summarization",
+      "Leadership in building AI systems and coordinating research projects across institutions"
+    ],
+    "gaps": [
+      "No explicit experience with large-scale e-commerce evaluation platforms or production ML pipelines at billion-user scale"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years building and evaluating AI systems for language tasks. In my PhD work I created hybrid evaluation metrics for Turkish text summarisation, combining extractive methods with large language models and testing them on real-world medical documents. This required designing tasks, curating data, and defining success criteria, the same steps you describe for evaluation development.\n\nAt Toros University I led the SmartLab Technology Center, where I managed projects that turned research prototypes into usable tools, such as an LLM-based disinformation detector and a utility-model for smart refrigerators. I coordinated interdisciplinary teams, sourced annotation resources, and ensured data privacy across collaborations, mirroring the cross-functional work you expect.\n\nI have also contributed to EU COST projects on trustworthy AI and medical imaging, where I built evaluation pipelines and reported results to scientists and engineers. Those experiences taught me how to calibrate task difficulty and make evaluation outcomes actionable for model training decisions.\n\nI look forward to bringing my hands-on research background and project leadership to the Prosus AI team, helping shape the next generation of evaluation platforms.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I design and evaluate NLP systems, built hybrid metrics for Turkish summarisation, and led AI projects that turned research into real-world tools, ready to own evaluation platforms at scale.",
+  "answers": {
+    "why_this_role": "The role focuses on building and operating evaluation platforms, which matches my experience creating hybrid metrics for summarisation, curating data, and defining success criteria in academic and industry projects.",
+    "why_this_organisation": "Prosus runs AI at global scale across many consumer products. My work on trustworthy AI and cross-institutional projects prepares me to contribute to such a diverse, impact-driven environment.",
+    "relevant_experience": "PhD research on hybrid evaluation metrics for Turkish summarisation; project lead at SmartLab Technology Center creating AI tools for medical and consumer applications; participation in COST projects developing trustworthy AI evaluation pipelines.",
+    "research_interests": "I focus on explainable, trustworthy AI for language tasks, especially in health and low-resource languages, and on building evaluation methods that guide model improvement.",
+    "additional_information": "I have coordinated international academic activities, managed a department, and co-founded a startup, demonstrating leadership and the ability to work across teams."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Senior Machine Learning Engineer, Evals",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Senior Machine Learning Engineer, Evals position. I look forward to discussing how my background in AI evaluation and project leadership can support Prosus.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-17-prosus-senior-machine-learning-engineer-evals",
+  "url": "https://www.arbeitnow.nl/jobs/companies/prosus/senior-machine-learning-engineer-evals-amsterdam-66181",
+  "apply_url": "https://jobs.ashbyhq.com/prosus/5a1479d7-121a-4862-9dab-e27a709e0751/application",
+  "created": "2026-11-17T14:22+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
