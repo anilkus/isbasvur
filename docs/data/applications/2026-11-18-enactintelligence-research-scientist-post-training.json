@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Research Scientist: Post-Training",
+    "company": "Enactintelligence",
+    "location": "Zürich",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 60,
+    "verdict": "maybe",
+    "strengths": [
+      "Experience designing and evaluating large-scale NLP models and metrics",
+      "Proven research record with publications on trustworthy AI and LLM evaluation",
+      "Solid foundation in ML frameworks and statistical experiment design"
+    ],
+    "gaps": [
+      "No hands-on experience with robot hardware or real-world manipulation tasks",
+      "No documented multi-node, multi-GPU distributed training projects"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and PhD candidate who has spent the last few years building and evaluating large language models for Turkish text summarisation and clinical AI. My work on hybrid automatic evaluation metrics required designing training curricula, mixing data sources, and running extensive experiments to compare extractive methods with LLMs. This mirrors the end-to-end research cycle you describe for robot foundation models.\n\nAt Toros University I led a department and co-founded the SmartLab Technology Center, where I managed projects that integrated AI models into real-world applications such as medical document summarisation and disinformation detection. Those projects demanded rigorous statistical analysis, reproducible pipelines, and performance optimisation in PyTorch.\n\nI have contributed to several COST research networks, handling data management, privacy, and AI development for medical and image-based use cases. My recent publications on trustworthy AI and LLM-as-judge evaluation show a commitment to robust, transparent model assessment, which matches your focus on sample efficiency and reliability.\n\nWhile I have not yet worked directly with robot hardware, I look forward to applying my expertise in large-scale model training and evaluation to the challenges of dexterous manipulation. I look forward to discussing how my research background can help build the intelligence layer you envision.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I design and evaluate large-scale language models for trustworthy AI, turning research into real-world tools. My experience with hybrid summarisation systems and rigorous experiment pipelines fits the data-centric, end-to-end approach Enact needs.",
+  "answers": {
+    "why_this_role": "The role combines large-scale model training with rigorous experimental design, both core parts of my recent PhD work on hybrid summarisation metrics and LLM evaluation. I enjoy taking models from data preparation through to real-world testing.",
+    "why_this_organisation": "Enact's focus on building general-purpose intelligence for robotics matches my goal of creating AI systems that are explainable and ready for deployment. The impact-driven environment matches my experience leading research projects.",
+    "relevant_experience": "I have built and evaluated hybrid NLP models using PyTorch, designed data mixes for medical summarisation, and led a research centre that integrated AI into practical applications. My publications on trustworthy AI demonstrate strong statistical and experimental skills.",
+    "research_interests": "My research interests lie at the intersection of trustworthy AI, large language models, and their deployment in safety-critical domains. I aim to improve sample efficiency and robustness of models that interact with the physical world.",
+    "additional_information": "I have coordinated international academic activities and mentored students in AI research, showing strong communication and leadership abilities."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "form",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Research Scientist: Post-Training",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Research Scientist: Post-Training position. I have highlighted my experience with large-scale model training and rigorous evaluation pipelines.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-18-enactintelligence-research-scientist-post-training",
+  "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/research-scientist-post-training-zurich-164875",
+  "apply_url": "https://jobs.ashbyhq.com/enactintelligence/8c4728e2-39f3-48f8-a091-a1f04c46ded1/application",
+  "created": "2026-11-18T13:58+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

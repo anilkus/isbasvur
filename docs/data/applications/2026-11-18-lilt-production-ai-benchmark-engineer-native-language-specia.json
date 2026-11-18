@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "AI Benchmark Engineer | Native Language Specialist - German",
+    "company": "LILT (Production)",
+    "location": "Switzerland (Remote)",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 55,
+    "verdict": "maybe",
+    "strengths": [
+      "Strong Python and shell scripting experience from full-stack web development and AI research projects",
+      "Hands-on work with multilingual NLP, trustworthiness metrics and text summarisation in Turkish, showing awareness of language-specific processing challenges",
+      "Experience designing and managing research assets, including datasets and evaluation scripts for AI models"
+    ],
+    "gaps": [
+      "German proficiency is elementary (A1-A2), not native or near-native as required"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD focus on trustworthy AI and multilingual NLP. In my recent research I built evaluation metrics for Turkish text summarisation and created LLM-as-judge pipelines, which required designing deterministic verification scripts and calibrating difficulty levels, tasks very similar to the benchmark engineering work you describe.\n\nMy software background includes full-stack development in Python, JavaScript and PHP, as well as extensive use of CLI tools for data processing and model testing. At Toros University I led a department and coordinated international projects, which gave me experience in creating high-quality assets, reviewing them, and ensuring reproducibility across teams.\n\nAlthough my German is currently at an elementary level, I have lived and studied in Germany during my BSc exchange and have a solid command of English. I am comfortable learning the nuances of German grammar and encoding issues quickly, and I am ready to apply my expertise in multilingual AI to improve LILT's benchmark suite.\n\nI look forward to discussing how my technical skills and research experience can help build robust, language-aware evaluation tasks for LILT.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop AI evaluation tools and multilingual NLP pipelines, with strong Python/CLI skills and experience designing deterministic benchmarks. My research on trustworthy Turkish summarisation gives me deep insight into language-specific challenges, ready to be applied to German benchmark tasks.",
+  "answers": {
+    "why_this_role": "The role blends software engineering, benchmark creation and multilingual AI, exactly the mix I have worked with in my research on trustworthy NLP and evaluation metrics.",
+    "why_this_organisation": "LILT's focus on real-world multilingual robustness matches my goal of building AI systems that work reliably across languages and domains.",
+    "relevant_experience": "I built LLM-as-judge evaluation pipelines for Turkish summarisation, wrote deterministic verifier scripts, and managed data assets for AI projects in COST research networks.",
+    "research_interests": "My interests lie in trustworthy AI, multilingual text processing, and creating practical evaluation frameworks that expose model weaknesses.",
+    "additional_information": "I have co-founded a tech centre, led academic departments, and mentored students in AI, demonstrating both technical depth and project leadership."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for AI Benchmark Engineer - Native Language Specialist",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the AI Benchmark Engineer position. I have highlighted my experience with Python, CLI workflows, and multilingual AI evaluation.\n\nThank you for considering my application.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-18-lilt-production-ai-benchmark-engineer-native-language-specia",
+  "url": "https://www.arbeitnow.ch/jobs/companies/lilt-production/ai-benchmark-engineer-native-language-specialist-german-switzerland-remote-bern-90445",
+  "apply_url": "https://jobs.ashbyhq.com/lilt-production/d4f17d71-e6b6-4028-858f-f5795f6cecbf/application",
+  "created": "2026-11-18T13:57+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

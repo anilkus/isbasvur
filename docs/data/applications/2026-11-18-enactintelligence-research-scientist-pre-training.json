@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Research Scientist: Pre-Training",
+    "company": "Enactintelligence",
+    "location": "Zürich",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 65,
+    "verdict": "apply",
+    "strengths": [
+      "Experience designing and running large-scale NLP pre-training experiments",
+      "Strong background in probabilistic modeling and evaluation of AI systems",
+      "Proven research record with publications on trustworthy AI and LLM evaluation"
+    ],
+    "gaps": [
+      "No documented experience with real robot hardware",
+      "No explicit multi-node GPU distributed training work"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD track in AI, focusing on trustworthy and large-scale language models. At Torus University I led a department while managing research projects that built and evaluated transformer-based summarisation systems for Turkish medical texts. My work required designing data pipelines, defining training objectives, and running extensive experiments on GPU clusters, similar to the pre-training workflows you describe.\n\nI have published on human-centered evaluation metrics for clinical AI and on LLM-as-judge methods, demonstrating my ability to create rigorous experiments and separate signal from noise. My recent involvement in COST research networks gave me experience with multi-institution data management and privacy, which supports building robust, scalable datasets for robotics.\n\nWhile I have not yet programmed directly on robot hardware, I am ready to apply my expertise in large-scale model training to the physical domain. I enjoy turning abstract AI research into systems that work in real settings, and I am keen to contribute to Enact's vision of general-purpose robotic intelligence.\n\nThank you for considering my application.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I design and run large-scale language model experiments, have a strong research record in trustworthy AI, and am keen to apply my ML expertise to building foundation models for robotics.",
+  "answers": {
+    "why_this_role": "The role matches my experience in building and evaluating large language models, defining training curricula, and measuring scaling effects. I have led end-to-end experiments from data preparation to model assessment, which fits the responsibilities described.",
+    "why_this_organisation": "Enact's focus on real-world robotic intelligence matches my goal of moving AI from research to practical deployment. The dynamic, experimental culture mirrors how I have conducted my own research projects.",
+    "relevant_experience": "At Torus University I managed a project that created a transformer-based summarisation system for medical texts, handling data pipelines, multi-GPU training, and rigorous evaluation. I also contributed to COST projects that required large-scale AI development and data privacy handling.",
+    "research_interests": "I am interested in trustworthy AI, large-scale model training, and bridging language models with real-world applications such as robotics and healthcare.",
+    "additional_information": "I have mentored Kaggle participants, co-founded a startup focused on AI tools, and hold patents on AI-enabled hardware, showing my ability to translate research into products."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Research Scientist: Pre-Training",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Research Scientist: Pre-Training position. I have highlighted my experience with large-scale model training and rigorous AI evaluation, which I believe matches well with your needs.\n\nI look forward to the possibility of discussing how my background can contribute to Enact's robotics initiatives.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-18-enactintelligence-research-scientist-pre-training",
+  "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/research-scientist-pre-training-zurich-156093",
+  "apply_url": "https://jobs.ashbyhq.com/enactintelligence/b1a36a14-5340-4ca1-a877-a5bc292ce48a/application",
+  "created": "2026-11-18T13:59+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

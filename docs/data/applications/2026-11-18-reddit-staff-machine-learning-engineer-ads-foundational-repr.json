@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "Staff Machine Learning Engineer, Ads Foundational Representations",
+    "company": "Reddit",
+    "location": "Remote (UK or Netherlands)",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 78,
+    "verdict": "apply",
+    "strengths": [
+      "NLP and embedding research for Turkish text summarization and clinical AI",
+      "Leadership as department head and project manager, mentoring junior staff"
+    ],
+    "gaps": [
+      "No direct experience with ad targeting systems or large-scale production ML pipelines",
+      "Limited work on multimodal or visual embeddings"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years building NLP systems that generate trustworthy embeddings for medical and academic texts. My PhD work on hybrid automatic evaluation metrics for Turkish summarization required designing text representations that combine extractive methods with large language models, a skill directly relevant to creating content embeddings for ads. As head of a university department I led cross-functional projects, mentored junior researchers and set technical direction, which matches the leadership component of this role.\n\nI have also contributed to European research networks on AI for health and image analysis, giving me experience collaborating across disciplines and handling data privacy concerns. My work on explainable AI for clinical models shows I can build metrics that reflect relevance and trust, useful for ad relevance modeling.\n\nI aim to bring my research background and leadership experience to Reddit's Ads Foundational Representations team and help build the next generation of semantic signals.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop trustworthy NLP embeddings and lead academic teams, ready to drive Reddit's ad representation research.",
+  "answers": {
+    "why_this_role": "The role blends research on embeddings with technical leadership, exactly where my experience in NLP, LLM-based evaluation, and department management lies.",
+    "why_this_organisation": "Reddit's focus on community-driven content and its need for high-quality semantic signals align with my work on trustworthy AI for real-world use.",
+    "relevant_experience": "My PhD project created hybrid text embeddings for Turkish summarization, and I led a department and a research center, guiding projects from design to delivery.",
+    "research_interests": "I am interested in explainable, multimodal representations that improve relevance and trust, especially when combined with large language models.",
+    "additional_information": ""
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Staff Machine Learning Engineer - Reddit",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Staff Machine Learning Engineer position. I look forward to discussing how my background in NLP embeddings and technical leadership can contribute to Reddit's Ads Foundational Representations team.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-18-reddit-staff-machine-learning-engineer-ads-foundational-repr",
+  "url": "https://www.arbeitnow.nl/jobs/companies/reddit/staff-machine-learning-engineer-ads-foundational-representations-261590",
+  "apply_url": "https://job-boards.greenhouse.io/reddit/jobs/8018517",
+  "created": "2026-11-18T13:57+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

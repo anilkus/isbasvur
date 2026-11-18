@@ -1,5 +1,49 @@
 [
   {
+    "id": "2026-11-18-enactintelligence-research-scientist-pre-training",
+    "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/research-scientist-pre-training-zurich-156093",
+    "title": "Research Scientist: Pre-Training",
+    "company": "Enactintelligence",
+    "score": 65,
+    "verdict": "apply",
+    "created": "2026-11-18T13:59+00:00",
+    "status": "ready",
+    "method": "unknown"
+  },
+  {
+    "id": "2026-11-18-enactintelligence-research-scientist-post-training",
+    "url": "https://www.arbeitnow.ch/jobs/companies/enactintelligence/research-scientist-post-training-zurich-164875",
+    "title": "Research Scientist: Post-Training",
+    "company": "Enactintelligence",
+    "score": 60,
+    "verdict": "maybe",
+    "created": "2026-11-18T13:58+00:00",
+    "status": "ready",
+    "method": "form"
+  },
+  {
+    "id": "2026-11-18-lilt-production-ai-benchmark-engineer-native-language-specia",
+    "url": "https://www.arbeitnow.ch/jobs/companies/lilt-production/ai-benchmark-engineer-native-language-specialist-german-switzerland-remote-bern-90445",
+    "title": "AI Benchmark Engineer | Native Language Specialist - German",
+    "company": "LILT (Production)",
+    "score": 55,
+    "verdict": "maybe",
+    "created": "2026-11-18T13:57+00:00",
+    "status": "ready",
+    "method": "unknown"
+  },
+  {
+    "id": "2026-11-18-reddit-staff-machine-learning-engineer-ads-foundational-repr",
+    "url": "https://www.arbeitnow.nl/jobs/companies/reddit/staff-machine-learning-engineer-ads-foundational-representations-261590",
+    "title": "Staff Machine Learning Engineer, Ads Foundational Representations",
+    "company": "Reddit",
+    "score": 78,
+    "verdict": "apply",
+    "created": "2026-11-18T13:57+00:00",
+    "status": "ready",
+    "method": "unknown"
+  },
+  {
     "id": "2026-11-17-actcareers-machine-learning-engineer-ranking-retrieval",
     "url": "https://www.arbeitnow.ch/jobs/companies/actcareers/machine-learning-engineer-ranking-retrieval-zurich-388176",
     "title": "Machine Learning Engineer, Ranking & Retrieval",
