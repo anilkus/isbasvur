@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "Principal Applied AI Scientist, Commerce Foundation Models",
+    "company": "Prosus",
+    "location": "Amsterdam",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 78,
+    "verdict": "apply",
+    "strengths": [
+      "Experience with trustworthy AI and evaluation metrics for NLP models",
+      "Leadership in academic research projects and coordination of international collaborations",
+      "Hands-on development of AI systems for medical and text summarisation tasks"
+    ],
+    "gaps": [
+      "No direct experience with billion-scale foundation model training or production deployment at that scale"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last five years building AI systems that are explainable and ready for real use. In my PhD work I created hybrid evaluation metrics for Turkish summarisation models, combining extractive methods with large language models and testing them on clinical texts. This experience matches the need to design robust evaluation pipelines that separate true gains from noise.\n\nAt Toros University I led the SmartLab Technology Center, where I managed multi-disciplinary projects, mentored junior researchers and coordinated international collaborations such as COST AI-driven dental age estimation. Those roles required me to decide which research questions deserved investment, run large-scale experiments and move successful prototypes into production.\n\nMy recent publications on trustworthy Turkish NLP and LLM-as-judge evaluation show a focus on model reliability and human-centered metrics, which matches Prosus's goal of safe, high-impact AI. I enjoy writing code, debugging training runs and analysing failures, and I look forward to bringing that hands-on mindset to the LCM team.\n\nThank you for considering my application. I look forward to discussing how my background can help shape the next generation of commerce foundation models.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I build trustworthy AI systems, from hybrid evaluation metrics for summarisation to LLM-as-judge pipelines, and have led research teams and international projects that move prototypes into production.",
+  "answers": {
+    "why_this_role": "The role asks for deep expertise in model training and evaluation, which I have developed through my PhD work on hybrid metrics for summarisation and my research on trustworthy NLP, where I design experiments and assess real improvements.",
+    "why_this_organisation": "Prosus operates at massive scale across many consumer platforms. My experience creating AI solutions that are explainable and ready for deployment fits the need to ensure safe, high-impact models for billions of users.",
+    "relevant_experience": "I led the SmartLab Technology Center, managed COST research projects, and published on evaluation methods for clinical AI. I also co-founded a startup that built an LLM-powered reporting platform, showing hands-on development and mentorship.",
+    "research_interests": "My interests lie in trustworthy AI, evaluation metrics for large language models, and applying AI to health and language preservation, all of which match the LCM team's focus on reliable, user-centric models.",
+    "additional_information": "I have coordinated international academic activities, mentored junior researchers, and presented work at European AI workshops, demonstrating strong communication and collaboration skills."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Principal Applied AI Scientist, Commerce Foundation Models",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Principal Applied AI Scientist position. I have highlighted my experience in trustworthy AI, evaluation metrics and leading research projects that match the role.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-19-prosus-principal-applied-ai-scientist-commerce-foundation-mo",
+  "url": "https://www.arbeitnow.nl/jobs/companies/prosus/principal-applied-ai-scientist-commerce-foundation-models-amsterdam-271811",
+  "apply_url": "https://jobs.ashbyhq.com/prosus/dfd01eb6-3f32-44a8-9180-d8b22b12cb23/application",
+  "created": "2026-11-19T14:25+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
