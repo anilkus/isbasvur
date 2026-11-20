@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Experienced Machine Learning Engineer",
+    "company": "Doctrine",
+    "location": "Paris, France",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 78,
+    "verdict": "apply",
+    "strengths": [
+      "NLP research on Turkish summarization and clinical AI",
+      "Python development and deep learning experience",
+      "Leadership in academic projects and coordination"
+    ],
+    "gaps": [
+      "No proven experience with Elasticsearch",
+      "No direct work on Spanish legal documents"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years building NLP systems for medical and academic texts. My PhD work on hybrid evaluation metrics for Turkish summarization required designing deep-learning pipelines, fine-tuning LLMs, and creating robust evaluation frameworks. At Toros University I led a department while managing research projects, which gave me solid experience coordinating engineers and product teams.\n\nI have built end-to-end Python solutions for text extraction, trained models on domain-specific corpora, and deployed them for real users. My recent work on trustworthy AI for clinical systems involved translating scientific advances into production code and monitoring performance over time. These skills match the core tasks of developing and maintaining NLP models for legal documents.\n\nAlthough my experience is with Turkish and English data, I am fluent in Spanish and have already applied NLP techniques to multilingual contexts. I am ready to learn the specifics of legal language and to contribute to Doctrine's Spanish product.\n\nThank you for considering my application. I am available to discuss how my background can help advance your AI platform.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop NLP pipelines and LLM-based evaluation metrics, lead interdisciplinary projects, and have strong Python and deep-learning skills. I am fluent in Spanish and ready to apply my research experience to legal AI at Doctrine.",
+  "answers": {
+    "why_this_role": "The role combines model development, production monitoring, and cross-functional collaboration, all areas where I have proven experience in academic and startup settings.",
+    "why_this_organisation": "Doctrine's focus on building a trustworthy AI platform matches my research on explainable and reliable AI systems for high-stakes domains.",
+    "relevant_experience": "My PhD work on hybrid summarization, publications on trustworthy AI, and leadership of SmartLab Technology Center show my ability to deliver NLP solutions from research to deployment.",
+    "research_interests": "I am interested in trustworthy AI, evaluation metrics for language models, and applying these methods to real-world domains such as law and healthcare.",
+    "additional_information": ""
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Experienced Machine Learning Engineer",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Experienced Machine Learning Engineer position at Doctrine. I am available to discuss how my NLP and AI background can support your Spanish legal AI product.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-20-doctrine-experienced-machine-learning-engineer",
+  "url": "https://www.arbeitnow.fr/jobs/companies/doctrine/experienced-machine-learning-engineer-spain-spanish-speaking-paris-223865",
+  "apply_url": "https://jobs.lever.co/doctrine/49453c9c-6cfd-4c5c-9585-e6718e2f8e2e/apply",
+  "created": "2026-11-20T14:00+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

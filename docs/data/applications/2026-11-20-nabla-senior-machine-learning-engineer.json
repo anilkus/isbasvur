@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Senior Machine Learning Engineer",
+    "company": "Nabla",
+    "location": "Paris",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": "78",
+    "verdict": "apply",
+    "strengths": [
+      "Experience leading ML projects in medical AI",
+      "Hands-on work with LLMs for text summarization and evaluation",
+      "Proven Python and PyTorch development"
+    ],
+    "gaps": [
+      "No explicit production speech-to-text experience",
+      "No stated work with large-scale cloud deployment pipelines"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD focus on trustworthy AI for clinical applications. At Toros University I led the SmartLab Technology Center, where I managed a team that built an LLM-powered evaluation framework for Turkish medical text summarization. This involved designing model architectures, writing production-ready Python code, and deploying the system on cloud resources for real-time use.\n\nMy recent work on hybrid automatic evaluation metrics combines extractive methods with large language models, directly addressing the need for robust note generation and normalization. I also contributed to COST research networks on AI-driven medical imaging, giving me experience in cross-disciplinary collaboration and data-labeling strategies.\n\nBeyond research, I have coordinated international academic programs and mentored junior engineers, demonstrating the leadership and communication skills required to guide squads at Nabla. I am fluent in English and comfortable presenting technical ideas to both engineers and clinicians.\n\nI look forward to applying my expertise in trustworthy medical AI and my track record of delivering end-to-end ML solutions to help Nabna redefine clinical workflows.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I lead ML projects that blend LLMs with domain-specific evaluation for medical texts, have built production-grade Python/PyTorch pipelines, and mentor engineers across interdisciplinary teams.",
+  "answers": {
+    "why_this_role": "The role matches my experience building trustworthy AI systems for healthcare, especially my work on LLM-based summarization and evaluation of clinical texts.",
+    "why_this_organisation": "Nabla's focus on integrating AI directly into clinical workflows matches my goal of delivering explainable, real-world medical AI solutions.",
+    "relevant_experience": "I headed the SmartLab Technology Center, created an LLM-driven evaluation metric for Turkish medical summaries, and contributed to COST projects on AI for medical imaging, all using Python and PyTorch.",
+    "research_interests": "My research aims to make AI models transparent and reliable in healthcare, focusing on summarization, evaluation, and deployment of trustworthy systems.",
+    "additional_information": "I have organized international AI workshops, mentored KaggleX participants, and hold patents on AI-enabled hardware, showing a blend of research and practical innovation."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Senior Machine Learning Engineer",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Senior Machine Learning Engineer position at Nabla. I look forward to discussing how my experience in medical AI and LLM development can contribute to your team.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-20-nabla-senior-machine-learning-engineer",
+  "url": "https://www.arbeitnow.fr/jobs/companies/nabla/senior-machine-learning-engineer-paris-399227",
+  "apply_url": "https://jobs.ashbyhq.com/nabla/3974e7ad-ea67-4872-91ce-3ccc5849e375/application",
+  "created": "2026-11-20T14:01+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

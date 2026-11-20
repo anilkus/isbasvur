@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Applied AI Architect, Industries",
+    "company": "Anthropic",
+    "location": "Paris",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": "55",
+    "verdict": "maybe",
+    "strengths": [
+      "Hands-on LLM research and evaluation metrics for Turkish text summarization",
+      "Python programming and full-stack development experience",
+      "Teaching and mentoring experience, including technical workshops"
+    ],
+    "gaps": [
+      "No fluent French (required C1)",
+      "No documented 5+ years in a pre-sales or solutions-architect role"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD focus on trustworthy AI and large language models. In my recent work I evaluated LLMs for Turkish summarization and built evaluation frameworks that balance performance with safety. I wrote Python scripts to integrate these models into web services and taught students how to deploy AI solutions in real environments.\n\nAt Toros University I led a department and co-founded a technology centre where I managed projects that connected academic research with industry partners. I regularly presented technical content to mixed audiences, from engineers to senior managers, and mentored participants in a Kaggle mentorship program.\n\nMy experience designing cloud-based pipelines for medical AI and my involvement in COST research networks have given me a solid understanding of enterprise requirements and data-privacy concerns. I enjoy translating complex concepts into clear, actionable plans and I am comfortable guiding stakeholders through discovery, evaluation and deployment stages.\n\nI look forward to bringing my technical depth, teaching mindset and project leadership to help Anthropic customers adopt Claude safely and effectively.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I research trustworthy AI, build Python-based LLM pipelines, and teach technical concepts to diverse audiences. I have led academic projects that bridge research and industry, delivering clear, safe AI solutions.",
+  "answers": {
+    "why_this_role": "I enjoy turning research into practical AI solutions and guiding users through adoption. This role lets me combine my LLM expertise with my habit of teaching and mentoring technical teams.",
+    "why_this_organisation": "Anthropic's focus on safe, interpretable AI matches my research on trustworthy models and my interest in real-world impact.",
+    "relevant_experience": "I designed evaluation metrics for LLM-generated summaries, built Python integration scripts, and led a technology centre that partnered with industry on AI projects.",
+    "research_interests": "My work centers on explainable AI, LLM evaluation, and medical text summarization, aiming to make AI both reliable and useful.",
+    "additional_information": "I have strong Python skills, experience presenting to executives and engineers, and a record of mentoring students and professionals."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Applied AI Architect, Industries",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Applied AI Architect position. I look forward to discussing how my LLM research, Python experience and teaching background can support Anthropic's customers.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-20-anthropic-applied-ai-architect-industries",
+  "url": "https://www.arbeitnow.fr/jobs/companies/anthropic/paris-applied-ai-architect-industries-489452",
+  "apply_url": "https://job-boards.greenhouse.io/anthropic/jobs/5482967008",
+  "created": "2026-11-20T14:00+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
