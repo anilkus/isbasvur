@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Staff AI Engineer - Agent Evaluation Platform",
+    "company": "Doctolib",
+    "location": "Paris",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 85,
+    "verdict": "apply",
+    "strengths": [
+      "Built LLM-as-a-judge evaluation methods for Turkish summarization",
+      "Led AI evaluation research in medical NLP projects",
+      "8 years of software engineering experience with Python and full-stack development"
+    ],
+    "gaps": [
+      "No explicit experience building large-scale production CI/CD pipelines for AI tooling",
+      "Limited background in regulated medical device software development"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD focus on trustworthy AI and medical NLP. At Toros University I designed and ran evaluation pipelines that used LLM-as-a-judge, human review and statistical sampling to assess Turkish summarisation models. This work directly matches EvalX's goal of building shared evaluation capabilities for AI agents.\n\nMy software background spans full-stack web development (HTML, CSS, JavaScript, PHP) and Python-based AI research. I co-founded a technology centre where I managed projects that turned research prototypes into usable tools, and I have coordinated international academic activities, which required close collaboration with diverse teams.\n\nI have published on human-centered evaluation metrics for clinical AI and presented at the ELSA Trustworthy AI workshop. These experiences give me a practical view of how evaluation methods can be integrated into product workflows and adopted by engineers.\n\nI look forward to helping Doctolib turn evaluation into a core engineering practice and to contributing to safer, more reliable healthcare AI.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I design and operate AI evaluation pipelines, including LLM-as-judge and human review, for medical NLP projects. With eight years of software engineering experience, I turn research into production tools that teams can adopt.",
+  "answers": {
+    "why_this_role": "The role combines platform engineering with AI evaluation, exactly what I have done in my research on trustworthy NLP and in building evaluation tools for medical text summarisation.",
+    "why_this_organisation": "Doctolib's focus on improving healthcare through technology matches my work on AI systems that support clinicians and patients, especially in the medical domain.",
+    "relevant_experience": "I led the development of evaluation frameworks that used LLM-as-judge, deterministic checks and human feedback for Turkish summarisation models, and I have managed software projects from prototype to deployment.",
+    "research_interests": "My research explores explainable and trustworthy AI for clinical applications, hybrid evaluation metrics, and how AI can assist healthcare professionals safely.",
+    "additional_information": "I have coordinated international academic activities and mentored students, showing I can work across teams and drive adoption of new practices."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "form",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Staff AI Engineer - Agent Evaluation Platform",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Staff AI Engineer position on the EvalX team. I have highlighted my experience in building AI evaluation pipelines and working with medical NLP systems.\n\nThank you for considering my application.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-21-doctolib-staff-ai-engineer-agent-evaluation-platform",
+  "url": "https://www.arbeitnow.fr/jobs/companies/doctolib/staff-ai-engineer-agent-evaluation-platform-levallois-perret-333679",
+  "apply_url": "https://jobs.ashbyhq.com/doctolib/75d2e4d3-4ddc-40e1-9e6c-b5cc499e27a1/application",
+  "created": "2026-11-21T13:28+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
