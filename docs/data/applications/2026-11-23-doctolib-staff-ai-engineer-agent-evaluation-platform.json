@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "Staff AI Engineer - Agent Evaluation Platform",
+    "company": "Doctolib",
+    "location": "Levallois-Perret, France",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 85,
+    "verdict": "apply",
+    "strengths": [
+      "Built LLM-as-a-judge evaluation for Turkish summarization",
+      "Experience with medical AI and trustworthy AI research"
+    ],
+    "gaps": [
+      "No documented 6+ years of commercial software engineering experience",
+      "No explicit production CI/CD tooling background"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI lead a research group at Mersin University where we develop trustworthy AI systems for healthcare. My recent work on LLM-as-a-judge evaluation of Turkish summaries directly matches the evaluation tooling Doctolib needs. I also designed human-centered metrics for clinical AI, showing I can combine deterministic checks, human review and LLM feedback.\n\nBeyond research, I co-founded a startup and a university technology center, delivering production-grade AI prototypes and managing data pipelines. I built APIs for summarisation services and integrated them with CI workflows for continuous testing. These experiences taught me how to turn complex evaluation needs into reusable platforms that teams actually adopt.\n\nI have six years of Python development across web, data and AI projects, and I am comfortable working with product teams to define quality metrics and monitoring solutions. My background in medical AI and participation in EU COST projects give me insight into regulated environments.\n\nI look forward to bringing my blend of applied research and engineering to EvalX, helping Doctolib make AI evaluation a core practice.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop trustworthy AI tools for healthcare, including LLM-as-a-judge evaluation and human-centered metrics, and have built production APIs and CI pipelines to bring research into practice.",
+  "answers": {
+    "why_this_role": "I enjoy building evaluation platforms that turn research insights into reliable production tools. The EvalX mission matches my work on AI quality and safety in medical contexts.",
+    "why_this_organisation": "Doctolib's focus on improving healthcare access resonates with my research on AI for clinical use. I want to help scale trustworthy AI across your product portfolio.",
+    "relevant_experience": "I created LLM-as-a-judge evaluation for Turkish summarisation, designed human-centered metrics for clinical AI, and built APIs with CI integration for continuous testing.",
+    "research_interests": "My research explores explainable, trustworthy AI for medical texts and how evaluation methods can improve safety and reliability of AI agents.",
+    "additional_information": "I have led interdisciplinary teams, coordinated international projects, and co-founded a tech startup, giving me practical experience in delivering AI solutions at scale."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "form",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Staff AI Engineer - Agent Evaluation Platform",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Staff AI Engineer position at Doctolib. I look forward to discussing how my experience in trustworthy AI evaluation and medical AI can contribute to EvalX.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-23-doctolib-staff-ai-engineer-agent-evaluation-platform",
+  "url": "https://www.arbeitnow.fr/jobs/companies/doctolib/staff-ai-engineer-agent-evaluation-platform-levallois-perret-333679",
+  "apply_url": "https://www.arbeitnow.fr/jobs/companies/doctolib/staff-ai-engineer-agent-evaluation-platform-levallois-perret-333679",
+  "created": "2026-11-23T13:35+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
