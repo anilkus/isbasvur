@@ -47,5 +47,10 @@
   "created": "2026-11-23T13:35+00:00",
   "model": "openai/gpt-oss-120b",
   "style_flags": [],
-  "status": "ready"
+  "status": "manual",
+  "submission": {
+    "at": "2026-11-23T13:37+00:00",
+    "result": "manual",
+    "reason": "Bu başvuru portalı otomatik gönderim için desteklenmiyor (hesap ya da özel form gerekiyor olabilir)."
+  }
 }
