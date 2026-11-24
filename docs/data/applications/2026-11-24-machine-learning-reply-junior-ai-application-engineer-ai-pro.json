@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Junior AI Application Engineer, AI Products (LLM & RAG)",
+    "company": "Machine Learning Reply",
+    "location": "Munich, Bayern, Germany",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 70,
+    "verdict": "apply",
+    "strengths": [
+      "Python development and AI research experience",
+      "Hands-on leadership in building AI prototypes and micro-services",
+      "Experience with NLP, LLM evaluation and backend web development"
+    ],
+    "gaps": [
+      "No explicit cloud deployment or Kubernetes experience",
+      "German language at elementary level"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a strong background in AI research and practical software development. At Toros University I led a department while co-founding SmartLab Technology Center, where I built AI prototypes for medical text summarisation and managed full-stack web projects using Python, HTML, JavaScript and PHP. My recent work on trustworthy NLP and LLM-based evaluation metrics gives me solid experience with large language models and retrieval-augmented generation concepts.\n\nI have designed and deployed micro-services for AI applications, integrated APIs, and built scalable back-end components for academic and startup projects. My hands-on approach to prototyping and moving solutions to production matches the focus of your AI Application Engineer role.\n\nI look forward to contributing to Machine Learning Reply's AI products, collaborating with cross-functional teams, and expanding my cloud deployment and DevOps skills while delivering reliable, user-centric AI systems.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I combine AI research with practical software engineering. I led a university department and co-founded a tech centre where I built NLP prototypes and full-stack services using Python and web technologies. My work on LLM evaluation and retrieval-augmented summarisation prepares me to develop scalable AI applications and micro-services for enterprise use.",
+  "answers": {
+    "why_this_role": "The role blends AI engineering with product development, which matches my experience building AI prototypes and turning research into usable software. I enjoy turning model capabilities into real-world applications.",
+    "why_this_organisation": "Machine Learning Reply's focus on bringing advanced AI to business matches my goal of delivering trustworthy AI solutions that have practical impact.",
+    "relevant_experience": "I led AI projects on trustworthy NLP, created LLM-based evaluation tools, and built backend services for academic platforms. I also managed a tech centre, coordinating development teams and delivering prototypes to users.",
+    "research_interests": "My research centers on explainable AI, trustworthy NLP, and hybrid summarisation methods that combine extractive techniques with large language models.",
+    "additional_information": "I have experience mentoring diverse teams, participating in international AI summer schools, and holding patents on AI-enabled hardware, demonstrating a blend of research and applied innovation."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Junior AI Application Engineer, Machine Learning Reply",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Junior AI Application Engineer position. I look forward to discussing how my AI research and software development background can contribute to your team.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-24-machine-learning-reply-junior-ai-application-engineer-ai-pro",
+  "url": "https://www.arbeitnow.com/jobs/companies/machine-learning-reply/junior-ai-application-engineer-ai-products-llm-rag-munich-465884",
+  "apply_url": "https://machinelearningreply.recruitee.com/o/junior-ai-application-engineer-ai-products-llm-rag-mfd-4",
+  "created": "2026-11-24T15:53+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

@@ -1,0 +1,52 @@
+{
+  "job": {
+    "title": "Machine Learning Engineer",
+    "company": "Turbalabs",
+    "location": "Heidelberg, GER",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": "70",
+    "verdict": "apply",
+    "strengths": [
+      "shipped ML models to production",
+      "strong Python and research-to-production experience",
+      "experience profiling AI systems for medical and dental applications"
+    ],
+    "gaps": [
+      "no explicit CUDA or TensorRT experience",
+      "no documented Docker or cluster scheduler work"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has moved research ideas into real systems for several years. At Mersin University I built an NLP evaluation pipeline that runs on heterogeneous servers, integrated it with a web service, and kept it reliable for clinical users. The project required profiling code, writing tests, and monitoring performance, which matches the end-to-end responsibility you describe for the Scheduler.\n\nMy work with COST projects on AI-driven dental age estimation and brain-cancer modelling involved handling GPU clusters, writing Python and PyTorch code, and creating reproducible benchmarking pipelines. I also led a department where I introduced CI, code reviews and clear ticket specifications, so my designs are easy for others to follow.\n\nBeyond research, I co-founded a startup and a technology centre, where I built AI-enabled products that run on customer hardware. Those experiences taught me to balance accuracy, latency and cost, and to add guardrails that keep services stable when the underlying infrastructure changes.\n\nI look forward to bringing this blend of research depth and production discipline to Turba Labs. Thank you for considering my application.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I turn research prototypes into reliable AI services, handling GPU clusters, Python/PyTorch code, and production-grade testing. My work on medical AI pipelines and AI-driven COST projects shows I can build and monitor systems that run on heterogeneous hardware.",
+  "answers": {
+    "why_this_role": "The role asks for taking validated ideas to production, building reliable ML pipelines and handling GPU hardware. My experience delivering NLP evaluation tools on mixed servers and leading AI projects for medical use fits these needs.",
+    "why_this_organisation": "Turba Labs focuses on infrastructure that optimizes AI compute, which matches my work on cost-effective AI models for clinical and dental applications.",
+    "relevant_experience": "I built a production-grade NLP evaluation platform for Turkish summarisation, wrote extensive Python and PyTorch code, and managed performance monitoring on heterogeneous hardware. I also contributed to AI-driven COST projects that required GPU profiling and data-center level reliability.",
+    "research_interests": "I am interested in trustworthy AI, explainable models and how they can be deployed efficiently on real hardware, especially in health-related domains.",
+    "additional_information": "I have co-founded a technology centre and a startup, giving me hands-on experience with product delivery, CI pipelines and cross-functional coordination."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "form",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Machine Learning Engineer",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Machine Learning Engineer position. I look forward to discussing how my experience building production AI systems can help Turba Labs.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-24-turbalabs-machine-learning-engineer",
+  "url": "https://www.arbeitnow.com/jobs/companies/turbalabs/machine-learning-engineer-heidelberg-ger-293037",
+  "apply_url": "https://turbalabs.jobs.personio.de/job/2901478#apply",
+  "created": "2026-11-24T15:54+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

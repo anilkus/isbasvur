@@ -1,0 +1,53 @@
+{
+  "job": {
+    "title": "AI Application Engineer, AI Products (LLM & RAG)",
+    "company": "Machine Learning Reply",
+    "location": "Berlin, Germany",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 78,
+    "verdict": "apply",
+    "strengths": [
+      "Python development and AI research on trustworthy NLP",
+      "Hands-on leadership of AI-focused projects and a startup",
+      "Experience building LLM-related evaluation tools and micro-services"
+    ],
+    "gaps": [
+      "No explicit experience with Retrieval-Augmented Generation (RAG)",
+      "Limited professional cloud platform deployment experience",
+      "German communication at workshop level not proven"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer who has spent the last few years building AI systems that are both explainable and ready for real use. In my PhD work I created hybrid evaluation metrics for Turkish summarization, which required integrating LLMs with traditional extractive methods and exposing them through APIs. At Toros University I led the SmartLab Technology Center, where I turned research prototypes into usable services, managed a team of developers, and delivered a prototype for a clinical AI assistant that combined vector search with LLM outputs.\n\nMy background includes full-stack development in Python, building backend services, and deploying AI models for medical and educational applications. I have presented work on trustworthy NLP at international venues and contributed to European COST projects that involve data management and AI engineering. These experiences have given me solid skills in designing micro-services, handling embeddings pipelines, and collaborating with interdisciplinary teams.\n\nI am comfortable communicating in English and have basic German (A2) that I continue to improve. I enjoy turning complex AI capabilities into products that solve concrete business problems, and I look forward to bringing that mindset to your AI Application Engineer role.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop AI systems that blend research and production, turning LLMs and retrieval pipelines into usable services. My experience leading a tech center and building trustworthy NLP tools matches creating enterprise AI applications.",
+  "answers": {
+    "why_this_role": "The role focuses on building user-facing AI products, which matches my work turning NLP research into APIs and micro-services for real-world use.",
+    "why_this_organisation": "Machine Learning Reply's emphasis on collaborative, cross-industry AI solutions fits my experience working across academia, startups, and international projects.",
+    "relevant_experience": "I designed hybrid summarization pipelines that combine LLMs with vector embeddings, led a tech center that delivered AI prototypes, and built backend services in Python for clinical AI tools.",
+    "research_interests": "My research targets trustworthy and explainable AI, especially in language technologies and medical applications, aiming to bridge the gap between advanced models and practical deployment.",
+    "additional_information": "I have co-founded a startup, mentored Kaggle participants, and hold a utility model and a patent on AI-enabled hardware, demonstrating an entrepreneurial mindset."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for AI Application Engineer, AI Products (LLM & RAG)",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the AI Application Engineer position. I look forward to discussing how my experience building AI services and LLM-based tools can contribute to your team.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-24-machine-learning-reply-ai-application-engineer-ai-products-l",
+  "url": "https://www.arbeitnow.com/jobs/companies/machine-learning-reply/ai-application-engineer-ai-products-llm-rag-berlin-322593",
+  "apply_url": "https://machinelearningreply.recruitee.com/o/ai-application-engineer-ai-products-llm-rag-mfd-7",
+  "created": "2026-11-24T15:53+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}
