@@ -1,0 +1,51 @@
+{
+  "job": {
+    "title": "Senior Machine Learning Engineer, FeedForward 3D/4D Reconstruction",
+    "company": "Paralleldomain",
+    "location": "European Union",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 68,
+    "verdict": "maybe",
+    "strengths": [
+      "Hands-on research on AI models for medical and clinical text summarisation, including large-scale training and evaluation"
+    ],
+    "gaps": [
+      "No direct experience with feed-forward 3D/4D reconstruction models",
+      "No demonstrated work with PyTorch in a large shared codebase",
+      "No published work on video diffusion or dynamic scene reconstruction"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI am a computer engineer and lecturer with a PhD focus on trustworthy AI and large-scale NLP models. In my recent research I built evaluation pipelines for clinical AI systems and trained transformer-based summarisation models on multi-GPU clusters, learning how to spot stalled runs early and define robust quality metrics. This experience matches your need for scaling training and building trustworthy evaluation for reconstruction quality.\n\nAt Toros University I led a department and coordinated international projects, which required clear communication across researchers, engineers and administrators. I also co-founded a technology centre where I oversaw the transition of research prototypes into usable tools, giving me practical insight into moving models from lab to production.\n\nWhile I have not yet worked on feed-forward 3D reconstruction, my background in building explainable AI systems, handling multi-node GPU training, and designing evaluation frameworks prepares me to learn quickly and contribute to your stack. I look forward to applying my research judgment and engineering skills to advance your 4D reconstruction pipeline.\n\nThank you for considering my application.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop trustworthy AI models at scale and have led research projects from prototype to production. My experience with multi-GPU training and rigorous evaluation can help advance your feed-forward reconstruction pipeline.",
+  "answers": {
+    "why_this_role": "The role combines large-scale model training, rigorous evaluation, and moving research into production, all areas where I have proven experience.",
+    "why_this_organisation": "Parallel Domain's focus on realistic synthetic data matches my work on trustworthy AI for real-world applications.",
+    "relevant_experience": "I built transformer-based summarisation models on multi-GPU clusters, created evaluation metrics for clinical AI, and led a tech centre that turned research prototypes into usable tools.",
+    "research_interests": "My research aims to make AI systems explainable, reliable and ready for deployment, especially in domains where data quality varies.",
+    "additional_information": "I have coordinated international academic activities and mentored students, which strengthens my communication and teamwork skills."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Application for Senior Machine Learning Engineer, FeedForward 3D/4D Reconstruction",
+    "body": "Dear Hiring Committee,\n\nPlease find attached my CV and cover letter for the Senior Machine Learning Engineer position. I look forward to discussing how my experience with large-scale AI training and evaluation can benefit Parallel Domain.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-25-paralleldomain-senior-machine-learning-engineer-feedforward",
+  "url": "https://www.arbeitnow.com/jobs/companies/paralleldomain/senior-machine-learning-engineer-feedforward-3d-4d-reconstruction-european-union-247436",
+  "apply_url": "https://jobs.lever.co/paralleldomain/e7d1d2f8-da76-4117-b034-ccd9e22a787c/apply",
+  "created": "2026-11-25T15:36+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [],
+  "status": "ready"
+}

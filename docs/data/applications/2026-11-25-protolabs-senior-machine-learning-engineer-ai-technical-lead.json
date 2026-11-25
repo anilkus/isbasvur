@@ -1,0 +1,54 @@
+{
+  "job": {
+    "title": "Senior Machine Learning Engineer - AI Technical Lead",
+    "company": "Protolabs",
+    "location": "Amsterdam",
+    "deadline": "",
+    "language": "en"
+  },
+  "fit": {
+    "score": 70,
+    "verdict": "maybe",
+    "strengths": [
+      "Led AI research projects on trustworthy NLP and medical AI",
+      "Managed and co-founded a technology centre, overseeing product prototypes and patents",
+      "Experience coordinating cross-disciplinary academic teams and international collaborations"
+    ],
+    "gaps": [
+      "No prior work in digital manufacturing environment",
+      "Not based in the Netherlands"
+    ]
+  },
+  "cover_letter": "Dear Hiring Committee,\n\nI lead AI research that blends explainable NLP with real-world applications. At Toros University I built a smart-lab, managed a team of engineers and delivered prototype AI systems for medical summarisation and disinformation detection. My work on hybrid evaluation metrics and utility-model patents shows I can turn novel ideas into usable tools.\n\nI have coordinated international projects, written technical roadmaps and mentored junior engineers without formal authority. These experiences match the need to own technical delivery, guide architecture and drive innovation across product teams.\n\nI would like to apply my background in trustworthy AI and hands-on system building to Protolabs' digital manufacturing challenges.\n\nBest regards,\nAnıl Kuş",
+  "short_pitch": "I develop trustworthy AI systems from research to prototype, leading teams and delivering patents. Ready to drive innovative ML solutions for digital manufacturing at Protolabs.",
+  "answers": {
+    "why_this_role": "I enjoy turning novel AI concepts into production-ready tools, which is exactly the focus of this role.",
+    "why_this_organisation": "Protolabs' dynamic, cross-functional environment matches my experience leading interdisciplinary AI projects.",
+    "relevant_experience": "Led AI research on explainable NLP, managed a tech centre, and built prototype systems for medical summarisation and disinformation detection.",
+    "research_interests": "Trustworthy, hybrid AI systems that combine rule-based and learning components for real-world impact.",
+    "additional_information": "I have coordinated international research networks and hold patents on AI-enabled hardware."
+  },
+  "custom_questions": [],
+  "application": {
+    "method": "unknown",
+    "email": "",
+    "reference_code": "",
+    "required_documents": [
+      "cv",
+      "cover_letter"
+    ]
+  },
+  "email": {
+    "subject": "Senior Machine Learning Engineer - AI Technical Lead Application",
+    "body": "Hello,\n\nPlease find attached my CV and cover letter for the Senior Machine Learning Engineer - AI Technical Lead position. I look forward to discussing how my experience in trustworthy AI and technical leadership can contribute to Protolabs.\n\nBest regards,\nAnıl Kuş"
+  },
+  "id": "2026-11-25-protolabs-senior-machine-learning-engineer-ai-technical-lead",
+  "url": "https://www.arbeitnow.nl/jobs/companies/protolabs/senior-machine-learning-engineer-ai-technical-lead-amsterdam-283684",
+  "apply_url": "https://jobs.lever.co/protolabs/8678f2c0-004d-4df7-9026-0ef8739874bb/apply",
+  "created": "2026-11-25T15:35+00:00",
+  "model": "openai/gpt-oss-120b",
+  "style_flags": [
+    "innovative"
+  ],
+  "status": "ready"
+}
