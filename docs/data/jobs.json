@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26T15:12+00:00",
-  "count": 2,
+  "updated": "2026-11-27T15:03+00:00",
+  "count": 3,
   "errors": [],
   "jobs": [
     {
@@ -22,6 +22,24 @@
       ],
       "status": "prepared",
       "apply_url": "https://jobs.lever.co/protolabs/8678f2c0-004d-4df7-9026-0ef8739874bb/apply"
+    },
+    {
+      "title": "Senior Machine Learning Engineer",
+      "company": "CesiumAstro",
+      "location": "Munich, Germany",
+      "url": "https://www.arbeitnow.com/jobs/companies/cesiumastro/senior-machine-learning-engineer-munich-germany-5311",
+      "description": "At  CesiumAstro , we are developers and pioneers of out-of-the-box communication systems for satellites, UAVs, launch vehicles, and other space and airborne platforms. We take pride in our dynamic and cross-functional work environment, which allows us to learn, develop, and engage across our organization. If you are looking for hands-on, interactive, and autonomous work, CesiumAstro is the place for you. We are actively seeking passionate, collaborative, energetic, and forward-thinking individuals to join our team. \n We are looking for a  Senior Machine Learning Engineer to contribute to the development and deployment of machine learning solutions for our advanced distributed processing platforms. This role is highly collaborative, working closely with product, backend, and systems engineering teams to design, integrate, and maintain robust ML applications that support CesiumAstro’s mission.  \n JOB DUTIES AND RESPONSIBILITIES \n\n Design, develop, and maintain deep learning pipelines for real-time data processing. \n\n Evaluate and curate relevant datasets; establish model benchmarks to measure performance. \n\n Improve observability and monitoring for deployed ML systems. \n\n Develop, deploy, and maintain microservices that deliver ML capabilities to production systems. \n\n Enhance tooling and orchestration for tuning, deployment, and scaling of ML pipelines. \n\n Collaborate in research and development initiatives, contributing to new ML capabilities for aerospace and defense applications. \n\n Document designs, workflows, and operational best practices to ensure maintainable and resilient ML systems. \n\n JOB REQUIREMENTS AND MINIMUM QUALIFICATIONS \n\n Bachelor’s or higher degree in Computer Science, Engineering, or related technical field. \n\n 5+ years of professional experience developing production-ready ML systems in small to medium-sized organizations (additional experience required for larger organizations). \n\n Proficiency in Python with demonstrated experience implementing ML algorithms in production environments. \n\n Experience designing and maintaining APIs for ML services. \n\n Hands-on experience deploying and managing ML workflows in Kubernetes environments. \n\n Strong communication skills with the ability to clearly articulate complex technical ideas. \n\n Ability to work effectively in a collaborative, Agile engineering team. \n\n PREFERRED EXPERIENCE \n\n Knowledge of microservice architectures and distributed data systems. \n\n Familiarity with aerospace or defense applications of ML systems. \n\n Track record of contributing to early-stage or rapidly scaling teams. \n\n CesiumAstro considers several factors when extending an offer, including but not limited to, the role and associated responsibilities, a candidate’s work experience, education/training, and key skills. \n Please be aware that many roles will be subject to both security and export control restrictions. These restrictions mean that factors including new starter’s nationality, any previous or dual nationalities held, place of birth and country of residence may limit those roles that you can perform for the organization. \n Please note: CesiumAstro does not accept unsolicited resumes from contract agencies or search firms. Any unsolicited resumes submitted to our website or to CesiumAstro team members not through our approved vendor list or Talent Acquisition will be considered property of CesiumAstro, and we will not be obligated to pay any referral fees. Find more English Speaking Jobs in Germany on Arbeitnow",
+      "posted": "2026-11-27",
+      "source": "Arbeitnow",
+      "score": 39,
+      "matched": [
+        "machine learning",
+        "deep learning",
+        "python",
+        "research"
+      ],
+      "status": "new",
+      "apply_url": "https://jobs.lever.co/CesiumAstro/98789d26-6265-4100-842f-e588a4c5fa4f/apply"
     },
     {
       "title": "Senior Product Manager - Machine Learning (m/f/d)",
